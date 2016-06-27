@@ -1,2 +1,222 @@
+@import 'https://fonts.googleapis.com/css?family=Mada:400,900|Rye|Suez+One';
+
+$font-family-sans-serif: 'Mada', sans-serif;
+$headings-font-family: 'Suez One', serif;
+$body-bg: #333333;
+$text-color: #f9f9f9;
+$navbar-height: 50px;
+$navbar-default-bg: #000;
+$navbar-default-link-color: #f9f9f9;
+$navbar-default-link-active-bg: #000;
+$navbar-default-link-active-color: #ffdcb8;
+$navbar-default-link-hover-color: #ffc902;
+$navbar-default-border: none;
+$navbar-default-toggle-border-color: none;
+$navbar-default-toggle-hover-bg: none;
+$brand-primary: #f9f9f9;
+$jumbotron-heading-font-size: 300%;
+$jumbotron-padding: 2%;
+$component-active-color: #f9f9f9;
+$page-header-border-color: none;
+$input-bg: #f9f9f9;
+$btn-font-weight: bold;
+$btn-primary-color: #1abc9c;
+$btn-primary-bg: #f9f9f9;
+$btn-primary-border: #1abc9c;
+$input-border: #bdc3c7;
+$input-border-radius-large: 0;
+$panel-default-border: #f9f9f9;
+$panel-bg: #f9f9f9;
+$panel-inner-border: #f9f9f9;
+
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */
+
+.navbar {
+	position: relative;
+}
+.navbar-brand {
+  font-family: 'Rye', cursive;
+  font-size: 24px;
+	display: block;
+	position: absolute;
+	left: 50%;
+	width: auto;
+	height: 80px;
+	margin-left: -80px !important;  /* 44px 50% of your logo width */
+	margin-top: 0px;
+}
+.navbar-brand:hover {
+	opacity: .6;
+}
+.navbar-toggle {
+  display: block;
+  height: auto;
+  width: auto;
+  margin: 4px 0 0 2%;
+  float: right;
+}
+.navbar-default
+{
+
+}
+.navbar-default .navbar-toggle .icon-bar {
+	background-color: #f9f9f9;
+	height: 5px;
+	margin-bottom: 5px;
+}
+.navbar-toggle:hover {
+	opacity: .6;
+}
+.navbar-text {
+	float:left;
+  margin: 5px 5% 0 10px;
+}
+
+.navbar-right {
+	margin-top: 0px;
+	margin-left: 0px;
+	padding-right: 0px;
+	padding-top: 2%;
+}
+.navbar-collapse {
+  width: 100%;
+  margin-top: 2%;
+  text-align: center;
+}
+.nav_link {
+  font-size: 18px;
+  font-weight: normal;
+  font-weight: bold;
+}
+#logo-link {
+	width: 35px;
+  height: auto;
+}
+#logo-link:hover {
+	opacity: .6;
+}
+#hero-image {
+  margin-top: -20px;
+  background-image: url("burger-beans.jpg");
+  width: 100%;
+  height: 600px;
+  text-align: center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  }
+#home-title {
+  font-size: 56px;
+  margin-top: 80px;
+}
+h1 {
+
+}
+h1 small {
+
+}
+h2{
+
+}
+h3 {
+
+}
+h4 {
+}
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: $screen-sm-min) {
+	.navbar-toggle {
+		display: none;
+		}
+	.navbar-text {
+		display:none;
+		}
+  .navbar-brand {
+	 left: 10%;
+	 bottom: 0%;
+   max-height: 85px;
+   height: 85px;
+   width: auto;
+   margin: 0 auto;
+  }
+ .navbar-right {
+  padding-top: 0%;
+  margin-top: 0%;
+	margin-bottom: 5px;
+  margin-left: 0px;
+  margin-right: 1%;
+  padding-right: 0px;
+}
+  .nav_link {
+  font-size: 110%;
+  width: 100px;
+	font-weight: bold;
+  }
+
+  #home_option {
+  display: none;
+  }
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: $screen-md-min) {
+  .navbar-brand {
+   max-height: 90px;
+   height: 90px;
+
+  }
+  .nav_link {
+	 margin-bottom: 2px;
+  }
+  p {
+    font-size: 18px;
+  }
+	h2 {
+		font-size: 36px;
+	}
+	h3 {
+		font-size: 28px;
+	}
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: $screen-lg-min) {
+  .navbar-brand {
+   display: block;
+	 bottom: 0%;
+   max-height: 100px;
+   height: 100px;
+   width: auto;
+   margin: 0 auto;
+  }
+  .navbar-toggle {
+  display: none;
+  }
+  .navbar-right {
+  padding-top: 0%;
+  margin-right: 3%;
+  margin-left: 0%;
+  margin-top: 0px;
+  }
+  .nav_link {
+  font-size: 18px;
+  width: 125px;
+	margin-bottom: 6px;
+  }
+
+	h2 {
+		font-size: 36px;
+	}
+	h3 {
+		font-size: 28px;
+	}
+}
