@@ -1,0 +1,58 @@
+/* Extra small devices (phones, less than 768px) */
+/* No media query since this is the default in Bootstrap */  
+
+.btn-primary {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0px;
+    margin-top: 45px;
+  }
+
+.btn-default {
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0px;
+    margin-top: 30px;
+  }
+
+  #home-title {
+    font-family: 'Rye', cursive;
+    font-size: 80px;
+    line-height: 90%;
+    margin-top: 65px;
+  }
+  #home-subtitle {
+    font-family: 'Rye', cursive;
+    color: #242021;
+    margin-top: -5px;
+  }
+
+  #food-menu-button{
+
+  }
+
+  #specials-button{
+
+  }
+
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+  
+  
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+  
+  
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
