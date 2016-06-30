@@ -7,7 +7,7 @@ class MenuItemsController < ApplicationController
     @menu_items = MenuItem.all
     respond_with(@menu_items)
   end
-
+  
   def show
     respond_with(@menu_item)
   end

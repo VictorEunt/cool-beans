@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   devise_for :users
   root "pages#home"
   get "about" => "pages#about"
-  get "menu" => "pages#menu"
+  get "menu" => "menu_items#index"
   get "specials" => "pages#specials"
   get "gallery" => "pages#gallery"
   get "contact" => "pages#contact"
