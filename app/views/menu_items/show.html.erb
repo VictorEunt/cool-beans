@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Menu section:</strong>
+  <%= @menu_item.menu_section %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @menu_item.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @menu_item.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @menu_item.price %>
+</p>
+
+<p>
+  <strong>Extra one:</strong>
+  <%= @menu_item.extra_one %>
+</p>
+
+<p>
+  <strong>Extra one price:</strong>
+  <%= @menu_item.extra_one_price %>
+</p>
+
+<p>
+  <strong>Extra two:</strong>
+  <%= @menu_item.extra_two %>
+</p>
+
+<p>
+  <strong>Extra two price:</strong>
+  <%= @menu_item.extra_two_price %>
+</p>
+
+<p>
+  <strong>Extra three:</strong>
+  <%= @menu_item.extra_three %>
+</p>
+
+<p>
+  <strong>Extra three price:</strong>
+  <%= @menu_item.extra_three_price %>
+</p>
+
+<%= link_to 'Edit', edit_menu_item_path(@menu_item) %> |
+<%= link_to 'Back', menu_items_path %>
