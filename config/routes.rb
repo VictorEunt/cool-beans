@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :gallery_photos
+
   resources :menu_items
 
   devise_for :users
@@ -7,7 +9,7 @@ Rails.application.routes.draw do
   get "about" => "pages#about"
   get "menu" => "menu_items#index"
   get "specials" => "pages#specials"
-  get "gallery" => "pages#gallery"
+  get "gallery" => "gallery_photos#index"
   get "contact" => "pages#contact"
 
 
