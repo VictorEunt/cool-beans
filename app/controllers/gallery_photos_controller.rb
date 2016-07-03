@@ -14,7 +14,7 @@ class GalleryPhotosController < ApplicationController
 
   def new
     @gallery_photo = GalleryPhoto.new
-    respond_with(@gallery_photo)
+    respond_with(@gallery_photos)
   end
 
   def edit
@@ -23,7 +23,7 @@ class GalleryPhotosController < ApplicationController
   def create
     @gallery_photo = GalleryPhoto.new(gallery_photo_params)
     @gallery_photo.save
-    respond_with(@gallery_photo)
+    redirect_to gallery_photos_path
   end
 
   def update

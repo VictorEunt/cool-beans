@@ -2,7 +2,7 @@
 
 $font-family-sans-serif: 'Mada', sans-serif;
 $headings-font-family: 'Suez One', serif;
-$body-bg: #333333;
+$body-bg: #1a1a1a;
 $text-color: #f9f9f9;
 $navbar-height: 50px;
 $navbar-default-bg: #000;
@@ -28,13 +28,14 @@ $btn-default-bg: #f9f9f9;
 $btn-default-border: #242021;
 $input-border: #bdc3c7;
 $input-border-radius-large: 0;
-$panel-default-border: #f9f9f9;
-$panel-bg: #f9f9f9;
-$panel-inner-border: #f9f9f9;
+$panel-default-border: #333333;
+$panel-bg: #0d0d0d;
+$panel-inner-border: #0d0d0d;
 
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
 
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
