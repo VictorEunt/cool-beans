@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160702185113) do
+ActiveRecord::Schema.define(version: 20160705001635) do
+
+  create_table "classics", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "first_classic"
+    t.text     "first_classic_description"
+    t.string   "second_classic"
+    t.text     "second_classic_description"
+    t.string   "third_classic"
+    t.text     "third_classic_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "first_event"
+    t.text     "first_event_description"
+    t.string   "second_event"
+    t.text     "second_event_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "gallery_photos", force: true do |t|
     t.string   "name"
@@ -22,6 +46,37 @@ ActiveRecord::Schema.define(version: 20160702185113) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "hero_images", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "home_contents", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "hours", force: true do |t|
+    t.string   "name"
+    t.text     "message"
+    t.string   "sunday"
+    t.string   "monday"
+    t.string   "tuesday"
+    t.string   "wednesday"
+    t.string   "thursday"
+    t.string   "friday"
+    t.string   "saturday"
+    t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "menu_items", force: true do |t|
@@ -56,5 +111,16 @@ ActiveRecord::Schema.define(version: 20160702185113) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "weekends", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "first_special"
+    t.text     "first_special_description"
+    t.string   "second_special"
+    t.text     "second_special_description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

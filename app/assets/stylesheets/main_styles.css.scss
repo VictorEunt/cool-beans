@@ -40,6 +40,13 @@ $panel-inner-border: #0d0d0d;
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
+.img-responsive{
+}
+
+.padding-0 {
+    padding: 0;
+}
+
 .navbar {
 	position: relative;
 }

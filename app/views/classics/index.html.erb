@@ -1,0 +1,39 @@
+<h1>Listing classics</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>First classic</th>
+      <th>First classic description</th>
+      <th>Second classic</th>
+      <th>Second classic description</th>
+      <th>Third classic</th>
+      <th>Third classic description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @classics.each do |classic| %>
+      <tr>
+        <td><%= classic.title %></td>
+        <td><%= classic.description %></td>
+        <td><%= classic.first_classic %></td>
+        <td><%= classic.first_classic_description %></td>
+        <td><%= classic.second_classic %></td>
+        <td><%= classic.second_classic_description %></td>
+        <td><%= classic.third_classic %></td>
+        <td><%= classic.third_classic_description %></td>
+        <td><%= link_to 'Show', classic %></td>
+        <td><%= link_to 'Edit', edit_classic_path(classic) %></td>
+        <td><%= link_to 'Destroy', classic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Classic', new_classic_path %>

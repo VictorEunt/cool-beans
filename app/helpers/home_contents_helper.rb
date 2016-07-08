@@ -1,0 +1,2 @@
+module HomeContentsHelper
+end

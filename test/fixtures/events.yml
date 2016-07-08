@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  description: MyText
+  first_event: MyString
+  first_event_description: MyText
+  second_event: MyString
+  second_event_description: MyText
+
+two:
+  title: MyString
+  description: MyText
+  first_event: MyString
+  first_event_description: MyText
+  second_event: MyString
+  second_event_description: MyText

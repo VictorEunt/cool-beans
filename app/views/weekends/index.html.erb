@@ -1,0 +1,35 @@
+<h1>Listing weekends</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>First special</th>
+      <th>First special description</th>
+      <th>Second special</th>
+      <th>Second special description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @weekends.each do |weekend| %>
+      <tr>
+        <td><%= weekend.title %></td>
+        <td><%= weekend.description %></td>
+        <td><%= weekend.first_special %></td>
+        <td><%= weekend.first_special_description %></td>
+        <td><%= weekend.second_special %></td>
+        <td><%= weekend.second_special_description %></td>
+        <td><%= link_to 'Show', weekend %></td>
+        <td><%= link_to 'Edit', edit_weekend_path(weekend) %></td>
+        <td><%= link_to 'Destroy', weekend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Weekend', new_weekend_path %>

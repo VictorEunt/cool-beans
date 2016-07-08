@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
   
+  resources :events
+
+  resources :classics
+
+  resources :weekends
+
+  resources :hours
+
+  resources :hero_images
+
+  resources :home_contents
+
   resources :gallery_photos
 
   resources :menu_items

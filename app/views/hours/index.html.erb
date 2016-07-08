@@ -1,0 +1,43 @@
+<h1>Listing hours</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Message</th>
+      <th>Sunday</th>
+      <th>Monday</th>
+      <th>Tuesday</th>
+      <th>Wednesday</th>
+      <th>Thursday</th>
+      <th>Friday</th>
+      <th>Saturday</th>
+      <th>Note</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @hours.each do |hour| %>
+      <tr>
+        <td><%= hour.name %></td>
+        <td><%= hour.message %></td>
+        <td><%= hour.sunday %></td>
+        <td><%= hour.monday %></td>
+        <td><%= hour.tuesday %></td>
+        <td><%= hour.wednesday %></td>
+        <td><%= hour.thursday %></td>
+        <td><%= hour.friday %></td>
+        <td><%= hour.saturday %></td>
+        <td><%= hour.note %></td>
+        <td><%= link_to 'Show', hour %></td>
+        <td><%= link_to 'Edit', edit_hour_path(hour) %></td>
+        <td><%= link_to 'Destroy', hour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Hour', new_hour_path %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @classic.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @classic.description %>
+</p>
+
+<p>
+  <strong>First classic:</strong>
+  <%= @classic.first_classic %>
+</p>
+
+<p>
+  <strong>First classic description:</strong>
+  <%= @classic.first_classic_description %>
+</p>
+
+<p>
+  <strong>Second classic:</strong>
+  <%= @classic.second_classic %>
+</p>
+
+<p>
+  <strong>Second classic description:</strong>
+  <%= @classic.second_classic_description %>
+</p>
+
+<p>
+  <strong>Third classic:</strong>
+  <%= @classic.third_classic %>
+</p>
+
+<p>
+  <strong>Third classic description:</strong>
+  <%= @classic.third_classic_description %>
+</p>
+
+<%= link_to 'Edit', edit_classic_path(@classic) %> |
+<%= link_to 'Back', classics_path %>

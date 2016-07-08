@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @weekend.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @weekend.description %>
+</p>
+
+<p>
+  <strong>First special:</strong>
+  <%= @weekend.first_special %>
+</p>
+
+<p>
+  <strong>First special description:</strong>
+  <%= @weekend.first_special_description %>
+</p>
+
+<p>
+  <strong>Second special:</strong>
+  <%= @weekend.second_special %>
+</p>
+
+<p>
+  <strong>Second special description:</strong>
+  <%= @weekend.second_special_description %>
+</p>
+
+<%= link_to 'Edit', edit_weekend_path(@weekend) %> |
+<%= link_to 'Back', weekends_path %>
