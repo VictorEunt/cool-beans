@@ -1,83 +1,36 @@
-<h1>Listing menu_items</h1>
+<div class="row">
+  <div class="col-sm-12 col-md-9 col-lg-9">
+    <h1>Our Burgers</h1>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Menu section</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Extra one</th>
-      <th>Extra one price</th>
-      <th>Extra two</th>
-      <th>Extra two price</th>
-      <th>Extra three</th>
-      <th>Extra three price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
     <% @menu_items.each do |menu_item| %>
-      <tr>
-        <td><%= menu_item.menu_section %></td>
-        <td><%= menu_item.name %></td>
-        <td><%= menu_item.description %></td>
-        <td><%= menu_item.price %></td>
-        <td><%= menu_item.extra_one %></td>
-        <td><%= menu_item.extra_one_price %></td>
-        <td><%= menu_item.extra_two %></td>
-        <td><%= menu_item.extra_two_price %></td>
-        <td><%= menu_item.extra_three %></td>
-        <td><%= menu_item.extra_three_price %></td>
-        <td><%= link_to 'Show', menu_item %></td>
-        <td><%= link_to 'Edit', edit_menu_item_path(menu_item) %></td>
-        <td><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<table>
-  <thead>
-    <tr>
-      <th>Menu section</th>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Price</th>
-      <th>Extra one</th>
-      <th>Extra one price</th>
-      <th>Extra two</th>
-      <th>Extra two price</th>
-      <th>Extra three</th>
-      <th>Extra three price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <h1>Burgers</h1>
-  <tbody>
-    <% @menu_items.each do |menu_item| %>
+    <div class="row">
+      <div class="col-sm-12 col-md-9 col-lg-9">
       <% if menu_item.menu_section == 'Burgers' %>
-      <tr>
-        <td><%= menu_item.menu_section %></td>
-        <td><%= menu_item.name %></td>
-        <td><%= menu_item.description %></td>
-        <td><%= menu_item.price %></td>
-        <td><%= menu_item.extra_one %></td>
-        <td><%= menu_item.extra_one_price %></td>
-        <td><%= menu_item.extra_two %></td>
-        <td><%= menu_item.extra_two_price %></td>
-        <td><%= menu_item.extra_three %></td>
-        <td><%= menu_item.extra_three_price %></td>
-        <td><%= link_to 'Show', menu_item %></td>
-        <td><%= link_to 'Edit', edit_menu_item_path(menu_item) %></td>
-        <td><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <h2><%= menu_item.name %></h2>
+        <p><%= menu_item.description %></p>
+        <h5 class="menu-price"><%= menu_item.price %></h5>
+        <p><%= menu_item.extra_one %></p>
+        <p><%= menu_item.extra_one_price %></p>
+        <p><%= menu_item.extra_two %></p>
+        <p><%= menu_item.extra_two_price %></p>
+        <p><%= menu_item.extra_three %></p>
+        <p><%= menu_item.extra_three_price %></p>
+        <% if user_signed_in? %>
+          <p><%= link_to 'Show', menu_item %></p>
+        <% end %>
+        <% if user_signed_in? %>
+          <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
+        <% end %>
+        <% if user_signed_in? %>
+          <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+        <% end %>
       <% end %>
+      </div>
+    </div>
     <% end %>
-  </tbody>
-</table>
+
 
 <table>
 
