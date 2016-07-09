@@ -6,19 +6,31 @@
   color: #666666;
 }
 
-h1 {
-  color: #ffcc04;
-}
-h2 {
-  color: #ffdcb8;
-}
-
-body {
+#menu-style {
   padding: 3%;
 }
 
+#menu-style p {
+  color: #242021;
+}
+
+.panel {
+  padding: 3%;
+}
+
+#menu-style h1 {
+  color: #ffd333;
+  margin-bottom: 15px;
+}
+
+#menu-style h3 {
+  color: #d41a27;
+  margin-top: -2px;
+}
+
 .menu-price {
-  margin-top: -5px;
+  margin-top: -10px;
+  margin-bottom: 5px;
   float: right;
-  color: #d41827;
+  color: #d41a27;
 }
