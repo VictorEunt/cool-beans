@@ -29,8 +29,11 @@ $btn-default-border: #242021;
 $input-border: #bdc3c7;
 $input-border-radius-large: 0;
 $panel-default-border: #333333;
-$panel-bg: #fff2e6;
+$panel-bg: #eee2c3;
 $panel-inner-border: #0d0d0d;
+$panel-primary-inner-border: #666666;
+$panel-primary-border: #0d0d0d;
+$panel-primary-text: #eee2c3;
 
 
 @import 'bootstrap-sprockets';
@@ -41,10 +44,6 @@ $panel-inner-border: #0d0d0d;
 /* No media query since this is the default in Bootstrap */
 
 .img-responsive{
-}
-
-.padding-0 {
-    padding: 0;
 }
 
 .navbar {

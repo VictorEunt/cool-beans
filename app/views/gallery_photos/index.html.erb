@@ -2,12 +2,13 @@
 
 <div id="gallery_photos" class="transitions-enabled">
   <% @gallery_photos.each do |gallery_photo| %>
-    <div class="box panel panel-default">
-      <%= link_to image_tag(gallery_photo.image.url(:medium)), gallery_photo %>
+    <div class="box panel panel-primary">
+      <%= link_to image_tag(gallery_photo.image.url(:medium), :class=>'photo-image'), gallery_photo %>
       <div class="panel-body">
-        <%= gallery_photo.name %><br/>
-        <strong><%= gallery_photo.description %></strong>
+        <p><%= gallery_photo.name %></p>
+        <p class="photo-description"><%= gallery_photo.description %></p>
         
+        <% if user_signed_in? %>
           <div class="actions">
             <%= link_to edit_gallery_photo_path(gallery_photo) do %>
               <span class="glyphicon glyphicon-edit"></span>
@@ -17,8 +18,8 @@
               <span class="glyphicon glyphicon-trash"></span>
               Delete
             <% end %>
-        </div>
-        
+          </div>
+        <% end %>
      </div>
    </div>
   <% end %>

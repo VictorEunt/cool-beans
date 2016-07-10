@@ -4,13 +4,31 @@
 
 #gallery_photos {
   margin: 0 auto;
-}
 
-.box {
-  margin: 5px;
-  width: 214px;
-}
+  .box {
+    margin: 5px;
+    width: 214px;
+  }
 
-.box img {
-  width: 100%;
+  .photo-image {
+    width: 100%;
+  }
+  
+  .photo-description {
+    color: #eee2c3;
+  }
+
+  .panel {
+    background: #0d0d0d;
+  }
+  
+  p {
+    color: #cccccc;
+  }
+  
+  h5 {
+    color: #cccccc;
+    margin-bottom: 3px;
+  }
+
 }

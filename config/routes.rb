@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :menu_photos
+
   resources :events
 
   resources :classics

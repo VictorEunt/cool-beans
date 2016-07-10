@@ -5,7 +5,11 @@ class MenuItemsController < ApplicationController
 
   def index
     @menu_items = MenuItem.all
-    respond_with(@menu_items)
+    @menu_photos = MenuPhoto.all
+
+    respond_to do |format|
+      format.html  
+    end
   end
   
   def show
