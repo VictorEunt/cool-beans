@@ -4,7 +4,7 @@ class MenuItemsController < ApplicationController
   respond_to :html
 
   def index
-    @menu_items = MenuItem.all
+    @menu_items = MenuItem.all.order('item_rank ASC')
     @menu_photos = MenuPhoto.all
 
     respond_to do |format|
@@ -46,6 +46,6 @@ class MenuItemsController < ApplicationController
     end
 
     def menu_item_params
-      params.require(:menu_item).permit(:menu_section, :name, :description, :price, :extra_one, :extra_one_price, :extra_two, :extra_two_price, :extra_three, :extra_three_price)
+      params.require(:menu_item).permit(:menu_section, :name, :description, :price, :extra_one, :extra_one_price, :extra_two, :extra_two_price, :extra_three, :extra_three_price, :item_rank)
     end
 end
