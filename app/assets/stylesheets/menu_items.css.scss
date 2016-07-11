@@ -10,28 +10,38 @@
   padding: 3%;
 }
 
-#menu-style p {
-  color: #242021;
-}
-
-#menu-style .panel {
-  padding: 3%;
-}
-
 #menu-style h1 {
   color: #ffd333;
   margin-bottom: 15px;
 }
 
-#menu-style h3 {
+#menu-style .panel-default {
+  padding: 2%;
+}
+
+#menu-style .panel-title {
+  font-size: 28px;
   color: #d41a27;
-  margin-top: -2px;
+  margin-bottom: -15px;
+}
+
+#menu-style .panel-heading {
+  border-color: #eee2c3;
+}
+
+#menu-style .panel-default p {
+  color: #242021;
 }
 
 .menu-price {
-  margin-top: -10px;
-  margin-bottom: 5px;
-  float: right;
+  margin-bottom: 10px;
+  text-align: right;
+  color: #d41a27;
+}
+
+.menu-extra {
+  margin-top: 5px;
+  text-align: right;
   color: #d41a27;
 }
 
@@ -42,3 +52,5 @@
 .food-photo {
   width: 100%;
 }
+
+
