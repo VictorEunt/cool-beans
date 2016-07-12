@@ -46,9 +46,16 @@
             </div>
             <% if user_signed_in? %>
               <div class="panel-footer">      
-                <p><%= link_to 'Show', menu_item %></p>
-                <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
-                <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <div class="actions">
+                  <%= link_to edit_menu_item_path(menu_item) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
               </div>
             <% end %>
           </div>
@@ -104,9 +111,16 @@
             </div>
             <% if user_signed_in? %>
               <div class="panel-footer">      
-                <p><%= link_to 'Show', menu_item %></p>
-                <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
-                <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <div class="actions">
+                  <%= link_to edit_menu_item_path(menu_item) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
               </div>
             <% end %>
           </div>
@@ -161,9 +175,16 @@
             </div>
             <% if user_signed_in? %>
               <div class="panel-footer">      
-                <p><%= link_to 'Show', menu_item %></p>
-                <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
-                <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <div class="actions">
+                  <%= link_to edit_menu_item_path(menu_item) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
               </div>
             <% end %>
           </div>
@@ -218,9 +239,16 @@
             </div>
             <% if user_signed_in? %>
               <div class="panel-footer">      
-                <p><%= link_to 'Show', menu_item %></p>
-                <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
-                <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <div class="actions">
+                  <%= link_to edit_menu_item_path(menu_item) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
               </div>
             <% end %>
           </div>
@@ -275,9 +303,16 @@
             </div>
             <% if user_signed_in? %>
               <div class="panel-footer">      
-                <p><%= link_to 'Show', menu_item %></p>
-                <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
-                <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <div class="actions">
+                  <%= link_to edit_menu_item_path(menu_item) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
               </div>
             <% end %>
           </div>

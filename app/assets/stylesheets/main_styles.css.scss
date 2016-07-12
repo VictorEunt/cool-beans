@@ -31,6 +31,8 @@ $input-border-radius-large: 0;
 $panel-default-border: #333333;
 $panel-default-text: #242021;
 $panel-default-heading-bg: #eee2c3;
+$panel-default-border: #eee2c3;
+$panel-footer-bg: #e9d8af;
 $panel-bg: #eee2c3;
 $panel-border-radius: 0;
 $panel-inner-border: #0d0d0d;
@@ -40,6 +42,7 @@ $thumbnail-padding: 3%;
 $thumbnail-bg: #eee2c3;
 $thumbnail-border-radius: 0;
 $thumbnail-border: #eee2c3;
+$jumbotron-bg: #333333;
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';

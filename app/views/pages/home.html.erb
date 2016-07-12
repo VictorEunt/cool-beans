@@ -1,9 +1,8 @@
-<div id="hero-image">
-  <%= link_to image_tag("logo.png", :alt=>'cool beans logo', :class=>'navbar-text', id: 'logo-link'), root_path %>
-  <div class="container">
-    <h1 id="home-title">Cool Beans</h1>
-    <h2 id="home-subtitle">Denton's Finest</br>Dive Bar</h2>
-    <div id="food-menu-button"><%= link_to "Our Menu", menu_path, class: "btn btn-primary btn-lg" %></div>
-    <div id="specials-button"><%= link_to "The Specials", specials_path, class: "btn btn-default btn-lg" %></div>
-  </div>
+<div class="jumbotron center">
+  <h1>Log in to update the Cool Beans website.</h1>
+  <p>
+    <%= link_to "Log in", new_user_session_path, class: "btn btn-default btn-lg" %>
+    <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg" %>
+  </p>
+
 </div>

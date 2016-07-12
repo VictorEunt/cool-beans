@@ -34,6 +34,10 @@
   color: #242021;
 }
 
+#menu-style .panel-footer {
+  border-top: none;
+}
+
 .menu-price {
   margin-bottom: 10px;
   text-align: right;
@@ -54,4 +58,12 @@
   width: 100%;
 }
 
+#menu-style .actions a {
+  color: #242021;
+  padding-right: 15px;
+}
+
+#menu-style .actions a:hover {
+  color: #d41a27;
+}
 
