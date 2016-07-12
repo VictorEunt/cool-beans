@@ -32,11 +32,14 @@ $panel-default-border: #333333;
 $panel-default-text: #242021;
 $panel-default-heading-bg: #eee2c3;
 $panel-bg: #eee2c3;
+$panel-border-radius: 0;
 $panel-inner-border: #0d0d0d;
-$panel-primary-inner-border: #666666;
 $panel-primary-border: #0d0d0d;
 $panel-primary-text: #eee2c3;
-
+$thumbnail-padding: 3%;
+$thumbnail-bg: #eee2c3;
+$thumbnail-border-radius: 0;
+$thumbnail-border: #eee2c3;
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';

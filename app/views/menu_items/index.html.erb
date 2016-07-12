@@ -1,59 +1,69 @@
 <div id="menu-style">
+  
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-9 col-lg-9">
       <h1>Our Burgers</h1>
       <% @menu_photos.each do |menu_photo| %>
         <% if menu_photo.name == 'Burger-One' %>
-        <div class="panel panel-default">
-        <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Burger'), menu_photo %>
-        </div>
+          <div class="thumbnail">
+            <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Burger'), menu_photo %>
+          </div>
         <% end %>
       <% end %>
     </div>
   </div>
 
   <% @menu_items.each do |menu_item| %>
-  <div class="row">
-    <div class="col-sm-12 col-md-9 col-lg-9">
     <% if menu_item.menu_section == 'Burgers' %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= menu_item.name %></h3>
-        </div>
-        <div class="panel-body">
-          <p><%= menu_item.description %></p>
-          <div class="menu-price">
-            <h5><%= menu_item.price %></h5>
+      <div class="row">
+        <div class="col-sm-12 col-md-9 col-lg-9">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= menu_item.name %></h3>
+            </div>
+            <div class="panel-body">
+              <% if menu_item.description.present? %>
+                <p><%= menu_item.description %></p>
+              <% end %>
+              <div class="menu-price">
+                <h5><%= menu_item.price %></h5>
+              </div>
+              <% if menu_item.extra_one.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_two.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_three.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
+                </div>
+              <% end %>
+            </div>
+            <% if user_signed_in? %>
+              <div class="panel-footer">      
+                <p><%= link_to 'Show', menu_item %></p>
+                <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
+                <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+              </div>
+            <% end %>
           </div>
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
-          </div>
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
-          </div>  
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
-          </div>
         </div>
-        <% if user_signed_in? %>
-        <div class="panel-footer">      
-          <p><%= link_to 'Show', menu_item %></p>
-          <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
-          <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        </div>
-        <% end %>
       </div>
     <% end %>
-    </div>
-  </div>
   <% end %>
 
+  
   <div class="row">
     <div class="col-xs-12 col-sm-6 col-md-9 col-lg-9">
       <h1>Our Chicken Sandwiches</h1>
       <% @menu_photos.each do |menu_photo| %>
         <% if menu_photo.name == 'Chicken-One' %>
-        <div class="panel panel-default">
+        <div class="thumbnail">
         <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Chicken Sandwich'), menu_photo %>
         </div>
         <% end %>
@@ -62,39 +72,47 @@
   </div>
 
   <% @menu_items.each do |menu_item| %>
-  <div class="row">
-    <div class="col-sm-12 col-md-9 col-lg-9">
     <% if menu_item.menu_section == 'Chicken Sandwiches' %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= menu_item.name %></h3>
-        </div>
-        <div class="panel-body">
-          <p><%= menu_item.description %></p>
-          <div class="menu-price">
-            <h5><%= menu_item.price %></h5>
+      <div class="row">
+        <div class="col-sm-12 col-md-9 col-lg-9">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= menu_item.name %></h3>
+            </div>
+            <div class="panel-body">
+              <% if menu_item.description.present? %>
+                <p><%= menu_item.description %></p>
+              <% end %>
+              <div class="menu-price">
+                <h5><%= menu_item.price %></h5>
+              </div>
+              <% if menu_item.extra_one.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_two.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_three.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
+                </div>
+              <% end %>
+            </div>
+            <% if user_signed_in? %>
+              <div class="panel-footer">      
+                <p><%= link_to 'Show', menu_item %></p>
+                <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
+                <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+              </div>
+            <% end %>
           </div>
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
-          </div>
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
-          </div>  
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
-          </div>
         </div>
-        <% if user_signed_in? %>
-        <div class="panel-footer">      
-          <p><%= link_to 'Show', menu_item %></p>
-          <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
-          <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        </div>
-        <% end %>
       </div>
     <% end %>
-    </div>
-  </div>
   <% end %>
 
   <div class="row">
@@ -102,7 +120,7 @@
       <h1>Our Baskets and More</h1>
       <% @menu_photos.each do |menu_photo| %>
         <% if menu_photo.name == 'Basket-One' %>
-        <div class="panel panel-default">
+        <div class="thumbnail">
         <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Tacos'), menu_photo %>
         </div>
         <% end %>
@@ -111,39 +129,47 @@
   </div>
 
   <% @menu_items.each do |menu_item| %>
-  <div class="row">
-    <div class="col-sm-12 col-md-9 col-lg-9">
     <% if menu_item.menu_section == 'Baskets and More' %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= menu_item.name %></h3>
-        </div>
-        <div class="panel-body">
-          <p><%= menu_item.description %></p>
-          <div class="menu-price">
-            <h5><%= menu_item.price %></h5>
+      <div class="row">
+        <div class="col-sm-12 col-md-9 col-lg-9">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= menu_item.name %></h3>
+            </div>
+            <div class="panel-body">
+              <% if menu_item.description.present? %>
+                <p><%= menu_item.description %></p>
+              <% end %>
+              <div class="menu-price">
+                <h5><%= menu_item.price %></h5>
+              </div>
+              <% if menu_item.extra_one.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_two.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_three.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
+                </div>
+              <% end %>
+            </div>
+            <% if user_signed_in? %>
+              <div class="panel-footer">      
+                <p><%= link_to 'Show', menu_item %></p>
+                <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
+                <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+              </div>
+            <% end %>
           </div>
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
-          </div>
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
-          </div>  
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
-          </div>
         </div>
-        <% if user_signed_in? %>
-        <div class="panel-footer">      
-          <p><%= link_to 'Show', menu_item %></p>
-          <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
-          <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        </div>
-        <% end %>
       </div>
     <% end %>
-    </div>
-  </div>
   <% end %>
 
   <div class="row">
@@ -151,7 +177,7 @@
       <h1>For the Vegetarian</h1>
       <% @menu_photos.each do |menu_photo| %>
         <% if menu_photo.name == 'Vegetarian-One' %>
-        <div class="panel panel-default">
+        <div class="thumbnail">
         <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Munchie'), menu_photo %>
         </div>
         <% end %>
@@ -160,39 +186,47 @@
   </div>
 
   <% @menu_items.each do |menu_item| %>
-  <div class="row">
-    <div class="col-sm-12 col-md-9 col-lg-9">
     <% if menu_item.menu_section == 'Vegetarian' %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= menu_item.name %></h3>
-        </div>
-        <div class="panel-body">
-          <p><%= menu_item.description %></p>
-          <div class="menu-price">
-            <h5><%= menu_item.price %></h5>
+      <div class="row">
+        <div class="col-sm-12 col-md-9 col-lg-9">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= menu_item.name %></h3>
+            </div>
+            <div class="panel-body">
+              <% if menu_item.description.present? %>
+                <p><%= menu_item.description %></p>
+              <% end %>
+              <div class="menu-price">
+                <h5><%= menu_item.price %></h5>
+              </div>
+              <% if menu_item.extra_one.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_two.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_three.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
+                </div>
+              <% end %>
+            </div>
+            <% if user_signed_in? %>
+              <div class="panel-footer">      
+                <p><%= link_to 'Show', menu_item %></p>
+                <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
+                <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+              </div>
+            <% end %>
           </div>
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
-          </div>
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
-          </div>  
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
-          </div>
         </div>
-        <% if user_signed_in? %>
-        <div class="panel-footer">      
-          <p><%= link_to 'Show', menu_item %></p>
-          <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
-          <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        </div>
-        <% end %>
       </div>
     <% end %>
-    </div>
-  </div>
   <% end %>
 
   <div class="row">
@@ -200,7 +234,7 @@
       <h1>The Munchies</h1>
       <% @menu_photos.each do |menu_photo| %>
         <% if menu_photo.name == 'Munchies-One' %>
-        <div class="panel panel-default">
+        <div class="thumbnail">
         <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Munchie'), menu_photo %>
         </div>
         <% end %>
@@ -209,39 +243,47 @@
   </div>
   
   <% @menu_items.each do |menu_item| %>
-  <div class="row">
-    <div class="col-sm-12 col-md-9 col-lg-9">
     <% if menu_item.menu_section == 'Munchies' %>
-      <div class="panel panel-default">
-        <div class="panel-heading">
-          <h3 class="panel-title"><%= menu_item.name %></h3>
-        </div>
-        <div class="panel-body">
-          <p><%= menu_item.description %></p>
-          <div class="menu-price">
-            <h5><%= menu_item.price %></h5>
+      <div class="row">
+        <div class="col-sm-12 col-md-9 col-lg-9">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= menu_item.name %></h3>
+            </div>
+            <div class="panel-body">
+              <% if menu_item.description.present? %>
+                <p><%= menu_item.description %></p>
+              <% end %>
+              <div class="menu-price">
+                <h5><%= menu_item.price %></h5>
+              </div>
+              <% if menu_item.extra_one.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_two.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_three.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
+                </div>
+              <% end %>
+            </div>
+            <% if user_signed_in? %>
+              <div class="panel-footer">      
+                <p><%= link_to 'Show', menu_item %></p>
+                <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
+                <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+              </div>
+            <% end %>
           </div>
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
-          </div>
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
-          </div>  
-          <div class="menu-extra">
-            <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
-          </div>
         </div>
-        <% if user_signed_in? %>
-        <div class="panel-footer">      
-          <p><%= link_to 'Show', menu_item %></p>
-          <p><%= link_to 'Edit', edit_menu_item_path(menu_item) %></p>
-          <p><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></p>
-        </div>
-        <% end %>
       </div>
     <% end %>
-    </div>
-  </div>
   <% end %>
   
   <%= link_to 'New Menu item', new_menu_item_path %>
