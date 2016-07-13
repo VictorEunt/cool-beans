@@ -21,6 +21,10 @@
       <li class="<%= active_class(specials_path) %>"><%= link_to "Specials", specials_path, class: "nav_link" %></li>
       <li class="<%= active_class(gallery_path) %>"><%= link_to "Gallery", gallery_path, class: "nav_link" %></li>
       <li class="<%= active_class(contact_path) %>"><%= link_to "Contact Us", contact_path, class: "nav_link" %></li>
+      <% if user_signed_in? %>
+        <li class="<%= active_class(edit_user_registration_path) %>"><%= link_to "Account", edit_user_registration_path, class: "nav_link" %></li>
+        <li><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "nav_link"  %></li>
+      <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->
   </div>

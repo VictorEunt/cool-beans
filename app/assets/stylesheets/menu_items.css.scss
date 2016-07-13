@@ -51,7 +51,7 @@
 }
 
 #burger-one {
-  margin-bottom:15px;
+  margin-bottom: 0;
 }
 
 .food-photo {
@@ -69,10 +69,20 @@
 
 #menu-style .well {
   border-color: #1a1a1a;
+  padding: 0 15px 5px 10px;
 }
 
 #menu-style .well h5 {
-  color: #ffd333;
+  color: #eee2c3;
+  font-weight: normal;
   line-height: 130%;
 }
 
+#menu-style .well .actions a {
+  color: #f9f9f9;
+  padding-right: 15px;
+}
+
+#menu-style .well .actions a:hover {
+  color: #d41a27;
+}
