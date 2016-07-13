@@ -6,20 +6,20 @@
     </div>
   </div>
   
-      <% @menu_photos.each do |menu_photo| %>
-        <% if menu_photo.name == 'Burger-One' %>
-          <div class="row">
-            <div class="col-xs-12 col-sm-6 col-md-9 col-lg-9">
-              <div class="thumbnail">
-                <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Burger'), menu_photo %>
-              </div>
-            </div>
+  <% @menu_photos.each do |menu_photo| %>
+    <% if menu_photo.name == 'Burger-One' %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-9 col-lg-9">
+          <div class="thumbnail">
+            <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Burger'), menu_photo %>
           </div>
-        <% end %>
-      <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
 
   <% @menu_items.each do |menu_item| %>
-    <% if menu_item.menu_section == 'Burger-Note' %>
+    <% if menu_item.menu_section == 'Burger-Note' && menu_item.description.present? %>
       <div class="row">
         <div class="col-sm-12 col-md-9 col-lg-9">
           <div class="well well-lg">
@@ -122,7 +122,7 @@
   </div>
 
   <% @menu_items.each do |menu_item| %>
-    <% if menu_item.menu_section == 'Chicken-Note' %>
+    <% if menu_item.menu_section == 'Chicken-Note' && menu_item.description.present? %>
       <div class="row">
         <div class="col-sm-12 col-md-9 col-lg-9">
           <div class="well well-lg">
@@ -223,7 +223,7 @@
   </div>
 
   <% @menu_items.each do |menu_item| %>
-    <% if menu_item.menu_section == 'Basket-Note' %>
+    <% if menu_item.menu_section == 'Basket-Note' && menu_item.description.present? %>
       <div class="row">
         <div class="col-sm-12 col-md-9 col-lg-9">
           <div class="well well-lg">
@@ -324,7 +324,7 @@
   </div>
 
   <% @menu_items.each do |menu_item| %>
-    <% if menu_item.menu_section == 'Vegetarian-Note' %>
+    <% if menu_item.menu_section == 'Vegetarian-Note' && menu_item.description.present? %>
       <div class="row">
         <div class="col-sm-12 col-md-9 col-lg-9">
           <div class="well well-lg">
@@ -425,7 +425,7 @@
   </div>
  
   <% @menu_items.each do |menu_item| %>
-    <% if menu_item.menu_section == 'Munchies-Note' %>
+    <% if menu_item.menu_section == 'Munchies-Note' && menu_item.description.present? %>
       <div class="row">
         <div class="col-sm-12 col-md-9 col-lg-9">
           <div class="well well-lg">
