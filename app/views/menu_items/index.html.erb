@@ -5,6 +5,7 @@
       <h1>Our Burgers</h1>
     </div>
   </div>
+  
       <% @menu_photos.each do |menu_photo| %>
         <% if menu_photo.name == 'Burger-One' %>
           <div class="row">
@@ -22,24 +23,18 @@
       <div class="row">
         <div class="col-sm-12 col-md-9 col-lg-9">
           <div class="well well-lg">
-            <% if menu_item.description.present? %>
-             <h4><%= menu_item.name %></h4>
-            <% end %>
-              <h5><%= menu_item.description %></h5>
-              <% if menu_item.price.present? %>
-                <p><%= menu_item.price %></p>
-              <% end %>
+            <h5><%= menu_item.description %></h5>
               <% if menu_item.extra_one.present? %>
                   <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
               <% end %>
               <% if menu_item.extra_two.present? %>
                 <div class="menu-extra">
-                  <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
+                  <p><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></p>
                 </div>
               <% end %>
               <% if menu_item.extra_three.present? %>
                 <div class="menu-extra">
-                  <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
+                  <p><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></p>
                 </div>
               <% end %>
               <% if user_signed_in? %>
