@@ -1,13 +1,14 @@
+<div class="container-fluid">
 <div id="menu-style">
   
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-lg-8">
       <h1>Our Burgers</h1>
     </div>
   
   <% @menu_photos.each do |menu_photo| %>
     <% if menu_photo.name == 'Burger-One' %>
-        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+        <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-5 col-lg-5">
           <div class="thumbnail">
             <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Burger'), menu_photo %>
           </div>
@@ -17,7 +18,7 @@
   
   <% @menu_photos.each do |menu_photo| %>
     <% if menu_photo.name == 'Burger-Two' %>
-      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="col-xs-12 col-sm-5 col-md-5 col-lg-5">
         <div class="thumbnail" id="burger_two">
           <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Burger'), menu_photo %>
         </div> 
@@ -29,7 +30,7 @@
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Burger-Note' && menu_item.description.present? %>
       <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-lg-8">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
           <div class="well well-lg">
             <p><%= menu_item.description %></p>
               <% if menu_item.extra_one.present? %>
@@ -66,7 +67,7 @@
   <div class="row">
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Burgers' %>
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 col-lg-6">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title"><%= menu_item.name %></h3>
@@ -115,8 +116,10 @@
   </div>
   
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-9 col-lg-9">
       <h1>Our Chicken Sandwiches</h1>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
       <% @menu_photos.each do |menu_photo| %>
         <% if menu_photo.name == 'Chicken-One' %>
         <div class="thumbnail">
@@ -130,7 +133,7 @@
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Chicken-Note' && menu_item.description.present? %>
       <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-lg-8">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-7">
           <div class="well well-lg">
             <p><%= menu_item.description %></p>
               <% if menu_item.extra_one.present? %>
@@ -167,7 +170,7 @@
   <div class="row">
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Chicken Sandwiches' %>
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 col-lg-6">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title"><%= menu_item.name %></h3>
@@ -216,8 +219,10 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-9 col-lg-9">
       <h1>Our Baskets and More</h1>
+      </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
       <% @menu_photos.each do |menu_photo| %>
         <% if menu_photo.name == 'Basket-One' %>
         <div class="thumbnail">
@@ -231,7 +236,7 @@
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Basket-Note' && menu_item.description.present? %>
       <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-lg-8">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-7">
           <div class="well well-lg">
             <p><%= menu_item.description %></p>
               <% if menu_item.extra_one.present? %>
@@ -268,7 +273,7 @@
     <div class="row">
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Baskets and More' %>
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 col-lg-6">
+       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title"><%= menu_item.name %></h3>
@@ -317,8 +322,10 @@
   </div>
   
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-9 col-lg-9">
       <h1>For the Vegetarian</h1>
+      </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
       <% @menu_photos.each do |menu_photo| %>
         <% if menu_photo.name == 'Vegetarian-One' %>
         <div class="thumbnail">
@@ -332,7 +339,7 @@
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Vegetarian-Note' && menu_item.description.present? %>
       <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-lg-8">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-7">
           <div class="well well-lg">
             <p><%= menu_item.description %></p>
               <% if menu_item.extra_one.present? %>
@@ -369,7 +376,7 @@
     <div class="row">
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Vegetarian' %>
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 col-lg-6">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title"><%= menu_item.name %></h3>
@@ -418,8 +425,10 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-9 col-lg-9">
       <h1>The Munchies</h1>
+      </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
       <% @menu_photos.each do |menu_photo| %>
         <% if menu_photo.name == 'Munchies-One' %>
         <div class="thumbnail">
@@ -433,7 +442,7 @@
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Munchies-Note' && menu_item.description.present? %>
       <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-lg-8">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-7">
           <div class="well well-lg">
             <p><%= menu_item.description %></p>
               <% if menu_item.extra_one.present? %>
@@ -470,7 +479,7 @@
     <div class="row">
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Munchies' %>
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-0 col-lg-6">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
           <div class="panel panel-default">
             <div class="panel-heading">
               <h3 class="panel-title"><%= menu_item.name %></h3>
@@ -520,4 +529,5 @@
   
   <%= link_to 'New Menu item', new_menu_item_path %>
 
+</div>
 </div>

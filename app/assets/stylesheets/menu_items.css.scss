@@ -94,8 +94,9 @@
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
-  
+  #burger_two {
+    display: block;
+}
   
 }
 
