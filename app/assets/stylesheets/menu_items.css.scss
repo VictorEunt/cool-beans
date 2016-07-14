@@ -74,8 +74,9 @@
   margin-bottom: 5px;
 }
 
-#menu-style .well h5 {
+#menu-style .well p {
   color: #eee2c3;
+  font-size: 16px;
   font-weight: normal;
   line-height: 130%;
 }
@@ -87,4 +88,34 @@
 
 #menu-style .well .actions a:hover {
   color: #d41a27;
+}
+
+#burger_two{
+  display: none;
+}
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+  
+  
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+  #menu-style .well p {
+  font-size: 18px;
+}
+  
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  #menu-style .well p {
+  font-size: 22px;
+}
+  
 }
