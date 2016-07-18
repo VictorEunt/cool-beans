@@ -1,61 +1,79 @@
-<%= form_for(@menu_item) do |f| %>
-  <% if @menu_item.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@menu_item.errors.count, "error") %> prohibited this menu_item from being saved:</h2>
+<div class="container-fluid">
+  <div id="menu-form">
+  <%= form_for(@menu_item) do |f| %>
+    <% if @menu_item.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@menu_item.errors.count, "error") %> prohibited this menu_item from being saved:</h2>
 
-      <ul>
-      <% @menu_item.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @menu_item.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Menu Item Form</h2>
     </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :menu_section %><br>
-    <%= f.text_field :menu_section %>
+  <div class="panel-body">
+    <div class="xs-12">
+    <div class="form-group">
+      <p><%= f.label :menu_section %></p>
+      <p><%= f.text_field :menu_section, class: "input-lg" %></p>
+    </div>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :item_rank, "Order of Item" %></p>
+      <p><%= f.text_field :item_rank, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :name %></p>
+      <p><%= f.text_field :name, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :description %></p>
+      <p><%= f.text_area :description, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :price %></p>
+      <p><%= f.text_field :price, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :extra_one, "Add On" %></p>
+      <p><%= f.text_field :extra_one, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :extra_one_price, "Add On Price" %></p>
+      <p><%= f.text_field :extra_one_price, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :extra_two, "Add On" %></p>
+      <p><%= f.text_field :extra_two, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :extra_two_price, "Add On Price" %></p>
+      <p><%= f.text_field :extra_two_price, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :extra_three, "Add On" %></p>
+      <p><%= f.text_field :extra_three, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :extra_three_price, "Add On Price" %></p>
+      <p><%= f.text_field :extra_three_price, class: "input-lg" %></p>
+    </div>
+     <div class="form-group">
+        <%= f.submit "Save", class: "btn btn-primary btn-lg" %>
+    </div>
+    </div>
+    <div class="panel-footer">
+      <p><%= link_to 'New Menu item', new_menu_item_path %></p>
+    </div>
+
+  <% end %>
   </div>
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :price %><br>
-    <%= f.text_field :price %>
-  </div>
-  <div class="field">
-    <%= f.label :extra_one %><br>
-    <%= f.text_field :extra_one %>
-  </div>
-  <div class="field">
-    <%= f.label :extra_one_price %><br>
-    <%= f.text_field :extra_one_price %>
-  </div>
-  <div class="field">
-    <%= f.label :extra_two %><br>
-    <%= f.text_field :extra_two %>
-  </div>
-  <div class="field">
-    <%= f.label :extra_two_price %><br>
-    <%= f.text_field :extra_two_price %>
-  </div>
-  <div class="field">
-    <%= f.label :extra_three %><br>
-    <%= f.text_field :extra_three %>
-  </div>
-  <div class="field">
-    <%= f.label :extra_three_price %><br>
-    <%= f.text_field :extra_three_price %>
-  </div>
-  <div class="field">
-    <%= f.label :item_rank %><br>
-    <%= f.text_field :item_rank %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+</div>

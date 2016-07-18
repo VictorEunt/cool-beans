@@ -2,8 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.field {
+#menu-form .panel-body p {
   color: #666666;
+}
+
+#menu-form .input-lg {
+  width: 100%;
 }
 
 #menu-style h1 {

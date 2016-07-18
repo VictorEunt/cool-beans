@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :specials_menus
+
   resources :menu_photos
 
   resources :events
@@ -23,7 +25,7 @@ Rails.application.routes.draw do
   root "pages#home"
   get "about" => "pages#about"
   get "menu" => "menu_items#index"
-  get "specials" => "pages#specials"
+  get "specials" => "specials_menus#index"
   get "gallery" => "gallery_photos#index"
   get "contact" => "pages#contact"
 

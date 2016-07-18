@@ -1,0 +1,68 @@
+// Place all the styles related to the SpecialsMenus controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#specials-menu-form .panel-body p {
+  color: #666666;
+}
+
+#specials-menu-form .input-lg {
+  width: 100%;
+}
+
+#specials-style {
+  
+  h2 {
+  font-family: 'Rye', cursive;
+  color: #eee2c3;
+  }
+  
+  .panel {
+    background: #333333;
+  }
+  .panel-success {
+    padding: 5px 0 0 0;
+    border-radius: 0;
+    border-color: #333333;
+  }
+  
+  .panel-heading {
+    border-color: #333333;
+    background: #333333;
+  }
+  
+  .panel-title {
+    font-size: 52px;
+    color: #ffc902;
+    border-color: #333333;
+    margin-bottom: -15px;
+  }
+  
+  .panel-body {
+    background: #333333;  
+  }
+
+  .panel-success p {
+    color: #eee2c3;
+    font-size: 26px;
+    line-height: 95%;
+  }
+
+  .panel-footer {
+    border-top: none;
+  }
+
+  .menu-price h5 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: right;
+    color: #eee2c3;
+  }
+
+  .menu-extra h5 {
+    margin-top: 5px;
+    font-size: 18px;
+    text-align: right;
+    color: #ffc902;
+  }
+}

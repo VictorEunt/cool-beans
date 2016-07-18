@@ -8,7 +8,7 @@ $navbar-height: 50px;
 $navbar-default-bg: #000;
 $navbar-default-link-color: #f9f9f9;
 $navbar-default-link-active-bg: #000;
-$navbar-default-link-active-color: #ffdcb8;
+$navbar-default-link-active-color: #eee2c3;
 $navbar-default-link-hover-color: #ffc902;
 $navbar-default-border: none;
 $navbar-default-toggle-border-color: none;
@@ -18,11 +18,10 @@ $jumbotron-heading-font-size: 300%;
 $jumbotron-padding: 2%;
 $component-active-color: #f9f9f9;
 $page-header-border-color: none;
-$input-bg: #f9f9f9;
 $btn-font-weight: bold;
-$btn-primary-color: #ffdcb8;
+$btn-primary-color: #eee2c3;
 $btn-primary-bg: #242021;
-$btn-primary-border: #ffdcb8;
+$btn-primary-border: #eee2c3;
 $btn-default-color: #242021;
 $btn-default-bg: #f9f9f9;
 $btn-default-border: #242021;
@@ -44,6 +43,9 @@ $thumbnail-border-radius: 0;
 $thumbnail-border: #eee2c3;
 $jumbotron-bg: #333333;
 $well-bg: #1a1a1a;
+$input-bg: #ecf0f1;
+$input-border-focus: #d41a27;
+$form-group-margin-bottom: 25px;
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
@@ -134,6 +136,9 @@ $well-bg: #1a1a1a;
   -o-background-size: cover;
   }
 
+.form-titles {
+  margin-left: 15px;
+}
 
 h1 {
 
