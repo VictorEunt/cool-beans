@@ -10,11 +10,12 @@
   width: 100%;
 }
 
-#specials-style {
+#food-specials-style {
   
   h2 {
   font-family: 'Rye', cursive;
-  color: #eee2c3;
+  color: #f9f9f9;
+  margin-bottom: 20px;
   }
   
   .panel {
@@ -54,15 +55,156 @@
 
   .menu-price h5 {
     margin-bottom: 10px;
-    font-size: 18px;
+    font-size: 22px;
     text-align: right;
-    color: #eee2c3;
+    color: #ffc902;
   }
 
   .menu-extra h5 {
     margin-top: 5px;
     font-size: 18px;
     text-align: right;
+    color: #eee2c3;
+  }
+}
+
+#happy-food-special {
+  
+  h2 {
+  font-family: 'Rye', cursive;
+  color: #f9f9f9;
+  margin-bottom: 20px;
+  }
+  
+  .panel {
+    background: #333333;
+  }
+  .panel-success {
+    padding: 5px 0 0 0;
+    border-radius: 0;
+    border-color: #333333;
+  }
+  
+  .panel-heading {
+    border-color: #333333;
+    background: #333333;
+  }
+  
+  .panel-title {
+    font-size: 52px;
     color: #ffc902;
+    border-color: #333333;
+    margin-bottom: -15px;
+  }
+  
+  .panel-body {
+    background: #333333;  
+  }
+
+  .panel-success p {
+    color: #eee2c3;
+    font-size: 26px;
+    line-height: 95%;
+  }
+
+  .panel-footer {
+    border-top: none;
+  }
+  
+  .menu-price h5 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    text-align: right;
+    color: #ffc902;
+  }
+
+  .menu-extra h5 {
+    margin-top: 5px;
+    font-size: 18px;
+    text-align: right;
+    color: #eee2c3;
+  }
+}
+
+#drinks-image {
+  background-image: url("cherries.png");
+  width: 100%;
+  height: 300px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin: 10% 0 5% 0;
+}
+
+#drinks-image h1 {
+  text-align: left;
+  font-size: 52px;
+  font-weight: bold;
+  color: #242021;
+  line-height: 90%;
+  margin-top: 15%;
+}
+
+#drinks-image h1 small {
+  font-family: 'Rye', cursive;
+  color: #242021;
+}
+
+#pitcher-specials-style {
+  
+  h2 {
+  font-family: 'Rye', cursive;
+  color: #f9f9f9;
+  margin-bottom: 20px;
+  }
+  
+  .panel {
+    background: #333333;
+  }
+  .panel-success {
+    padding: 5px 0 0 0;
+    border-radius: 0;
+    border-color: #333333;
+  }
+  
+  .panel-heading {
+    border-color: #333333;
+    background: #333333;
+  }
+  
+  .panel-title {
+    font-size: 52px;
+    color: #ffc902;
+    border-color: #333333;
+    margin-bottom: -15px;
+  }
+  
+  .panel-body {
+    background: #333333;  
+  }
+
+  .panel-success p {
+    color: #eee2c3;
+    font-size: 26px;
+    line-height: 95%;
+  }
+
+  .panel-footer {
+    border-top: none;
+  }
+
+  .menu-price h5 {
+    margin-bottom: 10px;
+    font-size: 22px;
+    text-align: right;
+    color: #ffc902;
+  }
+
+  .menu-extra h5 {
+    margin-top: 5px;
+    font-size: 18px;
+    text-align: right;
+    color: #eee2c3;
   }
 }
