@@ -1,6 +1,14 @@
 <div class="container-fluid">
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-default btn-lg btn-block" %>
+        <br/>
+        <%= link_to 'New Menu Photo', new_menu_photo_path, class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    </div>
+  <% end %>
 <div id="menu-style">
-  
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-lg-8">
       <h1>Our Burgers</h1>
@@ -527,7 +535,15 @@
   <% end %>
   </div>
   
-  <%= link_to 'New Menu item', new_menu_item_path %>
-
-</div>
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-default btn-lg btn-block" %>
+        <br/>
+        <%= link_to 'New Menu Photo', new_menu_photo_path, class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    </div>
+  <% end %>
+  
+</div> 
 </div>

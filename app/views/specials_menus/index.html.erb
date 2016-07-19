@@ -1,6 +1,14 @@
 <div class="container-fluid">
-  
-<div id="food-specials-style">
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-default btn-lg btn-block" %>
+        <br/>
+        <%= link_to 'New Menu Photo', new_menu_photo_path, class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    </div>
+  <% end %>
+<div class="specials-menu-style">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
       <h2>Our Food Specials</h2>
@@ -114,9 +122,7 @@
     <% end %>
   <% end %>
   </div>
-</div>
 
-<div id="happy-food-special">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
       <h2>Happy Hour Food</h2>
@@ -231,7 +237,7 @@
 
 <div class="container-fluid">
   
-<div id="happy-drinks-style">
+<div class="specials-menu-style">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
       <h2>Happy Hour Pitchers</h2>
@@ -277,7 +283,7 @@
                     Delete
                   <% end %>
                 </div>
-            <% end %>
+              <% end %>
           </div>
         </div>
       </div>
@@ -645,7 +651,13 @@
   </div>
 
 </div>
-  
-  <%= link_to 'New Menu item', new_menu_item_path %>
-
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-default btn-lg btn-block" %>
+        <br/>
+        <%= link_to 'New Menu Photo', new_menu_photo_path, class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    </div>
+  <% end %>
 </div>

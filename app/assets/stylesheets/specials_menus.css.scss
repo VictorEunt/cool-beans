@@ -2,15 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#specials-menu-form .panel-body p {
+.specials-menu-form .panel-body p {
   color: #666666;
 }
 
-#specials-menu-form .input-lg {
+.specials-menu-form .input-lg {
   width: 100%;
 }
 
-#food-specials-style {
+.specials-menu-style {
   
   h2 {
   font-family: 'Rye', cursive;
@@ -19,34 +19,35 @@
   }
   
   .panel {
-    background: #333333;
+    background: #242021;
   }
   .panel-success {
     padding: 5px 0 0 0;
     border-radius: 0;
-    border-color: #333333;
+    border-color: #262626;
   }
   
   .panel-heading {
-    border-color: #333333;
-    background: #333333;
+    border-color: #242021;
+    background: #242021;
   }
   
   .panel-title {
-    font-size: 42px;
+    font-size: 32px;
+    line-height: 90%;
     color: #ffc902;
-    border-color: #333333;
+    border-color: #242021;
     margin-bottom: -15px;
   }
   
   .panel-body {
-    background: #333333;  
+    background: #242021;  
   }
 
   .panel-success p {
     color: #eee2c3;
-    font-size: 26px;
-    line-height: 95%;
+    font-size: 20px;
+    line-height: 100%;
   }
 
   .panel-footer {
@@ -56,75 +57,38 @@
 
   .menu-price h5 {
     margin-bottom: 10px;
-    font-size: 22px;
+    font-size: 18px;
     text-align: right;
     color: #ffc902;
   }
 
   .menu-extra h5 {
     margin-top: 5px;
-    font-size: 18px;
+    font-size: 16px;
     text-align: right;
     color: #eee2c3;
   }
-}
-
-#happy-food-special {
-  
-  h2 {
-  font-family: 'Rye', cursive;
+  .actions a {
   color: #f9f9f9;
-  margin-bottom: 20px;
-  }
-  
-  .panel {
-    background: #333333;
-  }
-  .panel-success {
-    padding: 5px 0 0 0;
-    border-radius: 0;
-    border-color: #333333;
-  }
-  
-  .panel-heading {
-    border-color: #333333;
-    background: #333333;
-  }
-  
-  .panel-title {
-    font-size: 42px;
-    color: #ffc902;
-    border-color: #333333;
-    margin-bottom: -15px;
-  }
-  
-  .panel-body {
-    background: #333333;  
+  padding-right: 15px;
   }
 
-  .panel-success p {
-    color: #eee2c3;
-    font-size: 26px;
-    line-height: 95%;
-  }
-
-  .panel-footer {
-    border-top: none;
-    background: #262626;
+  .actions a:hover {
+    color: #d41a27;
   }
   
-  .menu-price h5 {
-    margin-bottom: 10px;
-    font-size: 22px;
-    text-align: right;
-    color: #ffc902;
+  .well {
+  border-color: #1a1a1a;
+  padding-top: 0;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
   }
 
-  .menu-extra h5 {
-    margin-top: 5px;
-    font-size: 18px;
-    text-align: right;
-    color: #eee2c3;
+  .well p {
+  color: #eee2c3;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 130%;
   }
 }
 
@@ -153,62 +117,10 @@
   color: #242021;
 }
 
-#happy-drinks-style {
-  
-  h2 {
-  font-family: 'Rye', cursive;
-  color: #f9f9f9;
-  margin-bottom: 20px;
-  }
-  
-  .panel {
-    background: #242021;
-  }
-  .panel-success {
-    padding: 5px 0 0 0;
-    border-radius: 0;
-    border-color: #262626;
-  }
-  
-  .panel-success p {
-    color: #eee2c3;
-    font-size: 16px;
-    line-height: 100%;
-  }
-  
-  .panel-heading {
-    border-color: #242021;
-    background: #242021;
-  }
-  
-  .panel-title {
-    font-size: 24px;
-    color: #d41a27;
-    border-color: #333333;
-    margin-bottom: -15px;
-  }
-  
-  .panel-body {
-    background: #242021; 
-    border-right-color: #1a1a1a;
-  }
+#admin-page-links a {
+  color: #eee2c3;
+}
 
-  .panel-footer {
-    border-top: none;
-    background: #262626;
-  }
-
-  .menu-price h5 {
-    margin-bottom: 10px;
-    font-size: 16px;
-    text-align: right;
-    color: #ffc902;
-  }
-
-  .menu-extra h5 {
-    margin-top: 5px;
-    font-size: 18px;
-    text-align: right;
-    color: #d41a27;
-  }
+#admin-page-links a:hover {
+  color: #d41a27;
 }
