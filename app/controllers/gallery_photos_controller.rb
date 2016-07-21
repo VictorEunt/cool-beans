@@ -1,20 +1,15 @@
 class GalleryPhotosController < ApplicationController
   before_action :set_gallery_photo, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html, :json
-
   def index
     @gallery_photos = GalleryPhoto.all
-    respond_with(@gallery_photos)
   end
 
   def show
-    respond_with(@gallery_photo)
   end
 
   def new
     @gallery_photo = GalleryPhoto.new
-    respond_with(@gallery_photos)
   end
 
   def edit
@@ -22,18 +17,24 @@ class GalleryPhotosController < ApplicationController
 
   def create
     @gallery_photo = GalleryPhoto.new(gallery_photo_params)
-    @gallery_photo.save
-    redirect_to gallery_photos_path
+    if @gallery_photo.save
+      redirect_to @gallery_photo, notice: 'Photo was successfully created.'
+    else
+      render action: 'new'
+    end
   end
 
   def update
-    @gallery_photo.update(gallery_photo_params)
-    respond_with(@gallery_photo)
+    if @gallery_photo.update(gallery_photo_params)
+      redirect_to @gallery_photo, notice: 'Photo was successfully updated.'
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
     @gallery_photo.destroy
-    respond_with(@gallery_photo)
+    redirect_to gallery_photos_url
   end
 
   private
