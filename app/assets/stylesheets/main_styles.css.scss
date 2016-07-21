@@ -10,9 +10,9 @@ $navbar-default-link-color: #f9f9f9;
 $navbar-default-link-active-bg: #000;
 $navbar-default-link-active-color: #eee2c3;
 $navbar-default-link-hover-color: #ffc902;
-$navbar-default-border: none;
+$navbar-default-border: #000;
 $navbar-default-toggle-border-color: #000;
-$navbar-default-toggle-hover-bg: none;
+$navbar-default-toggle-hover-bg: #000;
 $brand-primary: #f9f9f9;
 $jumbotron-heading-font-size: 300%;
 $jumbotron-padding: 2%;
@@ -103,13 +103,16 @@ $form-group-margin-bottom: 25px;
 }
 .navbar-collapse {
   width: 100%;
-  margin-top: 2%;
+  margin-top: 55px;
+  margin-bottom: 10px;
   text-align: center;
+  border: none;
 }
 .nav_link {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: normal;
   font-weight: bold;
+  margin-top: 10px;
 }
 #logo-link {
   margin-top: -60px;
