@@ -4,7 +4,7 @@ $font-family-sans-serif: 'Mada', sans-serif;
 $headings-font-family: 'Suez One', serif;
 $body-bg: #1a1a1a;
 $text-color: #f9f9f9;
-$navbar-height: 50px;
+$navbar-height: 65px;
 $navbar-default-bg: #000;
 $navbar-default-link-color: #f9f9f9;
 $navbar-default-link-active-bg: #000;
@@ -59,17 +59,14 @@ $form-group-margin-bottom: 25px;
 }
 
 .navbar {
-	position: relative;
 }
 .navbar-brand {
-  font-family: 'Rye', cursive;
-  font-size: 24px;
 	position: absolute;
-	left: 60px;
+	left: 50%;
 	width: auto;
-	height: 105px;
+	height: 150px;
 	margin-left: -65px !important;  /* 44px 50% of your logo width */
-	margin-top: -10px;
+	margin-top: -20px;
 }
 .navbar-brand:hover {
 	opacity: .6;
@@ -79,7 +76,7 @@ $form-group-margin-bottom: 25px;
   height: auto;
   width: auto;
   margin: 4px 0 0 2%;
-  float: right;
+  float: left;
 }
 .navbar-default
 {
@@ -87,8 +84,8 @@ $form-group-margin-bottom: 25px;
 }
 .navbar-default .navbar-toggle .icon-bar {
 	background-color: #f9f9f9;
-	height: 5px;
-	margin-bottom: 5px;
+	height: 7px;
+	margin-bottom: 6px;
 }
 .navbar-toggle:hover {
 	opacity: .6;
@@ -118,13 +115,23 @@ $form-group-margin-bottom: 25px;
   margin-top: -60px;
   position: absolute;
   left: 0;
-  width: 100px;
+  width: 95px;
   height: auto;
 }
 #logo-link:hover {
 	opacity: .6;
 }
 
+#menu-link {
+  font-size: 16px;
+  float: right;
+  color: #f9f9f9;
+  margin-top: 20px;
+}
+#menu-link:hover {
+	text-decoration:none;
+	opacity: .6;
+}
 
 .form-titles {
   margin-left: 15px;
