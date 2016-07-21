@@ -1,7 +1,7 @@
 class GalleryPhotosController < ApplicationController
   before_action :set_gallery_photo, only: [:show, :edit, :update, :destroy]
 
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @gallery_photos = GalleryPhoto.all
