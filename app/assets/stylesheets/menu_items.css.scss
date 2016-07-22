@@ -18,6 +18,33 @@
   width: 100%;
 }
 
+#menu-header-image {
+  background-image: url("mac-cheese.png");
+  width: 100%;
+  height: 300px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin: -20px 0 5% 0;
+}
+
+#menu-header-image h1 {
+  text-align: left;
+  font-size: 52px;
+  font-weight: bold;
+  color: #242021;
+  line-height: 90%;
+  margin-top: 15%;
+}
+
+#menu-header-image h1 small {
+  font-size: 80px;
+  line-height: 80%;
+  color: #d41a27;
+
+}
+
 #menu-style h1 {
   color: #ffd333;
   margin-bottom: 10px;

@@ -1,5 +1,10 @@
+<div id="gallery-header-image">
+  <div class="container-fluid">
+    <h1><small>The Dive Bar</small><br/>Gallery</h1>
+  </div>
+</div>
 
-<div id="gallery_photos" class="transitions-enabled masonry">
+<div id="gallery_photos" class="transitions-enabled">
   <% @gallery_photos.each do |gallery_photo| %>
     <div class="box panel panel-primary">
       <%= link_to image_tag(gallery_photo.image.url(:medium), :class=>'photo-image'), gallery_photo %>
@@ -25,5 +30,6 @@
 </div>
 
 <br>
-
+<div class="container-fluid">
 <%= link_to 'New Gallery photo', new_gallery_photo_path %>
+</div>
