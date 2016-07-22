@@ -7,3 +7,7 @@ $ ->
     $('#gallery_photos').masonry
       itemSelector: '.box'
       isFitWidth: true
+      
+
+$(document).on("page:change", ->
+  init_my_script());
