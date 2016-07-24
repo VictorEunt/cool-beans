@@ -49,67 +49,68 @@
 </div>
 
 <div id="classics-container">
-  <div class="continer-fluid"></div>
-</div>
-
-
   <% @classics.each do |classic| %>
     <% if classic.title == 'The Classics' %>
     <div class="container-fluid">
       <div id="classics-styles">
       <div class="row">
         <div class="col-xs-12 col-sm-6">
+          <div class="home-container-heading">
             <h1><%= classic.title %></h1>
-            <p><%= classic.description %></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-4">
-            <div class="thumbnail">
-               <%= image_tag(classic.image_one.url, :class=>'classic-photo', :alt=>'classic') %>
-              <div class="caption">
-                <h2><%= classic.first_classic %></h2>
-                <p><%= classic.first_classic_description %></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="thumbnail">
-               <%= image_tag(classic.image_two.url, :class=>'classic-photo', :alt=>'classic') %>
-              <div class="caption">
-                <h2><%= classic.second_classic %></h2>
-                <p><%= classic.second_classic_description %></p>
-              </div>
-            </div>
-          </div>
-          <div class="col-xs-12 col-sm-4">
-            <div class="thumbnail">
-               <%= image_tag(classic.image_three.url, :class=>'classic-photo', :alt=>'classic') %>
-              <div class="caption">
-                <h2><%= classic.third_classic %></h2>
-                <p><%= classic.third_classic_description %></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xs-12 col-sm-6">
-            <% if user_signed_in? %>
-              <div class="well">      
-                <div class="actions">
-                  <%= link_to edit_classic_path(classic) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to classic, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
-              </div>
-            <% end %>
+            <h6><%= classic.description %></h6>
           </div>
         </div>
       </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <div class="thumbnail">
+             <%= image_tag(classic.image_one.url, :class=>'classic-photo', :alt=>'classic') %>
+            <div class="caption">
+              <h3><%= classic.first_classic %></h3>
+              <p><%= classic.first_classic_description %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="thumbnail">
+             <%= image_tag(classic.image_two.url, :class=>'classic-photo', :alt=>'classic') %>
+            <div class="caption">
+              <h3><%= classic.second_classic %></h3>
+              <p><%= classic.second_classic_description %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <div class="thumbnail">
+             <%= image_tag(classic.image_three.url, :class=>'classic-photo', :alt=>'classic') %>
+            <div class="caption">
+              <h3><%= classic.third_classic %></h3>
+              <p><%= classic.third_classic_description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <% if user_signed_in? %>
+            <div class="well">      
+              <div class="actions">
+                <%= link_to edit_classic_path(classic) do %>
+                  <span class="glyphicon glyphicon-edit"></span>
+                  Edit
+                <% end %>
+                <%= link_to classic, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                  Delete
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    </div>
     <% end %>
   <% end %>
+      
+</div>
