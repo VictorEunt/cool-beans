@@ -12,6 +12,7 @@
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
+  margin-bottom: 50px;
 }
 
 
@@ -50,4 +51,110 @@
 
 #specials-button .btn:hover {
   background-color: #242021;
+}
+
+  #hours-container {
+  display: none;
+  }
+  
+  #all-ages {
+  margin: 25px 15px;
+  border: solid 1px #eee2c3;
+  padding: 5%;
+  height: 240px;
+  }
+
+  #all-ages p {
+  font-size: 22px;
+  color: #eee2c3;
+  text-align: center;
+  }  
+  
+  #all-ages #ages-text {
+  color: #f9f9f9;
+  }
+  
+  #hours-style {
+  margin: 50px 15px;
+  border: solid 1px #f9f9f9;
+  padding: 5%;
+  height: 240px;
+  }
+  
+  #hours-style p {
+  font-size: 22px;
+  color: #eee2c3;
+  text-align: center;
+  }
+  
+  #hours-style #hours-text {
+  color: #f9f9f9;
+  }
+
+  #classics-container {
+  background-image: url('bar-people.png');
+  width: 100%;
+  height: 500px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin-top: 25px;
+  }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
+  #hours-container {
+  background-image: url('bar-superhero2.png');
+  width: 100%;
+  height: 165px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  }
+  
+  #all-ages {
+  margin: 25px 15px;
+  border: solid 1px #eee2c3;
+  padding: 5%;
+  height: 200px;
+  }
+
+  #all-ages p {
+  font-size: 22px;
+  color: #eee2c3;
+  text-align: center;
+  }  
+  
+  #all-ages #ages-text {
+  color: #f9f9f9;
+  }
+  
+  #hours-style {
+  margin: 25px 15px;
+  border: solid 1px #eee2c3;
+  padding: 5%;
+  height: 200px;
+  }
+  
+  #hours-style p {
+  font-size: 22px;
+  color: #eee2c3;
+  text-align: center;
+  }
+  
+  #hours-style #hours-text {
+  color: #f9f9f9;
+  }
+}
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+  #hero-image {
+    height: 600px;
+  }
+  
 }

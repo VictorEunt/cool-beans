@@ -1,57 +1,72 @@
-<%= form_for(@hour) do |f| %>
-  <% if @hour.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@hour.errors.count, "error") %> prohibited this hour from being saved:</h2>
+<div class="container-fluid">
+  <div id="hours-form">
+  <%= form_for(@hour) do |f| %>
+    <% if @hour.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@hour.errors.count, "error") %> prohibited this hour from being saved:</h2>
 
-      <ul>
-      <% @hour.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @hour.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+    
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Store Hours</h2>
+    </div>
+
+  <div class="panel-body">
+    <div class="form-group">
+      <p><%= f.label :name %></p>
+      <p><%= f.text_field :name, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :sunday %></p>
+      <p><%= f.text_field :sunday, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :monday %></p>
+      <p><%= f.text_field :monday, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :tuesday %></p>
+      <p><%= f.text_field :tuesday, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :wednesday %></p>
+      <p><%= f.text_field :wednesday, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :thursday %></p>
+      <p><%= f.text_field :thursday, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :friday %></p>
+      <p><%= f.text_field :friday, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :saturday %></p>
+      <p><%= f.text_field :saturday, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :note %></p>
+      <p><%= f.text_field :note, class: "input-lg" %></p>
+    </div>
+     <div class="form-group">
+      <p><%= f.label :message %></p>
+      <p><%= f.text_area :message, class: "input-lg" %></p>
+    </div>
+     <div class="form-group">
+        <%= f.submit "Save", class: "btn btn-primary btn-lg btn-block" %>
+    </div>
+    </div>
+    <div class="panel-footer">
+      <h5><%= link_to 'New Hours', new_hour_path %></h5>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
   </div>
-  <div class="field">
-    <%= f.label :message %><br>
-    <%= f.text_area :message %>
-  </div>
-  <div class="field">
-    <%= f.label :sunday %><br>
-    <%= f.text_field :sunday %>
-  </div>
-  <div class="field">
-    <%= f.label :monday %><br>
-    <%= f.text_field :monday %>
-  </div>
-  <div class="field">
-    <%= f.label :tuesday %><br>
-    <%= f.text_field :tuesday %>
-  </div>
-  <div class="field">
-    <%= f.label :wednesday %><br>
-    <%= f.text_field :wednesday %>
-  </div>
-  <div class="field">
-    <%= f.label :thursday %><br>
-    <%= f.text_field :thursday %>
-  </div>
-  <div class="field">
-    <%= f.label :friday %><br>
-    <%= f.text_field :friday %>
-  </div>
-  <div class="field">
-    <%= f.label :saturday %><br>
-    <%= f.text_field :saturday %>
-  </div>
-  <div class="field">
-    <%= f.label :note %><br>
-    <%= f.text_field :note %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+</div>

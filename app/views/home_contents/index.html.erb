@@ -9,162 +9,45 @@
   </div>
 </div>
 
+<div id="hours-container">
+  <div class="continer-fluid"></div>
+</div>
 
-<br>
-
-
-<h1>Listing hours</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Message</th>
-      <th>Sunday</th>
-      <th>Monday</th>
-      <th>Tuesday</th>
-      <th>Wednesday</th>
-      <th>Thursday</th>
-      <th>Friday</th>
-      <th>Saturday</th>
-      <th>Note</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @hours.each do |hour| %>
-      <tr>
-        <td><%= hour.name %></td>
-        <td><%= hour.message %></td>
-        <td><%= hour.sunday %></td>
-        <td><%= hour.monday %></td>
-        <td><%= hour.tuesday %></td>
-        <td><%= hour.wednesday %></td>
-        <td><%= hour.thursday %></td>
-        <td><%= hour.friday %></td>
-        <td><%= hour.saturday %></td>
-        <td><%= hour.note %></td>
-        <td><%= link_to 'Show', hour %></td>
-        <td><%= link_to 'Edit', edit_hour_path(hour) %></td>
-        <td><%= link_to 'Destroy', hour, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div id="all-ages">
+          <p id="ages-text">All Ages</p>
+          <p>Cool Beans is for ALL AGES everyday from 11am to 9pm. Come enjoy the best food and fun on Fry.</p>
+      </div>
+    </div>
+  <% @hours.each do |hour| %>
+    <% if hour.name == 'Regular Hours' %>
+        <div class="col-xs-12 col-sm-6">
+          <div id="hours-style">
+            <p id="hours-text">Our Hours</p>
+            <p><%= hour.note %></p>
+            <% if user_signed_in? %>
+              <div class="well">      
+                <div class="actions">
+                  <%= link_to edit_hour_path(hour) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to hour, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+        </div>
+      </div>
+      <% end %>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Hour', new_hour_path %>
-
-<h1>Listing weekends</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>First special</th>
-      <th>First special description</th>
-      <th>Second special</th>
-      <th>Second special description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @weekends.each do |weekend| %>
-      <tr>
-        <td><%= weekend.title %></td>
-        <td><%= weekend.description %></td>
-        <td><%= weekend.first_special %></td>
-        <td><%= weekend.first_special_description %></td>
-        <td><%= weekend.second_special %></td>
-        <td><%= weekend.second_special_description %></td>
-        <td><%= link_to 'Show', weekend %></td>
-        <td><%= link_to 'Edit', edit_weekend_path(weekend) %></td>
-        <td><%= link_to 'Destroy', weekend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Weekend', new_weekend_path %>
-
-<h1>Listing classics</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>First classic</th>
-      <th>First classic description</th>
-      <th>Second classic</th>
-      <th>Second classic description</th>
-      <th>Third classic</th>
-      <th>Third classic description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @classics.each do |classic| %>
-      <tr>
-        <td><%= classic.title %></td>
-        <td><%= classic.description %></td>
-        <td><%= classic.first_classic %></td>
-        <td><%= classic.first_classic_description %></td>
-        <td><%= classic.second_classic %></td>
-        <td><%= classic.second_classic_description %></td>
-        <td><%= classic.third_classic %></td>
-        <td><%= classic.third_classic_description %></td>
-        <td><%= link_to 'Show', classic %></td>
-        <td><%= link_to 'Edit', edit_classic_path(classic) %></td>
-        <td><%= link_to 'Destroy', classic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Classic', new_classic_path %>
-
-<h1>Listing events</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>First event</th>
-      <th>First event description</th>
-      <th>Second event</th>
-      <th>Second event description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @events.each do |event| %>
-      <tr>
-        <td><%= event.title %></td>
-        <td><%= event.description %></td>
-        <td><%= event.first_event %></td>
-        <td><%= event.first_event_description %></td>
-        <td><%= event.second_event %></td>
-        <td><%= event.second_event_description %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Event', new_event_path %>
+<div id="classics-container">
+  <div class="continer-fluid"></div>
+</div>

@@ -1,3 +1,19 @@
 // Place all the styles related to the Hours controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#hours-form .panel-body p {
+  color: #666666;
+}
+
+#hours-form .panel-footer a {
+  color: #242021;
+}
+
+#hours-form .panel-footer a:hover {
+  color: #d41a27;
+}
+
+#hours-form .input-lg {
+  width: 100%;
+}
