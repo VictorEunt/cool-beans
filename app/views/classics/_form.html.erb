@@ -1,49 +1,79 @@
-<%= form_for(@classic) do |f| %>
-  <% if @classic.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@classic.errors.count, "error") %> prohibited this classic from being saved:</h2>
+<div class="container-fluid">
+  <div id="classics-form">
+  <%= form_for(@classic) do |f| %>
+    <% if @classic.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@classic.errors.count, "error") %> prohibited this classic from being saved:</h2>
 
-      <ul>
-      <% @classic.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+        <ul>
+        <% @classic.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+<div class="panel panel-default">
+  <div class="panel-heading">
+      <h2>Classics Form</h2>
     </div>
-  <% end %>
+  <div class="panel-body">
+    <div class="form-group">
+      <p><%= f.label :title, 'Title' %></p>
+      <p><%= f.text_field :title, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :description %></p>
+      <p><%= f.text_area :description, class: "input-lg" %></p>
+    </div>
+    <h4>Classic One</h4>
+    <div class="form-group">
+      <p><%= f.label :first_classic %></p>
+      <p><%= f.text_field :first_classic, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :first_classic_description %></p>
+      <p><%= f.text_area :first_classic_description, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :image_one %></p>
+      <%= f.file_field :image_one, class: "btn btn-default btn-lg btn-block" %>
+    </div>
+    <h4>Classic Two</h4>
+    <div class="form-group">
+      <p><%= f.label :second_classic %></p>
+      <p><%= f.text_field :second_classic, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :second_classic_description %></p>
+      <p><%= f.text_area :second_classic_description, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :image_two %></p>
+      <%= f.file_field :image_two, class: "btn btn-default btn-lg btn-block" %>
+    </div>
+    <h4>Classic Three</h4>
+    <div class="form-group">
+      <p><%= f.label :third_classic %></p>
+      <p><%= f.text_field :third_classic, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :third_classic_description %></p>
+      <p><%= f.text_area :third_classic_description, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :image_three %></p>
+      <%= f.file_field :image_three, class: "btn btn-default btn-lg btn-block" %>
+    </div>
+     <div class="form-group">
+        <%= f.submit "Save", class: "btn btn-primary btn-lg btn-block" %>
+    </div>
+    </div>
+    <div class="panel-footer">
+      <h5><%= link_to 'New Classic', new_classic_path %></h5>
+    </div>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :first_classic %><br>
-    <%= f.text_field :first_classic %>
-  </div>
-  <div class="field">
-    <%= f.label :first_classic_description %><br>
-    <%= f.text_area :first_classic_description %>
-  </div>
-  <div class="field">
-    <%= f.label :second_classic %><br>
-    <%= f.text_field :second_classic %>
-  </div>
-  <div class="field">
-    <%= f.label :second_classic_description %><br>
-    <%= f.text_area :second_classic_description %>
-  </div>
-  <div class="field">
-    <%= f.label :third_classic %><br>
-    <%= f.text_field :third_classic %>
-  </div>
-  <div class="field">
-    <%= f.label :third_classic_description %><br>
-    <%= f.text_area :third_classic_description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+</div>

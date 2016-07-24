@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160717170651) do
+ActiveRecord::Schema.define(version: 20160724161411) do
 
   create_table "classics", force: true do |t|
     t.string   "title"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20160717170651) do
     t.text     "third_classic_description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_one_file_name"
+    t.string   "image_one_content_type"
+    t.integer  "image_one_file_size"
+    t.datetime "image_one_updated_at"
+    t.string   "image_two_file_name"
+    t.string   "image_two_content_type"
+    t.integer  "image_two_file_size"
+    t.datetime "image_two_updated_at"
+    t.string   "image_three_file_name"
+    t.string   "image_three_content_type"
+    t.integer  "image_three_file_size"
+    t.datetime "image_three_updated_at"
   end
 
   create_table "events", force: true do |t|

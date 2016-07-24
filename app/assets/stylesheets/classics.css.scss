@@ -1,3 +1,24 @@
 // Place all the styles related to the Classics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+#classics-form .panel-body p {
+  color: #666666;
+}
+
+#classics-form .panel-footer a {
+  color: #242021;
+}
+
+#classics-form .panel-footer a:hover {
+  color: #d41a27;
+}
+
+#classics-form .input-lg {
+  width: 100%;
+}
+
+#classics-form h4 {
+  color: #242021;
+}
