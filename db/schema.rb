@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160724161411) do
+ActiveRecord::Schema.define(version: 20160725011744) do
 
   create_table "classics", force: true do |t|
     t.string   "title"
@@ -47,6 +47,14 @@ ActiveRecord::Schema.define(version: 20160724161411) do
     t.text     "second_event_description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_one_file_name"
+    t.string   "image_one_content_type"
+    t.integer  "image_one_file_size"
+    t.datetime "image_one_updated_at"
+    t.string   "image_two_file_name"
+    t.string   "image_two_content_type"
+    t.integer  "image_two_file_size"
+    t.datetime "image_two_updated_at"
   end
 
   create_table "gallery_photos", force: true do |t|
@@ -151,6 +159,14 @@ ActiveRecord::Schema.define(version: 20160724161411) do
     t.text     "second_special_description"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "image_one_file_name"
+    t.string   "image_one_content_type"
+    t.integer  "image_one_file_size"
+    t.datetime "image_one_updated_at"
+    t.string   "image_two_file_name"
+    t.string   "image_two_content_type"
+    t.integer  "image_two_file_size"
+    t.datetime "image_two_updated_at"
   end
 
 end

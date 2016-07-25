@@ -54,11 +54,11 @@
 }
 
 #hours-container {
-display: none;
+  margin-bottom: 50px;
 }
 
 #all-ages {
-margin: 25px 15px;
+margin: 15px 15px;
 border: solid 1px #eee2c3;
 padding: 5%;
 height: 240px;
@@ -75,7 +75,7 @@ color: #f9f9f9;
 }
 
 #hours-style {
-margin: 50px 15px;
+margin: 15px 15px;
 border: solid 1px #f9f9f9;
 padding: 5%;
 height: 240px;
@@ -135,6 +135,93 @@ margin-bottom: 25px;
 
 }
 
+#weekend-container {
+  background-color: #eee2c3;
+}
+
+#weekend-styles {
+
+  margin-top: 15px;
+  margin-bottom: 25px;
+
+  .home-container-heading {
+    margin-left: 2%;
+    background-color: none;
+    padding: 0 2px;
+  }
+
+  h1 {
+    font-family: 'Rye', cursive;
+    color: #242021;
+    margin-bottom: 10px;
+  }
+  
+  h6 {
+    color: #d41a27;
+  }
+
+  .thumbnail {
+    background-color: #1a1a1a;
+    border-color: #666666;
+    margin: 15px 2%;
+    padding: 25px 25px 5px 25px;
+  }
+  .thumbnail h3 {
+    margin-top: 5px;
+  }
+
+  .thumbnail p {
+    font-size: 16px;
+    line-height: 95%;
+    color: #eee2c3;
+  }
+
+}
+
+#event-container {
+  background-color: #333333;
+}
+
+#event-styles {
+
+  margin-top: 15px;
+  margin-bottom: 25px;
+
+  .home-container-heading {
+    margin-left: 2%;
+    background-color: none;
+    padding: 0 2px;
+  }
+
+  h1 {
+    font-family: 'Rye', cursive;
+    color: #eee2c3;
+    margin-bottom: 10px;
+  }
+  
+  h6 {
+    color: #f9f9f9;
+  }
+
+  .thumbnail {
+    background-color: #eee2c3;
+    border-color: #f9f9f9;
+    margin: 15px 2%;
+    padding: 25px 25px 5px 25px;
+  }
+  .thumbnail h3 {
+    margin-top: 5px;
+    color: #d41a27;
+  }
+
+  .thumbnail p {
+    font-size: 16px;
+    line-height: 95%;
+    color: #242021;
+  }
+
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   
@@ -143,13 +230,6 @@ margin-bottom: 25px;
   }
   
   #hours-container {
-  background-image: url('bar-superhero2.png');
-  width: 100%;
-  height: 165px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  -o-background-size: cover;
   }
   
   #all-ages {

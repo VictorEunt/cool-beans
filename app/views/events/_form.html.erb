@@ -1,41 +1,65 @@
-<%= form_for(@event) do |f| %>
-  <% if @event.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
+<div class="container-fluid">
+  <div id="event-form">
+    <%= form_for(@event) do |f| %>
+      <% if @event.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@event.errors.count, "error") %> prohibited this event from being saved:</h2>
 
-      <ul>
-      <% @event.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+          <ul>
+          <% @event.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>Event Form</h2>
+    </div>
+    <div class="panel-body">
+      <div class="form-group">
+        <p><%= f.label :title %></p>
+        <p><%= f.text_field :title, class: "input-lg" %></p>
+      </div>
+      <div class="form-group">
+        <p><%= f.label :description %></p>
+        <p><%= f.text_area :description, class: "input-lg" %></p>
+      </div>
+      <h4>First Event</h4>
+      <div class="form-group">
+        <p><%= f.label :first_event %></p>
+        <p><%= f.text_field :first_event, class: "input-lg" %></p>
+      </div>
+      <div class="form-group">
+        <p><%= f.label :first_event_description %></p>
+        <p><%= f.text_area :first_event_description, class: "input-lg" %></p>
+      </div>
+      <div class="form-group">
+        <p><%= f.label :image_one %></p>
+        <%= f.file_field :image_one, class: "btn btn-default btn-lg btn-block" %>
+      </div>
+      <h4>Second Event</h4>
+      <div class="form-group">
+        <p><%= f.label :second_event %></p>
+        <p><%= f.text_field :second_event, class: "input-lg" %></p>
+      </div>
+      <div class="form-group">
+        <p><%= f.label :second_event_description %></p>
+        <p><%= f.text_area :second_event_description, class: "input-lg" %></p>
+      </div>
+      <div class="form-group">
+        <p><%= f.label :image_two %></p>
+        <%= f.file_field :image_two, class: "btn btn-default btn-lg btn-block" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save", class: "btn btn-primary btn-lg btn-block" %>
+     </div>
+    </div>
+    <div class="panel-footer">
+      <h5><%= link_to 'New Event', new_event_path %></h5>
+    </div>
+    <% end %>
+    </div>
   </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :first_event %><br>
-    <%= f.text_field :first_event %>
-  </div>
-  <div class="field">
-    <%= f.label :first_event_description %><br>
-    <%= f.text_area :first_event_description %>
-  </div>
-  <div class="field">
-    <%= f.label :second_event %><br>
-    <%= f.text_field :second_event %>
-  </div>
-  <div class="field">
-    <%= f.label :second_event_description %><br>
-    <%= f.text_area :second_event_description %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>

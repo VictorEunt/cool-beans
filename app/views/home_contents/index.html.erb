@@ -10,9 +10,6 @@
 </div>
 
 <div id="hours-container">
-  <div class="continer-fluid"></div>
-</div>
-
 <div class="container-fluid">
   <div class="row">
       <div class="col-xs-12 col-sm-6">
@@ -46,6 +43,64 @@
       <% end %>
     <% end %>
   </div>
+</div>
+</div>
+
+<div id="weekend-container">
+  <% @weekends.each do |weekend| %>
+    <% if weekend.title == 'The Weekend' %>
+    <div class="container-fluid">
+      <div id="weekend-styles">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="home-container-heading">
+            <h1><%= weekend.title %></h1>
+            <h6><%= weekend.description %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="thumbnail">
+             <%= image_tag(weekend.image_one.url, :class=>'weekend-photo', :alt=>'weekend special') %>
+            <div class="caption">
+              <h3><%= weekend.first_special %></h3>
+              <p><%= weekend.first_special_description %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="thumbnail">
+             <%= image_tag(weekend.image_two.url, :class=>'weeknd-photo', :alt=>'weekend special') %>
+            <div class="caption">
+              <h3><%= weekend.second_special %></h3>
+              <p><%= weekend.second_special_description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <% if user_signed_in? %>
+            <div class="well">      
+              <div class="actions">
+                <%= link_to edit_weekend_path(weekend) do %>
+                  <span class="glyphicon glyphicon-edit"></span>
+                  Edit
+                <% end %>
+                <%= link_to weekend, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                  Delete
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %> 
 </div>
 
 <div id="classics-container">
@@ -111,6 +166,64 @@
       </div>
     </div>
     <% end %>
-  <% end %>
-      
+  <% end %> 
+</div>
+
+<div id="event-container">
+  <% @events.each do |event| %>
+    <% if event.title == 'Our Events' %>
+    <div class="container-fluid">
+      <div id="event-styles">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="home-container-heading">
+            <h1><%= event.title %></h1>
+            <h6><%= event.description %></h6>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <div class="thumbnail">
+            <% if event.image_one.present? %>
+             <%= image_tag(event.image_one.url, :class=>'event-photo', :alt=>'event one') %>
+            <% end %>
+            <div class="caption">
+              <h3><%= event.first_event %></h3>
+              <p><%= event.first_event_description %></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <div class="thumbnail">
+             <%= image_tag(event.image_two.url, :class=>'event-photo', :alt=>'event special') %>
+            <div class="caption">
+              <h3><%= event.second_event %></h3>
+              <p><%= event.second_event_description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <% if user_signed_in? %>
+            <div class="well">      
+              <div class="actions">
+                <%= link_to edit_event_path(event) do %>
+                  <span class="glyphicon glyphicon-edit"></span>
+                  Edit
+                <% end %>
+                <%= link_to event, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                  <span class="glyphicon glyphicon-trash"></span>
+                  Delete
+                <% end %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+      </div>
+    </div>
+    <% end %>
+  <% end %> 
 </div>

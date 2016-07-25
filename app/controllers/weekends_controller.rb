@@ -42,6 +42,6 @@ class WeekendsController < ApplicationController
     end
 
     def weekend_params
-      params.require(:weekend).permit(:title, :description, :first_special, :first_special_description, :second_special, :second_special_description)
+      params.require(:weekend).permit(:title, :description, :first_special, :first_special_description, :second_special, :second_special_description, :image_one, :image_two)
     end
 end
