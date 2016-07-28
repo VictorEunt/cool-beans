@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160725011744) do
+ActiveRecord::Schema.define(version: 20160726225524) do
 
   create_table "classics", force: true do |t|
     t.string   "title"
@@ -95,6 +95,20 @@ ActiveRecord::Schema.define(version: 20160725011744) do
     t.string   "friday"
     t.string   "saturday"
     t.string   "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "manager_notes", force: true do |t|
+    t.string   "subject"
+    t.text     "note"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "members", force: true do |t|
+    t.string   "name"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

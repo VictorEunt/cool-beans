@@ -25,6 +25,7 @@ gem 'devise', '~> 3.5.1'
 gem 'paperclip', '~> 4.3.7'
 gem 'aws-sdk', '< 2.0'
 gem 'masonry-rails'
+gem 'figaro'
 
 group :development, :test do
   gem 'sqlite3'

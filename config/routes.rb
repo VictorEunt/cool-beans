@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   
+  resources :manager_notes
+
+  resources :members
+
   resources :specials_menus
 
   resources :menu_photos
