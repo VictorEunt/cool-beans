@@ -1,5 +1,5 @@
 class MemberMailer < ActionMailer::Base
-  default to: Member.all.map(&:email),
+  default bcc: Member.all.map(&:email),
           from: "coolbeans.divebar@gmail.com"
   
   
