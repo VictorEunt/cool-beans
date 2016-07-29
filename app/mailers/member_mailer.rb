@@ -5,7 +5,7 @@ class MemberMailer < ActionMailer::Base
   
   
   def promotion_email(members)
-    attachments.inline['panther.png'] = File.read('app/assets/images/panther.png')
+    attachments.inline['mail-logo.png'] = File.read('app/assets/images/mail-logo.png')
     @manager_notes = ManagerNote.last
     @members = members
     mail(subject: @manager_notes.subject)
