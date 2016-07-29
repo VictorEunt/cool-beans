@@ -1,9 +1,11 @@
 class MemberMailer < ActionMailer::Base
-  default bcc: Member.all.map(&:email),
+  default to: "coolbeans.divebar@gmail.com",
+          bcc: Member.all.map(&:email),
           from: "coolbeans.divebar@gmail.com"
   
   
-  def sample_email(members)
+  def promotion_email(members)
+    attachments.inline['panther.png'] = File.read('app/assets/images/panther.png')
     @manager_notes = ManagerNote.last
     @members = members
     mail(subject: @manager_notes.subject)

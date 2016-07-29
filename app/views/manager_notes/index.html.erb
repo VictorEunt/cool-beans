@@ -22,16 +22,8 @@
             </div>
             <% if user_signed_in? %>
               <div class="panel-footer">      
-                <div class="actions">
-                  <%= link_to edit_manager_note_path(manager_note) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Review and Send
-                  <% end %>
-                  <%= link_to manager_note, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
+                <%= link_to 'Review and Send', edit_manager_note_path(manager_note), class: "btn btn-primary" %>
+                <%= link_to 'Delete', manager_note, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
             <% end %>
         </div>

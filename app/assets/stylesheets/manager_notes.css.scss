@@ -55,13 +55,8 @@
     border-top: none;
   }
 
-  .actions a {
-    color: #242021;
-    padding-right: 15px;
-  }
-
-  .actions a:hover {
-    color: #d41a27;
+  #email-delete-button {
+    float: right;
   }
   
 }
