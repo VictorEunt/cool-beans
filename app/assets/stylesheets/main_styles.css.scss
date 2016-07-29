@@ -135,7 +135,11 @@ $form-group-margin-bottom: 25px;
 }
 
 .form-titles {
-  margin-left: 15px;
+  margin: 15px 15px 0 15px;
+}
+
+.form-titles h5 {
+  text-decoration: underline;
 }
 
 h1 {

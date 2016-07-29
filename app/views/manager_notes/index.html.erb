@@ -1,27 +1,53 @@
-<h1>Listing manager_notes</h1>
+<div class="container-fluid">
+<div id="notes-style">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-lg-8">
+      <h1>Saved Emails</h1>
+      <p>The following is a list of created emails. Press <b>Review and Send</b> to look over the email one last time and finally send it to the Dive VIPs.</p>
+      <p>To create an email, press the <b>New Email Button</b>.</p>
+    </div> 
+  </div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Subject</th>
-      <th>Note</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+<div class="row">
     <% @manager_notes.each do |manager_note| %>
-      <tr>
-        <td><%= manager_note.subject %></td>
-        <td><%= manager_note.note %></td>
-        <td><%= link_to 'Show', manager_note %></td>
-        <td><%= link_to 'Edit', edit_manager_note_path(manager_note) %></td>
-        <td><%= link_to 'Destroy', manager_note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= manager_note.subject %></h3>
+            </div>
+            <div class="panel-body">
+              <div class="email-body">
+                <p><%= manager_note.note %></p>
+              </div>
+            </div>
+            <% if user_signed_in? %>
+              <div class="panel-footer">      
+                <div class="actions">
+                  <%= link_to edit_manager_note_path(manager_note) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Review and Send
+                  <% end %>
+                  <%= link_to manager_note, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
 
-<br>
+  </div>
+</div>
 
-<%= link_to 'New Manager note', new_manager_note_path %>
+<div class="container-fluid">
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <%= link_to 'New Email', new_manager_note_path, class: "btn btn-primary btn-lg btn-block" %><br>
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -21,19 +21,11 @@ class ManagerNotesController < ApplicationController
   end
 
   def create
-    @members = Member.all
     @manager_note = ManagerNote.new(manager_note_params)
-    respond_to do |format|
-      if @manager_note.save
-        # Tell the UserMailer to send a welcome email after save
-        MemberMailer.sample_email(Member.all).deliver
- 
-        format.html { redirect_to(@manager_note, notice: 'Email was successfully created.') }
-        format.json { render json: @manager_note, status: :created, location: @manager_note }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @manager_note.errors, status: :unprocessable_entity }
-      end
+    if @manager_note.save
+      redirect_to manager_notes_path, notice: 'Your email was successfully created.'
+    else
+      render action: 'new'
     end
   end
 
@@ -43,10 +35,10 @@ class ManagerNotesController < ApplicationController
     respond_to do |format|
       if @manager_note.save
         # Tell the UserMailer to send a welcome email after save
-        MemberMailer.sample_email(Member.first).deliver
+        MemberMailer.sample_email(Member).deliver
  
-        format.html { redirect_to(@manager_note, notice: 'Email was successfully created.') }
-        format.json { render json: @manager_note, status: :created, location: @manager_note }
+        format.html { redirect_to(manager_notes_path, notice: 'Your email was successfully sent to the Dive VIPs.') }
+        format.json { render json: manager_notes_path, status: :created, location: @manager_note }
       else
         format.html { render action: 'new' }
         format.json { render json: @manager_note.errors, status: :unprocessable_entity }
