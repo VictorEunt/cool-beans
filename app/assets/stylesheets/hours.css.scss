@@ -6,13 +6,10 @@
   color: #666666;
 }
 
-#hours-form .panel-footer a {
-  color: #242021;
-}
-
-#hours-form .panel-footer a:hover {
-  color: #d41a27;
-}
+#hours-form .panel-footer .btn-default {
+    border-color: #242021;
+    border-radius: 0;
+  }
 
 #hours-form .input-lg {
   width: 100%;

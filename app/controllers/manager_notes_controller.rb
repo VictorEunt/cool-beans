@@ -4,7 +4,7 @@ class ManagerNotesController < ApplicationController
   respond_to :html
 
   def index
-    @manager_notes = ManagerNote.all
+    @manager_notes = ManagerNote.all.order('created_at DESC')
     respond_with(@manager_notes)
   end
 

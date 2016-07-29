@@ -6,17 +6,14 @@
   color: #666666;
 }
 
-#menu-form .panel-footer a {
-  color: #242021;
-}
-
-#menu-form .panel-footer a:hover {
-  color: #d41a27;
+#menu-form .panel-footer .btn {
+  border-color: #242021;
+  border-radius: 0;
 }
 
 #menu-form .input-lg {
   width: 100%;
-}
+} 
 
 #menu-header-image {
   background-image: url("mac-cheese.png");

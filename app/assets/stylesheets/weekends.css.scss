@@ -8,12 +8,9 @@
     color: #666666;
   }
 
-  .panel-footer a {
-    color: #242021;
-  }
-
-  .panel-footer a:hover {
-    color: #d41a27;
+  .panel-footer .btn-default {
+    border-color: #242021;
+    border-radius: 0;
   }
 
   .input-lg {

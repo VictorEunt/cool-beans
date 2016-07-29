@@ -1,5 +1,6 @@
 class MenuItemsController < ApplicationController
   before_action :set_menu_item, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy]
 
   respond_to :html
 
@@ -26,18 +27,24 @@ class MenuItemsController < ApplicationController
 
   def create
     @menu_item = MenuItem.new(menu_item_params)
-    @menu_item.save
-    respond_with(@menu_item)
+    if @menu_item.save
+      redirect_to manager_path, notice: 'Your menu item was successfully created.'
+    else
+      render action: 'new'
+    end
   end
 
   def update
-    @menu_item.update(menu_item_params)
-    respond_with(@menu_item)
+   if @menu_item.update
+      redirect_to manager_path, notice: 'Your menu item was saved.'
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
     @menu_item.destroy
-    respond_with(@menu_item)
+    redirect_to manager_path
   end
 
   private

@@ -25,18 +25,9 @@
             <p id="hours-text">Our Hours</p>
             <p><%= hour.note %></p>
             <% if user_signed_in? %>
-              <div class="well">      
-                <div class="actions">
-                  <%= link_to edit_hour_path(hour) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to hour, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
+                <div class="button">
+                  <%= link_to 'Edit Hours', edit_hour_path(hour), class: "btn btn-default" %>
                 </div>
-              </div>
             <% end %>
         </div>
       </div>
@@ -61,20 +52,24 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <div class="thumbnail">
-             <%= image_tag(weekend.image_one.url, :class=>'weekend-photo', :alt=>'weekend special') %>
-            <div class="caption">
-              <h3><%= weekend.first_special %></h3>
-              <p><%= weekend.first_special_description %></p>
+          <div id="hover-effect">
+            <div class="thumbnail" data-toggle="modal" data-target="#weekendModal1">
+               <%= image_tag(weekend.image_one.url, :class=>'photo-image', :alt=>'weekend special') %>
+              <div class="caption">
+                <h3><%= weekend.first_special %></h3>
+                <p><%= weekend.first_special_description %></p>
+              </div>
             </div>
           </div>
         </div>
         <div class="col-xs-12 col-sm-6">
-          <div class="thumbnail">
-             <%= image_tag(weekend.image_two.url, :class=>'weeknd-photo', :alt=>'weekend special') %>
-            <div class="caption">
-              <h3><%= weekend.second_special %></h3>
-              <p><%= weekend.second_special_description %></p>
+          <div id="hover-effect">
+            <div class="thumbnail" data-toggle="modal" data-target="#weekendModal2">
+               <%= image_tag(weekend.image_two.url, :class=>'photo-image', :alt=>'weekend special') %>
+              <div class="caption">
+                <h3><%= weekend.second_special %></h3>
+                <p><%= weekend.second_special_description %></p>
+              </div>
             </div>
           </div>
         </div>
@@ -82,17 +77,8 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6">
           <% if user_signed_in? %>
-            <div class="well">      
-              <div class="actions">
-                <%= link_to edit_weekend_path(weekend) do %>
-                  <span class="glyphicon glyphicon-edit"></span>
-                  Edit
-                <% end %>
-                <%= link_to weekend, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span class="glyphicon glyphicon-trash"></span>
-                  Delete
-                <% end %>
-              </div>
+            <div class="button">
+              <%= link_to 'Edit Weekend', edit_weekend_path(weekend), class: "btn btn-default" %>
             </div>
           <% end %>
         </div>
@@ -103,6 +89,55 @@
   <% end %> 
 </div>
 
+<div id="weekend-modal-styles">
+<!-- Weekend Modal 1 -->
+  <% @weekends.each do |weekend| %>
+    <% if weekend.title == 'The Weekend' %>
+<div class="modal fade" id="weekendModal1" tabindex="-1" role="dialog" aria-labelledby="weekendLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= weekend.first_special %></h4>
+      </div>
+      <div class="modal-body">
+        <%= image_tag(weekend.image_one.url, :class=>'img-responsive', :alt=>'weekend special') %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default">The Specials Menu</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
+
+<!-- Weekend Modal 2 -->
+  <% @weekends.each do |weekend| %>
+    <% if weekend.title == 'The Weekend' %>
+<div class="modal fade" id="weekendModal2" tabindex="-1" role="dialog" aria-labelledby="weekendLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= weekend.second_special %></h4>
+      </div>
+      <div class="modal-body">
+        <%= image_tag(weekend.image_two.url, :class=>'img-responsive', :alt=>'weekend special') %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default">Sunday Brunch Menu</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<% end %>
+<% end %>
+</div>
+
+<!-- Classics Section -->
 <div id="classics-container">
   <% @classics.each do |classic| %>
     <% if classic.title == 'The Classics' %>
@@ -148,17 +183,8 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6">
           <% if user_signed_in? %>
-            <div class="well">      
-              <div class="actions">
-                <%= link_to edit_classic_path(classic) do %>
-                  <span class="glyphicon glyphicon-edit"></span>
-                  Edit
-                <% end %>
-                <%= link_to classic, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span class="glyphicon glyphicon-trash"></span>
-                  Delete
-                <% end %>
-              </div>
+            <div class="button">
+              <%= link_to 'Edit Classics', edit_classic_path(classic), class: "btn btn-default" %>
             </div>
           <% end %>
         </div>
@@ -207,17 +233,8 @@
       <div class="row">
         <div class="col-xs-12 col-sm-6">
           <% if user_signed_in? %>
-            <div class="well">      
-              <div class="actions">
-                <%= link_to edit_event_path(event) do %>
-                  <span class="glyphicon glyphicon-edit"></span>
-                  Edit
-                <% end %>
-                <%= link_to event, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span class="glyphicon glyphicon-trash"></span>
-                  Delete
-                <% end %>
-              </div>
+            <div class="button">
+              <%= link_to 'Edit Events', edit_event_path(event), class: "btn btn-default" %>
             </div>
           <% end %>
         </div>

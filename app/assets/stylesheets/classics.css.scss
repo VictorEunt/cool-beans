@@ -7,13 +7,10 @@
   color: #666666;
 }
 
-#classics-form .panel-footer a {
-  color: #242021;
-}
-
-#classics-form .panel-footer a:hover {
-  color: #d41a27;
-}
+#classics-form .panel-footer .btn-default {
+    border-color: #242021;
+    border-radius: 0;
+  }
 
 #classics-form .input-lg {
   width: 100%;

@@ -24,6 +24,7 @@ $btn-default-color: #d41a27;
 $btn-default-bg: #f9f9f9;
 $btn-default-border: #d41a27;
 $btn-border-radius-large: 0;
+$btn-border-radius-base: 0;
 $input-border: #bdc3c7;
 $input-border-radius-large: 0;
 $panel-default-border: #333333;
@@ -45,6 +46,10 @@ $well-bg: #1a1a1a;
 $input-bg: #ecf0f1;
 $input-border-focus: #d41a27;
 $form-group-margin-bottom: 25px;
+$modal-content-bg: #242021;
+$modal-header-border-color: #666666;
+$modal-footer-border-color: #666666;
+
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';

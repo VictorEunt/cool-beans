@@ -2,14 +2,14 @@
 <div id="notes-style">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-lg-8">
-      <h1>Saved Emails</h1>
-      <p>The following is a list of created emails. Press <b>Review and Send</b> to look over the email one last time and finally send it to the Dive VIPs.</p>
+      <h1>Saved Email</h1>
+      <p>Press <b>Review and Send</b> to look over the email one last time and finally send it to the Dive VIPs.</p>
       <p>To create an email, press the <b>New Email Button</b>.</p>
     </div> 
   </div>
 
 <div class="row">
-    <% @manager_notes.each do |manager_note| %>
+    <% @manager_notes.find(1) do |manager_note| %>
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
           <div class="panel panel-default">
             <div class="panel-heading">
