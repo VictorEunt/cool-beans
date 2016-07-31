@@ -22,8 +22,19 @@ class MembersController < ApplicationController
 
   def create
     @member = Member.new(member_params)
-    @member.save
-    respond_with(@member)
+ 
+    respond_to do |format|
+      if @member.save
+        # Tell the WelcomeMailer to send a welcome Email after save
+        WelcomeMailer.vip_email(@member).deliver
+ 
+        format.html { redirect_to(root_path, notice: 'You are now a Cool Beans Dive VIP. Thanks for registering. Look out for free stuff.') }
+        format.json { render json: @member, status: :created, location: @member }
+      else
+        format.html { render action: 'new' }
+        format.json { render json: @member.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   def update

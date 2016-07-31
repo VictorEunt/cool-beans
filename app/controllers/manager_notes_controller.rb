@@ -38,7 +38,7 @@ class ManagerNotesController < ApplicationController
         MemberMailer.promotion_email(Member).deliver
  
         format.html { redirect_to(manager_notes_path, notice: 'Your email was successfully sent to the Dive VIPs.') }
-        format.json { render json: manager_notes_path, status: :created, location: @manager_note }
+        format.json { render json: @manager_note, status: :created, location: manager_notes_path }
       else
         format.html { render action: 'new' }
         format.json { render json: @manager_note.errors, status: :unprocessable_entity }
