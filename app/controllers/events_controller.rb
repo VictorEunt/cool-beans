@@ -42,6 +42,6 @@ class EventsController < ApplicationController
     end
 
     def event_params
-      params.require(:event).permit(:title, :description, :first_event, :first_event_description, :second_event, :second_event_description, :image_one, :image_two)
+      params.require(:event).permit(:title, :description, :first_event, :first_event_description, :second_event, :second_event_description, :image_one, :image_two, :first_modal, :first_modal_description, :second_modal, :second_modal_description, :modal_image_one, :modal_image_two)
     end
 end

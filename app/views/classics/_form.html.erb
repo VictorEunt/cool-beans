@@ -15,8 +15,8 @@
 
 <div class="panel panel-default">
   <div class="panel-heading">
-      <h2>Classics Form</h2>
-    </div>
+    <h2>Classics Form</h2>
+  </div>
   <div class="panel-body">
     <div class="form-group">
       <p><%= f.label :title, 'Title' %></p>
@@ -39,6 +39,19 @@
       <p><%= f.label :image_one %></p>
       <%= f.file_field :image_one, class: "btn btn-default btn-lg btn-block" %>
     </div>
+    <h6>Pop-up Contents</h6>
+    <div class="form-group">
+      <p><%= f.label :first_modal, 'First Pop Up Heading' %></p>
+      <p><%= f.text_field :first_modal, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :first_modal_description, 'First Pop Up Description' %></p>
+      <p><%= f.text_area :first_modal_description, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :modal_image_one, 'First Pop Up Image' %></p>
+      <%= f.file_field :modal_image_one, class: "btn btn-default btn-lg btn-block" %>
+    </div>
     <h4>Classic Two</h4>
     <div class="form-group">
       <p><%= f.label :second_classic %></p>
@@ -51,6 +64,19 @@
     <div class="form-group">
       <p><%= f.label :image_two %></p>
       <%= f.file_field :image_two, class: "btn btn-default btn-lg btn-block" %>
+    </div>
+    <h6>Pop-up Contents</h6>
+    <div class="form-group">
+      <p><%= f.label :second_modal, 'Second Pop Up Heading' %></p>
+      <p><%= f.text_field :second_modal, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :second_modal_description, 'Second Pop Up Description' %></p>
+      <p><%= f.text_area :second_modal_description, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :modal_image_two, 'Second Pop Up Image' %></p>
+      <%= f.file_field :modal_image_two, class: "btn btn-default btn-lg btn-block" %>
     </div>
     <h4>Classic Three</h4>
     <div class="form-group">
@@ -65,8 +91,21 @@
       <p><%= f.label :image_three %></p>
       <%= f.file_field :image_three, class: "btn btn-default btn-lg btn-block" %>
     </div>
-     <div class="form-group">
-        <%= f.submit "Save", class: "btn btn-primary btn-lg btn-block" %>
+    <h6>Pop-up Contents</h6>
+    <div class="form-group">
+      <p><%= f.label :third_modal, 'Third Pop Up Heading' %></p>
+      <p><%= f.text_field :third_modal, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :third_modal_description, 'Third Pop Up Description' %></p>
+      <p><%= f.text_area :third_modal_description, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :modal_image_three, 'Third Pop Up Image' %></p>
+      <%= f.file_field :modal_image_three, class: "btn btn-default btn-lg btn-block" %>
+    </div>
+    <div class="form-group">
+      <%= f.submit "Save", class: "btn btn-primary btn-lg btn-block" %>
     </div>
     </div>
     <div class="panel-footer">

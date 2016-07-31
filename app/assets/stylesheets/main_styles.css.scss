@@ -47,8 +47,8 @@ $input-bg: #ecf0f1;
 $input-border-focus: #d41a27;
 $form-group-margin-bottom: 25px;
 $modal-content-bg: #242021;
-$modal-header-border-color: #666666;
-$modal-footer-border-color: #666666;
+$modal-header-border-color: #1a1a1a;
+$modal-footer-border-color: #1a1a1a;
 
 
 @import 'bootstrap-sprockets';
@@ -147,21 +147,160 @@ $modal-footer-border-color: #666666;
   text-decoration: underline;
 }
 
-h1 {
 
-}
-h1 small {
-
-}
-h2{
-
-}
-h3 {
-
-}
-h4 {
+// Vip Form
+.input-vip {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    margin: .25em;
+    max-width: 400px;
+    width: calc(100% - 2em);
+    vertical-align: top;
+    font-size: 125%;
 }
 
+// Kozakura styles
+.input--kozakura {
+	overflow: hidden;
+	padding-bottom: .25em;
+}
+
+.input__field {
+	position: relative;
+	display: block;
+	float: right;
+	padding: 0.8em;
+	width: 60%;
+	border: none;
+	border-radius: 0;
+	background: #eee2c3;
+	color: #242021;
+	font-weight: normal;
+	-webkit-appearance: none; /* for box shadows to show on iOS */
+}
+
+.input__field:focus {
+	outline: none;
+}
+.input__field--kozakura {
+	padding: 0.25em 0.5em;
+	margin-top: 1.25em;
+	width: 100%;
+	background: transparent;
+	font-size: 1.55em;
+	opacity: 0;
+}
+
+.input__label {
+	display: inline-block;
+	float: right;
+	padding: 0 1em;
+	width: 40%;
+	color: #ffc902;
+	font-weight: bold;
+	font-size: 70.25%;
+	-webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.input__label-content {
+	position: relative;
+	display: block;
+	padding: 1.6em 0;
+	width: 100%;
+}
+
+.input__label--kozakura {
+	width: 100%;
+	text-align: left;
+	position: absolute;
+	top: 1em;
+	pointer-events: none;
+	overflow: hidden;
+	padding: 0 0.25em;
+	-webkit-transform: translate3d(1em, 2.75em, 0);
+	transform: translate3d(1em, 2.75em, 0);
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.input__label-content--kozakura {
+	color: #ccc;
+	padding: 0.25em 0;
+	-webkit-transition: -webkit-transform 0.3s;
+	transition: transform 0.3s;
+}
+
+.input__label-content--kozakura::after {
+	content: attr(data-content);
+	position: absolute;
+	font-weight: normal;
+	top: 100%;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	color: #f9f9f9;
+	padding-bottom: 5px;
+	font-family: 'Rye', cursive;
+	letter-spacing: 1px;
+	font-size: 1em;
+}
+
+.graphic {
+	position: absolute;
+	top: 0;
+	left: 0;
+	fill: #242021;
+}
+
+.graphic--kozakura {
+	pointer-events: none;
+	top: 1em;
+	bottom: 0px;
+	height: 4.5em;
+	z-index: -1;
+	-webkit-transition: -webkit-transform 0.7s, fill 0.7s;
+	transition: transform 0.7s, fill 0.7s;
+	-webkit-transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+	transition-timing-function: cubic-bezier(0, 0.25, 0.5, 1);
+} 
+
+.input__field--kozakura:focus,
+.input--filled .input__field--kozakura {
+	-webkit-transition: opacity 0s 0.35s;
+	transition: opacity 0s 0.35s;
+	opacity: 1;
+}
+
+.input__field--kozakura:focus + .input__label--kozakura,
+.input--filled .input__label--kozakura {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+	-webkit-transform: translate3d(0, 0, 0);
+	transform: translate3d(0, 0, 0);
+}
+
+.input__field--kozakura:focus + .input__label--kozakura .input__label-content--kozakura,
+.input--filled .input__label-content--kozakura {
+	-webkit-transition-delay: 0.15s;
+	transition-delay: 0.15s;
+	-webkit-transform: translate3d(0, -100%, 0);
+	transform: translate3d(0, -100%, 0);
+}
+
+.input__field--kozakura:focus ~ .graphic--kozakura,
+.input--filled .graphic--kozakura {
+	fill: #eee2c3;
+	-webkit-transform: translate3d(-66.6%, 0, 0);
+	transform: translate3d(-66.6%, 0, 0);
+}
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {

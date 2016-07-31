@@ -22,18 +22,24 @@ class WeekendsController < ApplicationController
 
   def create
     @weekend = Weekend.new(weekend_params)
-    @weekend.save
-    respond_with(@weekend)
+    if @weekend.save
+      redirect_to root_path, notice: 'Your Weekend was successfully created.'
+    else
+      render action: 'new'
+    end
   end
 
   def update
-    @weekend.update(weekend_params)
-    respond_with(@weekend)
+    if @weekend.update(weekend_params)
+      redirect_to root_path, notice: 'Your updates were saved.'
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
     @weekend.destroy
-    respond_with(@weekend)
+    redirect_to manager_path
   end
 
   private
@@ -42,6 +48,6 @@ class WeekendsController < ApplicationController
     end
 
     def weekend_params
-      params.require(:weekend).permit(:title, :description, :first_special, :first_special_description, :second_special, :second_special_description, :image_one, :image_two)
+      params.require(:weekend).permit(:title, :description, :first_special, :first_special_description, :second_special, :second_special_description, :image_one, :image_two, :first_modal, :first_modal_description, :second_modal, :second_modal_description, :modal_image_one, :modal_image_two)
     end
 end

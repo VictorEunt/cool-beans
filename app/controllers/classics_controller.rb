@@ -42,6 +42,6 @@ class ClassicsController < ApplicationController
     end
 
     def classic_params
-      params.require(:classic).permit(:title, :description, :first_classic, :first_classic_description, :second_classic, :second_classic_description, :third_classic, :third_classic_description, :image_one, :image_two, :image_three)
+      params.require(:classic).permit(:title, :description, :first_classic, :first_classic_description, :second_classic, :second_classic_description, :third_classic, :third_classic_description, :image_one, :image_two, :image_three, :first_modal, :first_modal_description, :second_modal, :second_modal_description, :modal_image_one, :modal_image_two, :third_modal, :third_modal_description, :modal_image_three)
     end
 end

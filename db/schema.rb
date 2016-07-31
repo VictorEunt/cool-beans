@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160726225524) do
+ActiveRecord::Schema.define(version: 20160730192502) do
 
   create_table "classics", force: true do |t|
     t.string   "title"
@@ -36,6 +36,24 @@ ActiveRecord::Schema.define(version: 20160726225524) do
     t.string   "image_three_content_type"
     t.integer  "image_three_file_size"
     t.datetime "image_three_updated_at"
+    t.string   "first_modal"
+    t.text     "first_modal_description"
+    t.string   "second_modal"
+    t.text     "second_modal_description"
+    t.string   "third_modal"
+    t.text     "third_modal_description"
+    t.string   "modal_image_one_file_name"
+    t.string   "modal_image_one_content_type"
+    t.integer  "modal_image_one_file_size"
+    t.datetime "modal_image_one_updated_at"
+    t.string   "modal_image_two_file_name"
+    t.string   "modal_image_two_content_type"
+    t.integer  "modal_image_two_file_size"
+    t.datetime "modal_image_two_updated_at"
+    t.string   "modal_image_three_file_name"
+    t.string   "modal_image_three_content_type"
+    t.integer  "modal_image_three_file_size"
+    t.datetime "modal_image_three_updated_at"
   end
 
   create_table "events", force: true do |t|
@@ -55,6 +73,18 @@ ActiveRecord::Schema.define(version: 20160726225524) do
     t.string   "image_two_content_type"
     t.integer  "image_two_file_size"
     t.datetime "image_two_updated_at"
+    t.string   "first_modal"
+    t.text     "first_modal_description"
+    t.string   "second_modal"
+    t.text     "second_modal_description"
+    t.string   "modal_image_one_file_name"
+    t.string   "modal_image_one_content_type"
+    t.integer  "modal_image_one_file_size"
+    t.datetime "modal_image_one_updated_at"
+    t.string   "modal_image_two_file_name"
+    t.string   "modal_image_two_content_type"
+    t.integer  "modal_image_two_file_size"
+    t.datetime "modal_image_two_updated_at"
   end
 
   create_table "gallery_photos", force: true do |t|
@@ -181,6 +211,18 @@ ActiveRecord::Schema.define(version: 20160726225524) do
     t.string   "image_two_content_type"
     t.integer  "image_two_file_size"
     t.datetime "image_two_updated_at"
+    t.string   "first_modal"
+    t.text     "first_modal_description"
+    t.string   "second_modal"
+    t.text     "second_modal_description"
+    t.string   "modal_image_one_file_name"
+    t.string   "modal_image_one_content_type"
+    t.integer  "modal_image_one_file_size"
+    t.datetime "modal_image_one_updated_at"
+    t.string   "modal_image_two_file_name"
+    t.string   "modal_image_two_content_type"
+    t.integer  "modal_image_two_file_size"
+    t.datetime "modal_image_two_updated_at"
   end
 
 end

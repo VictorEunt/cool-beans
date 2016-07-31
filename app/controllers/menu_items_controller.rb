@@ -35,7 +35,7 @@ class MenuItemsController < ApplicationController
   end
 
   def update
-   if @menu_item.update
+   if @menu_item.update(menu_item_params)
       redirect_to manager_path, notice: 'Your menu item was saved.'
     else
       render action: 'edit'

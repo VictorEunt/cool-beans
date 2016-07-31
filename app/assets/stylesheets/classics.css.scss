@@ -3,19 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 
-#classics-form .panel-body p {
-  color: #666666;
-}
+#classics-form {
+    
+  .panel-body p {
+    color: #666666;
+  }
 
-#classics-form .panel-footer .btn-default {
+  .panel-footer .btn-default {
     border-color: #242021;
     border-radius: 0;
   }
 
-#classics-form .input-lg {
-  width: 100%;
-}
+  .input-lg {
+    width: 100%;
+  }
 
-#classics-form h4 {
-  color: #242021;
+  h4 {
+    color: #242021;
+  }
+  
+  h6 {
+    color: #242021;
+  }
+  
 }

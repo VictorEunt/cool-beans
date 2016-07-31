@@ -26,7 +26,7 @@
             <p><%= hour.note %></p>
             <% if user_signed_in? %>
                 <div class="button">
-                  <%= link_to 'Edit Hours', edit_hour_path(hour), class: "btn btn-default" %>
+                  <%= link_to 'Edit Hours', edit_hour_path(hour), class: "btn btn-primary" %>
                 </div>
             <% end %>
         </div>
@@ -78,7 +78,7 @@
         <div class="col-xs-12 col-sm-6">
           <% if user_signed_in? %>
             <div class="button">
-              <%= link_to 'Edit Weekend', edit_weekend_path(weekend), class: "btn btn-default" %>
+              <%= link_to 'Edit Weekend', edit_weekend_path(weekend), class: "btn btn-primary" %>
             </div>
           <% end %>
         </div>
@@ -89,8 +89,8 @@
   <% end %> 
 </div>
 
-<div id="weekend-modal-styles">
 <!-- Weekend Modal 1 -->
+<div id="weekend-modal-styles">
   <% @weekends.each do |weekend| %>
     <% if weekend.title == 'The Weekend' %>
 <div class="modal fade" id="weekendModal1" tabindex="-1" role="dialog" aria-labelledby="weekendLabel">
@@ -98,14 +98,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><%= weekend.first_special %></h4>
+        <h4 class="modal-title" id="myModalLabel"><%= weekend.first_modal %></h4>
       </div>
       <div class="modal-body">
-        <%= image_tag(weekend.image_one.url, :class=>'img-responsive', :alt=>'weekend special') %>
+        <%= image_tag(weekend.modal_image_one.url, :class=>'img-responsive', :alt=>'weekend special') %>
+        <p><%= weekend.first_modal_description %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default">The Specials Menu</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">The Specials Menu</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -121,14 +122,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><%= weekend.second_special %></h4>
+        <h4 class="modal-title" id="myModalLabel"><%= weekend.second_modal %></h4>
       </div>
       <div class="modal-body">
-        <%= image_tag(weekend.image_two.url, :class=>'img-responsive', :alt=>'weekend special') %>
+        <%= image_tag(weekend.modal_image_two.url, :class=>'img-responsive', :alt=>'weekend special') %>
+        <p><%= weekend.second_modal_description %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default">Sunday Brunch Menu</button>
-        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Sunday Brunch Menu</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>
@@ -153,29 +155,35 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-4">
-          <div class="thumbnail">
-             <%= image_tag(classic.image_one.url, :class=>'classic-photo', :alt=>'classic') %>
-            <div class="caption">
-              <h3><%= classic.first_classic %></h3>
-              <p><%= classic.first_classic_description %></p>
+          <div id="classic-hover-effect">
+            <div class="thumbnail" data-toggle="modal" data-target="#classicModal1">
+               <%= image_tag(classic.image_one.url, :class=>'classic-photo', :alt=>'classic') %>
+                <div class="caption">
+                  <h3><%= classic.first_classic %></h3>
+                  <p><%= classic.first_classic_description %></p>
+                </div>
             </div>
           </div>
         </div>
         <div class="col-xs-12 col-sm-4">
-          <div class="thumbnail">
-             <%= image_tag(classic.image_two.url, :class=>'classic-photo', :alt=>'classic') %>
-            <div class="caption">
-              <h3><%= classic.second_classic %></h3>
-              <p><%= classic.second_classic_description %></p>
+          <div id="classic-hover-effect">
+            <div class="thumbnail" data-toggle="modal" data-target="#classicModal2">
+               <%= image_tag(classic.image_two.url, :class=>'classic-photo', :alt=>'classic') %>
+              <div class="caption">
+                <h3><%= classic.second_classic %></h3>
+                <p><%= classic.second_classic_description %></p>
+            </div>
             </div>
           </div>
         </div>
         <div class="col-xs-12 col-sm-4">
-          <div class="thumbnail">
-             <%= image_tag(classic.image_three.url, :class=>'classic-photo', :alt=>'classic') %>
-            <div class="caption">
-              <h3><%= classic.third_classic %></h3>
-              <p><%= classic.third_classic_description %></p>
+          <div id="classic-hover-effect">
+            <div class="thumbnail" data-toggle="modal" data-target="#classicModal3">
+              <%= image_tag(classic.image_three.url, :class=>'classic-photo', :alt=>'classic') %>
+              <div class="caption">
+                <h3><%= classic.third_classic %></h3>
+                <p><%= classic.third_classic_description %></p>
+              </div>
             </div>
           </div>
         </div>
@@ -184,7 +192,7 @@
         <div class="col-xs-12 col-sm-6">
           <% if user_signed_in? %>
             <div class="button">
-              <%= link_to 'Edit Classics', edit_classic_path(classic), class: "btn btn-default" %>
+              <%= link_to 'Edit Classics', edit_classic_path(classic), class: "btn btn-primary" %>
             </div>
           <% end %>
         </div>
@@ -195,6 +203,81 @@
   <% end %> 
 </div>
 
+<!-- Classic Modal 1 -->
+<div id="classic-modal-styles">
+    <% @classics.each do |classic| %>
+    <% if classic.title == 'The Classics' %>
+    <div class="modal fade" id="classicModal1" tabindex="-1" role="dialog" aria-labelledby="classicLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><%= classic.first_modal %></h4>
+        </div>
+        <div class="modal-body">
+          <%= image_tag(classic.modal_image_one.url, :class=>'img-responsive', :alt=>'classic') %>
+          <p><%= classic.first_modal_description %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">The Food Menu</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+
+<!-- Classic Modal 2 -->
+    <% @classics.each do |classic| %>
+    <% if classic.title == 'The Classics' %>
+    <div class="modal fade" id="classicModal2" tabindex="-1" role="dialog" aria-labelledby="classicLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><%= classic.second_modal %></h4>
+        </div>
+        <div class="modal-body">
+          <%= image_tag(classic.modal_image_two.url(:wide), :class=>'img-responsive', :alt=>'classic two') %>
+          <p><%= classic.second_modal_description %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">The Specials Menu</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <% end %>
+    <% end %>
+
+<!-- Classic Modal 3 -->
+    <% @classics.each do |classic| %>
+    <% if classic.title == 'The Classics' %>
+    <div class="modal fade" id="classicModal3" tabindex="-1" role="dialog" aria-labelledby="classicLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><%= classic.third_modal %></h4>
+        </div>
+        <div class="modal-body">
+          <%= image_tag(classic.modal_image_three.url(:wide), :class=>'img-responsive', :alt=>'classic three') %>
+          <p><%= classic.third_modal_description %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">The Specials Menu</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <% end %>
+    <% end %>
+</div>
+
+<!-- Events Section -->
 <div id="event-container">
   <% @events.each do |event| %>
     <% if event.title == 'Our Events' %>
@@ -210,18 +293,19 @@
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <div class="thumbnail">
-            <% if event.image_one.present? %>
+        <div id="event-hover-effect">
+          <div class="thumbnail" data-toggle="modal" data-target="#eventModal1">
              <%= image_tag(event.image_one.url, :class=>'event-photo', :alt=>'event one') %>
-            <% end %>
             <div class="caption">
               <h3><%= event.first_event %></h3>
               <p><%= event.first_event_description %></p>
             </div>
           </div>
         </div>
+        </div>
         <div class="col-xs-12 col-sm-6">
-          <div class="thumbnail">
+          <div id="event-hover-effect">
+          <div class="thumbnail" data-toggle="modal" data-target="#eventModal2">
              <%= image_tag(event.image_two.url, :class=>'event-photo', :alt=>'event special') %>
             <div class="caption">
               <h3><%= event.second_event %></h3>
@@ -229,12 +313,13 @@
             </div>
           </div>
         </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
           <% if user_signed_in? %>
             <div class="button">
-              <%= link_to 'Edit Events', edit_event_path(event), class: "btn btn-default" %>
+              <%= link_to 'Edit Events', edit_event_path(event), class: "btn btn-primary" %>
             </div>
           <% end %>
         </div>
@@ -244,3 +329,136 @@
     <% end %>
   <% end %> 
 </div>
+
+<!-- Event Modal 1 -->
+<div id="event-modal-styles">
+    <% @events.each do |event| %>
+    <% if event.title == 'Our Events' %>
+    <div class="modal fade" id="eventModal1" tabindex="-1" role="dialog" aria-labelledby="eventLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><%= event.first_modal %></h4>
+        </div>
+        <div class="modal-body">
+          <%= image_tag(event.modal_image_one.url, :class=>'img-responsive', :alt=>'event') %>
+          <p><%= event.first_modal_description %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">The Specials Menu</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </div>
+      </div>
+    </div>
+    <% end %>
+    <% end %>
+
+<!-- Event Modal 2 -->
+    <% @events.each do |event| %>
+    <% if event.title == 'Our Events' %>
+    <div class="modal fade" id="eventModal2" tabindex="-1" role="dialog" aria-labelledby="eventLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><%= event.second_modal %></h4>
+        </div>
+        <div class="modal-body">
+          <%= image_tag(event.modal_image_two.url, :class=>'img-responsive', :alt=>'event two') %>
+          <p><%= event.second_modal_description %></p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Sign Up to be a Dive VIP</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+    </div>
+    <% end %>
+    <% end %>
+</div>
+
+<!-- VIP Section -->
+<div id="vip-container">
+  <div class="container-fluid">
+    <div id="vip-styles">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="home-container-heading">
+          <h1>Dive VIPs</h1>
+          <h6>Sign up for VIP deals just for you.</h6>
+        </div>
+      </div>
+    </div>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-12 col-sm-8">
+      <%= form_for Member.new do |f| %>
+      <span class="input-vip input--kozakura">
+        <%= f.text_field :name, class: "input__field input__field--kozakura" %>
+        <label class="input__label input__label--kozakura" for="member_name">
+						<span class="input__label-content input__label-content--kozakura" data-content="Your VIP Name">Your VIP Name</span>
+        </label>
+        <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+						<path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
+					</svg>
+      </span>
+      <span class="input-vip input--kozakura">
+        <%= f.text_field :email, class: "input__field input__field--kozakura" %>
+        <label class="input__label input__label--kozakura" for="member_email">
+						<span class="input__label-content input__label-content--kozakura" data-content="Your Email">Your Email</span>
+        </label>
+        <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
+						<path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
+					</svg>
+      </span>
+      
+      <div class="form-group" id="register-button">
+        <%= f.submit "Register", class: "btn btn-primary btn-lg" %>
+      </div>
+    <% end %>
+      </div>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/classie.js"></script>
+		<script>
+			(function() {
+				// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+				if (!String.prototype.trim) {
+					(function() {
+						// Make sure we trim BOM and NBSP
+						var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+						String.prototype.trim = function() {
+							return this.replace(rtrim, '');
+						};
+					})();
+				}
+
+				[].slice.call( document.querySelectorAll( 'input.input__field' ) ).forEach( function( inputEl ) {
+					// in case the input is already filled..
+					if( inputEl.value.trim() !== '' ) {
+						classie.add( inputEl.parentNode, 'input--filled' );
+					}
+
+					// events:
+					inputEl.addEventListener( 'focus', onInputFocus );
+					inputEl.addEventListener( 'blur', onInputBlur );
+				} );
+
+				function onInputFocus( ev ) {
+					classie.add( ev.target.parentNode, 'input--filled' );
+				}
+
+				function onInputBlur( ev ) {
+					if( ev.target.value.trim() === '' ) {
+						classie.remove( ev.target.parentNode, 'input--filled' );
+					}
+				}
+			})();
+		</script>
