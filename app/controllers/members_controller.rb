@@ -28,7 +28,7 @@ class MembersController < ApplicationController
         # Tell the WelcomeMailer to send a welcome Email after save
         WelcomeMailer.vip_email(@member).deliver
  
-        format.html { redirect_to(root_path, notice: 'You are now a Cool Beans Dive VIP. Thanks for registering. Look out for free stuff.') }
+        format.html { redirect_to(root_path, notice: 'Cool Beans! You are now a Dive VIP.') }
         format.json { render json: @member, status: :created, location: @member }
       else
         format.html { render action: 'new' }

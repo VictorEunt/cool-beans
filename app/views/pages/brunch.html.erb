@@ -1,0 +1,224 @@
+<div id="brunch-header-image">
+  <div class="container-fluid">
+  </div>
+</div>
+  
+<div class="container-fluid">
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-default btn-lg btn-block" %>
+        <br/>
+        <%= link_to 'New Menu Photo', new_menu_photo_path, class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<div class="container-fluid">
+<div id="brunch-style">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-9 col-lg-9">
+      <h1>The Dive Brunch</h1>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
+      <% @menu_photos.each do |menu_photo| %>
+        <% if menu_photo.name == 'Brunch-One' %>
+        <div class="thumbnail">
+        <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Brunch Food'), menu_photo %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% @menu_items.each do |menu_item| %>
+    <% if menu_item.menu_section == 'Brunch-Note' && menu_item.description.present? %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-7">
+          <div class="well well-lg">
+            <p><%= menu_item.description %></p>
+              <% if menu_item.extra_one.present? %>
+                  <p><%= menu_item.extra_one %></p>
+              <% end %>
+              <% if menu_item.extra_two.present? %>
+                <div class="menu-extra">
+                  <p><%= menu_item.extra_two %></p>
+                </div>
+              <% end %>
+              <% if menu_item.extra_three.present? %>
+                <div class="menu-extra">
+                  <p><%= menu_item.extra_three %></p>
+                </div>
+              <% end %>
+              <% if user_signed_in? %>
+                <div class="actions">
+                  <%= link_to edit_menu_item_path(menu_item) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  
+  <div class="row">
+  <% @menu_items.each do |menu_item| %>
+    <% if menu_item.menu_section == 'Sunday Brunch' %>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= menu_item.name %></h3>
+            </div>
+            <div class="panel-body">
+              <% if menu_item.description.present? %>
+                <p><%= menu_item.description %></p>
+              <% end %>
+              <div class="menu-price">
+                <h5><%= menu_item.price %></h5>
+              </div>
+              <% if menu_item.extra_one.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_two.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_three.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
+                </div>
+              <% end %>
+            </div>
+            <% if user_signed_in? %>
+              <div class="panel-footer">      
+                <div class="actions">
+                  <%= link_to edit_menu_item_path(menu_item) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-9 col-lg-9">
+      <h1>Dive Brunch Cocktails</h1>
+      </div>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
+      <% @menu_photos.each do |menu_photo| %>
+        <% if menu_photo.name == 'Sunday-Cocktails-One' %>
+        <div class="thumbnail">
+        <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Tacos'), menu_photo %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% @menu_items.each do |menu_item| %>
+    <% if menu_item.menu_section == 'Brunch-Cocktails-Note' && menu_item.description.present? %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-7">
+          <div class="well well-lg">
+            <p><%= menu_item.description %></p>
+              <% if menu_item.extra_one.present? %>
+                  <p><%= menu_item.extra_one %></p>
+              <% end %>
+              <% if menu_item.extra_two.present? %>
+                <div class="menu-extra">
+                  <p><%= menu_item.extra_two %></p>
+                </div>
+              <% end %>
+              <% if menu_item.extra_three.present? %>
+                <div class="menu-extra">
+                  <p><%= menu_item.extra_three %></p>
+                </div>
+              <% end %>
+              <% if user_signed_in? %>
+                <div class="actions">
+                  <%= link_to edit_menu_item_path(menu_item) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  
+    <div class="row">
+  <% @menu_items.each do |menu_item| %>
+    <% if menu_item.menu_section == 'Brunch Cocktails' %>
+       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= menu_item.name %></h3>
+            </div>
+            <div class="panel-body">
+              <% if menu_item.description.present? %>
+                <p><%= menu_item.description %></p>
+              <% end %>
+              <div class="menu-price">
+                <h5><%= menu_item.price %></h5>
+              </div>
+              <% if menu_item.extra_one.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_two.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
+                </div>
+              <% end %>
+              <% if menu_item.extra_three.present? %>
+                <div class="menu-extra">
+                  <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
+                </div>
+              <% end %>
+            </div>
+            <% if user_signed_in? %>
+              <div class="panel-footer">      
+                <div class="actions">
+                  <%= link_to edit_menu_item_path(menu_item) do %>
+                    <span class="glyphicon glyphicon-edit"></span>
+                    Edit
+                  <% end %>
+                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+                    <span class="glyphicon glyphicon-trash"></span>
+                    Delete
+                  <% end %>
+                </div>
+              </div>
+            <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  </div>

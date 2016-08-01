@@ -1,3 +1,159 @@
 // Place all the styles related to the pages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// Place all the styles related to the MenuItems controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#brunch-form .panel-body p {
+  color: #666666;
+}
+
+#brunch-form .panel-footer .btn {
+  border-color: #242021;
+  border-radius: 0;
+}
+
+#brunch-form .input-lg {
+  width: 100%;
+} 
+
+#brunch-header-image {
+  background-image: url("bar-superhero800x300.png");
+  width: 100%;
+  height: 150px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin: -20px 0 5% 0;
+}
+
+#brunch-header-image h1 {
+  text-align: left;
+  font-size: 52px;
+  font-weight: bold;
+  color: #242021;
+  line-height: 90%;
+  margin-top: 15%;
+}
+
+#brunch-header-image h1 small {
+  font-size: 80px;
+  line-height: 80%;
+  color: #d41a27;
+
+}
+
+#brunch-style h1 {
+  font-family: 'Rye', cursive;
+  color: #eee2c3;
+  margin-bottom: 10px;
+}
+
+#brunch-style .panel-default {
+  padding: 5px 0 0 0;
+  border-radius: 0;
+  background-color: #f9f9f9;
+  border-color: #ccc;
+}
+
+#brunch-style .panel-title {
+  font-size: 22px;
+  color: #d41a27;
+  margin-bottom: -15px;
+}
+
+#brunch-style .panel-heading {
+  background-color: #f9f9f9;
+  border-color: #f9f9f9;
+}
+
+#brunch-style .panel-default p {
+  color: #242021;
+}
+
+#brunch-style .panel-footer {
+  border-top: none;
+  background-color: #ccc;
+}
+
+.menu-price {
+  margin-bottom: 10px;
+  text-align: right;
+  color: #d41a27;
+}
+
+.menu-extra {
+  margin-top: 5px;
+  text-align: right;
+  color: #d41a27;
+}
+
+#brunch-style .thumbnail {
+  margin-bottom: 10px;
+  border-color: #f9f9f9;
+  background-color: #f9f9f9;
+}
+
+.food-photo {
+  width: 100%;
+}
+
+#brunch-style .actions a {
+  color: #242021;
+  padding-right: 15px;
+}
+
+#brunch-style .actions a:hover {
+  color: #d41a27;
+}
+
+#brunch-style .well {
+  border-color: #1a1a1a;
+  padding-top: 0;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+#brunch-style .well p {
+  color: #ccc;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 130%;
+}
+
+#brunch-style .well .actions a {
+  color: #f9f9f9;
+  padding-right: 15px;
+}
+
+#brunch-style .well .actions a:hover {
+  color: #d41a27;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+  #brunch-style .well p {
+  font-size: 18px;
+}
+  
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  #brunch-style .well p {
+  font-size: 22px;
+}
+  
+}

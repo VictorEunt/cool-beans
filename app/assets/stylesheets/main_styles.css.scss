@@ -58,11 +58,9 @@ $modal-footer-border-color: #1a1a1a;
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
-.img-responsive{
-}
-
 .navbar {
 }
+
 .navbar-brand {
 	position: absolute;
 	left: 50%;
@@ -71,9 +69,11 @@ $modal-footer-border-color: #1a1a1a;
 	margin-left: -65px !important;  /* 44px 50% of your logo width */
 	margin-top: -20px;
 }
+
 .navbar-brand:hover {
 	opacity: .6;
 }
+
 .navbar-toggle {
   display: block;
   height: auto;
@@ -81,6 +81,7 @@ $modal-footer-border-color: #1a1a1a;
   margin: 4px 0 0 2%;
   float: left;
 }
+
 .navbar-default
 {
 
@@ -90,9 +91,11 @@ $modal-footer-border-color: #1a1a1a;
 	height: 7px;
 	margin-bottom: 6px;
 }
+
 .navbar-toggle:hover {
 	opacity: .6;
 }
+
 .navbar-text {
 	float:left;
   margin: 5px 5% 0 10px;
@@ -104,6 +107,7 @@ $modal-footer-border-color: #1a1a1a;
 	padding-right: 0px;
 	padding-top: 2%;
 }
+
 .navbar-collapse {
   width: 100%;
   margin-top: 55px;
@@ -111,12 +115,14 @@ $modal-footer-border-color: #1a1a1a;
   text-align: center;
   border: none;
 }
+
 .nav_link {
   font-size: 22px;
   font-weight: normal;
   font-weight: bold;
   margin-top: 10px;
 }
+
 #logo-link {
   margin-top: -60px;
   position: absolute;
@@ -124,6 +130,7 @@ $modal-footer-border-color: #1a1a1a;
   width: 95px;
   height: auto;
 }
+
 #logo-link:hover {
 	opacity: .6;
 }
@@ -134,9 +141,24 @@ $modal-footer-border-color: #1a1a1a;
   color: #d41a27;
   margin-top: 15px;
 }
+
 #menu-link:hover {
 	text-decoration:none;
 	opacity: .6;
+}
+
+.alert {
+  background-color: transparent;
+  margin: 0 0 15px 0;
+  font-family: 'Suez One', serif;
+  font-size: 18px;
+}
+.alert-info {
+  background-color: #1a1a1a;
+  padding: 6% 25px 25px 25px;
+  border: none;
+  margin-top: 0;
+  color: #f9f9f9;
 }
 
 .form-titles {

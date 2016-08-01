@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get "about" => "pages#about"
   get "menu" => "menu_items#index"
   get "specials" => "specials_menus#index"
+  get "brunch" => "pages#brunch"
   get "gallery" => "gallery_photos#index"
   get "contact" => "pages#contact"
   get "manager" => "pages#manager"
