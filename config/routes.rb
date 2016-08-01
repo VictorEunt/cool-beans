@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :about_contents
+
   resources :manager_notes
 
   resources :members
@@ -27,7 +29,7 @@ Rails.application.routes.draw do
   devise_for :users
   
   root "home_contents#index"
-  get "about" => "pages#about"
+  get "about" => "about_contents#index"
   get "menu" => "menu_items#index"
   get "specials" => "specials_menus#index"
   get "brunch" => "pages#brunch"

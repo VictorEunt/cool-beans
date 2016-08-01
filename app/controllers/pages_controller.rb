@@ -16,5 +16,9 @@ class PagesController < ApplicationController
   def gallery
   end
   def contact
+    @hours = Hour.all
+    respond_to do |format|
+      format.html
+    end
   end
 end

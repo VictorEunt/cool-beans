@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160730192502) do
+ActiveRecord::Schema.define(version: 20160801013219) do
+
+  create_table "about_contents", force: true do |t|
+    t.string   "name"
+    t.text     "part_one"
+    t.text     "part_two"
+    t.text     "part_three"
+    t.text     "part_four"
+    t.text     "part_five"
+    t.text     "part_six"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "classics", force: true do |t|
     t.string   "title"

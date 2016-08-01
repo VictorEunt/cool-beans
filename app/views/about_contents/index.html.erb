@@ -1,0 +1,77 @@
+<div id="about-header-image">
+  <div class="container-fluid">
+    <h1>About<br>Cool Beans<br><small>Denton's Finest<br>Dive Bar</small></h1>
+  </div>
+</div>
+
+<div class="container-fluid">
+<div id="about-style">  
+  <div class="row">
+  <% @about_contents.each do |about_content| %>
+    <% if about_content.name == 'About Page' %>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+          <% if about_content.part_one.present? %>
+            <p><%= about_content.part_one %></p>
+          <% end %>
+          <% if about_content.part_two.present? %>
+            <p><%= about_content.part_two %></p>
+          <% end %>
+        <% if user_signed_in? %>
+          <div class="actions">
+            <%= link_to edit_menu_item_path(menu_item) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+</div>
+
+<div id="about-image-one">
+  <div class="container-fluid">
+  </div>
+</div>
+
+<div class="container-fluid">
+<div id="about-style">  
+  <div class="row">
+  <% @about_contents.each do |about_content| %>
+    <% if about_content.name == 'About Page' %>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+          <% if about_content.part_three.present? %>
+            <p><%= about_content.part_three %></p>
+          <% end %>
+          <% if about_content.part_four.present? %>
+            <p><%= about_content.part_four %></p>
+          <% end %>
+        <% if user_signed_in? %>
+          <div class="actions">
+            <%= link_to edit_menu_item_path(menu_item) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+</div>
+
+<div id="about-image-two">
+  <div class="container-fluid">
+  </div>
+</div>

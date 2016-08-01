@@ -1,0 +1,136 @@
+// Place all the styles related to the MenuItems controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#about-form .panel-body p {
+  color: #666666;
+}
+
+#about-form .panel-footer .btn {
+  border-color: #242021;
+  border-radius: 0;
+}
+
+#about-form .input-lg {
+  width: 100%;
+} 
+
+#about-header-image {
+  width: 100%;
+  height: auto;
+  padding: 0 2% 0 2%;
+  margin: -20px 0 0 0;
+}
+
+#about-header-image h1 {
+  text-align: left;
+  font-size: 52px;
+  font-weight: normal;
+  color: #eee2c3;
+  line-height: 90%;
+  margin-top: 35px;
+  letter-spacing: -2px;
+}
+
+#about-header-image h1 small {
+  font-size: 72px;
+  line-height: 80%;
+  color: #d41a27;
+}
+
+#about-style {
+  background-color: #eee2c3;
+  padding: 0 3%;
+}
+
+#about-style p {
+  font-size: 20px;
+  line-height: 130%;
+  color: #242021;
+  margin-top: 15px;
+}
+
+#about-style h3 {
+  font-family: 'Rye', cursive;
+  color: #f9f9f9;
+  margin-bottom: 10px;
+}
+
+#about-image-one {
+  background-image: url("bar-people.png");
+  width: 100%;
+  height: 300px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin: 5% 0 5% 0;
+}
+
+#about-image-two {
+  background-image: url("patio-color.png");
+  width: 100%;
+  height: 300px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  margin: 5% 0 5% 0;
+}
+
+#about-style .actions a {
+  color: #242021;
+  padding-right: 15px;
+}
+
+#about-style .actions a:hover {
+  color: #d41a27;
+}
+
+#about-style .well {
+  border-color: #1a1a1a;
+  padding-top: 0;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+
+#about-style .well p {
+  color: #ccc;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 130%;
+}
+
+#about-style .well .actions a {
+  color: #f9f9f9;
+  padding-right: 15px;
+}
+
+#about-style .well .actions a:hover {
+  color: #d41a27;
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  
+  #about-style .well p {
+  font-size: 18px;
+}
+  
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  #about-style .well p {
+  font-size: 22px;
+}
+  
+}

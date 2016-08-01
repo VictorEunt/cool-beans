@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  part_one: MyText
+  part_two: MyText
+  part_three: MyText
+  part_four: MyText
+  part_five: MyText
+  part_six: MyText
+
+two:
+  name: MyString
+  part_one: MyText
+  part_two: MyText
+  part_three: MyText
+  part_four: MyText
+  part_five: MyText
+  part_six: MyText

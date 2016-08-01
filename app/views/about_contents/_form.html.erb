@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <div id="about-form">
+
+  <%= form_for(@about_content) do |f| %>
+    <% if @about_content.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@about_content.errors.count, "error") %> prohibited this about_content from being saved:</h2>
+
+        <ul>
+        <% @about_content.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h2>About Page Form</h2>
+  </div>    
+  <div class="panel-body">
+    <div class="form-group">
+      <p><%= f.label :name %></p>
+      <p><%= f.text_area :name, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :part_one %></p>
+      <p><%= f.text_area :part_one, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :part_two %></p>
+      <p><%= f.text_area :part_two, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :part_three %></p>
+      <p><%= f.text_area :part_three, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :part_four %></p>
+      <p><%= f.text_area :part_four, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :part_five %></p>
+      <p><%= f.text_area :part_five, class: "input-lg" %></p>
+    </div>
+    <div class="form-group">
+      <p><%= f.label :part_six %></p>
+      <p><%= f.text_area :part_six, class: "input-lg" %></p>
+    </div>
+     <div class="form-group">
+        <%= f.submit "Save", class: "btn btn-primary btn-lg btn-block" %>
+    </div>
+    </div>
+    <div class="panel-footer">
+      <%= link_to 'Go to Manager', manager_path, class: "btn btn-default" %>
+    </div>
+
+  <% end %>
+  </div>
+</div>
+</div>
