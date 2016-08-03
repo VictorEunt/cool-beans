@@ -8,7 +8,6 @@
 
 #menu-form .panel-footer .btn {
   border-color: #242021;
-  border-radius: 0;
 }
 
 #menu-form .input-lg {
@@ -86,17 +85,12 @@
   margin-bottom: 10px;
 }
 
+#menu-style .thumbnail .btn-default {
+  float: right;
+}
+
 .food-photo {
   width: 100%;
-}
-
-#menu-style .actions a {
-  color: #242021;
-  padding-right: 15px;
-}
-
-#menu-style .actions a:hover {
-  color: #d41a27;
 }
 
 #menu-style .well {
@@ -113,13 +107,12 @@
   line-height: 130%;
 }
 
-#menu-style .well .actions a {
-  color: #f9f9f9;
-  padding-right: 15px;
+#menu-style .well .btn-default {
+  float: right;
 }
 
-#menu-style .well .actions a:hover {
-  color: #d41a27;
+#menu-style .panel .btn-default {
+  float: right;
 }
 
 #burger_two{

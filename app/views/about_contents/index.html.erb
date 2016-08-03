@@ -4,6 +4,23 @@
   </div>
 </div>
 
+  <% @about_contents.each do |about_content| %>
+    <% if about_content.name == 'About Page' %>
+    <% if user_signed_in? %>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <div class="button">
+          <%= link_to 'Edit About Contents', edit_about_content_path(about_content), class: "btn btn-default btn-lg btn-block" %><br>
+        </div>
+      </div>
+    </div>
+  </div>
+    <% end %>
+<% end %>
+<% end %>
+
+
 <div class="container-fluid">
 <div id="about-style">  
   <div class="row">
@@ -16,18 +33,6 @@
           <% if about_content.part_two.present? %>
             <p><%= about_content.part_two %></p>
           <% end %>
-        <% if user_signed_in? %>
-          <div class="actions">
-            <%= link_to edit_menu_item_path(menu_item) do %>
-              <span class="glyphicon glyphicon-edit"></span>
-              Edit
-            <% end %>
-            <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <span class="glyphicon glyphicon-trash"></span>
-              Delete
-            <% end %>
-          </div>
-        <% end %>
       </div>
     <% end %>
   <% end %>
@@ -52,19 +57,9 @@
           <% if about_content.part_four.present? %>
             <p><%= about_content.part_four %></p>
           <% end %>
-        <% if user_signed_in? %>
-          <div class="actions">
-            <%= link_to edit_menu_item_path(menu_item) do %>
-              <span class="glyphicon glyphicon-edit"></span>
-              Edit
-            <% end %>
-            <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <span class="glyphicon glyphicon-trash"></span>
-              Delete
-            <% end %>
-          </div>
-        <% end %>
       </div>
+
+    
     <% end %>
   <% end %>
   </div>

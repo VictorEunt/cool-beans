@@ -28,6 +28,11 @@
         <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2 col-lg-4">
           <div class="thumbnail">
             <%= image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Burger') %>
+            <% if user_signed_in? %>  
+            <div class="caption">
+              <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
+            </div>
+            <% end %>
           </div>
         </div>
     <% end %>
@@ -38,6 +43,11 @@
       <div class="col-xs-12 col-sm-5 col-md-4 col-lg-4">
         <div class="thumbnail" id="burger_two">
           <%= image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Burger') %>
+          <% if user_signed_in? %>  
+            <div class="caption">
+              <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div> 
       </div>
     <% end %>
@@ -64,16 +74,8 @@
                 </div>
               <% end %>
               <% if user_signed_in? %>
-                <div class="actions">
-                  <%= link_to edit_menu_item_path(menu_item) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
           </div>
         </div>
@@ -114,16 +116,9 @@
             </div>
             <% if user_signed_in? %>
               <div class="panel-footer">      
-                <div class="actions">
-                  <%= link_to edit_menu_item_path(menu_item) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <span class="rank">Order: <%= menu_item.item_rank %></span>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
             <% end %>
         </div>
@@ -141,6 +136,11 @@
         <% if menu_photo.name == 'Happy-Hour-Food-One' %>
         <div class="thumbnail">
         <%= link_to image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Happy Hour Food'), menu_photo %>
+          <% if user_signed_in? %>  
+            <div class="caption">
+              <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
         <% end %>
       <% end %>
@@ -167,16 +167,8 @@
                 </div>
               <% end %>
               <% if user_signed_in? %>
-                <div class="actions">
-                  <%= link_to edit_menu_item_path(menu_item) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
           </div>
         </div>
@@ -217,16 +209,9 @@
             </div>
             <% if user_signed_in? %>
               <div class="panel-footer">      
-                <div class="actions">
-                  <%= link_to edit_menu_item_path(menu_item) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <span class="rank">Order: <%= menu_item.item_rank %></span>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
             <% end %>
         </div>
@@ -235,7 +220,6 @@
   <% end %>
   </div>
 </div>
-
 </div>
   
 <div id="drinks-image">
@@ -256,6 +240,11 @@
         <% if menu_photo.name == 'Pitcher-Specials-One' %>
         <div class="thumbnail">
         <%= image_tag(menu_photo.photo.url, :class=>'pitcher-photo', :alt=>'Happy Hour Pitchers') %>
+          <% if user_signed_in? %>  
+            <div class="caption">
+              <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
         <% end %>
       <% end %>
@@ -282,20 +271,12 @@
                 </div>
               <% end %>
               <% if user_signed_in? %>
-                <div class="actions">
-                  <%= link_to edit_menu_item_path(menu_item) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
-              <% end %>
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
           </div>
         </div>
-      </div>
+        </div>
     <% end %>
   <% end %>
 
@@ -332,16 +313,9 @@
             </div>
             <% if user_signed_in? %>
               <div class="panel-footer">      
-                <div class="actions">
-                  <%= link_to edit_menu_item_path(menu_item) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <span class="rank">Order: <%= menu_item.item_rank %></span>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
             <% end %>
         </div>
@@ -359,6 +333,11 @@
         <% if menu_photo.name == 'Happy-Drinks-One' %>
         <div class="thumbnail">
         <%= image_tag(menu_photo.photo.url, :class=>'drinks-photo', :alt=>'Happy Hour Drinks') %>
+          <% if user_signed_in? %>  
+            <div class="caption">
+              <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
         <% end %>
       <% end %>
@@ -385,16 +364,8 @@
                 </div>
               <% end %>
               <% if user_signed_in? %>
-                <div class="actions">
-                  <%= link_to edit_menu_item_path(menu_item) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
           </div>
         </div>
@@ -434,19 +405,12 @@
             <% end %>
           </div>
           <% if user_signed_in? %>
-            <div class="panel-footer">      
-              <div class="actions">
-                <%= link_to edit_menu_item_path(menu_item) do %>
-                  <span class="glyphicon glyphicon-edit"></span>
-                  Edit
-                <% end %>
-                <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span class="glyphicon glyphicon-trash"></span>
-                  Delete
-                <% end %>
+              <div class="panel-footer">      
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <span class="rank">Order: <%= menu_item.item_rank %></span>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
-            </div>
-          <% end %>
+            <% end %>
         </div>
       </div>
     <% end %>
@@ -462,6 +426,11 @@
         <% if menu_photo.name == 'Seven-Eleven-One' %>
         <div class="thumbnail">
         <%= image_tag(menu_photo.photo.url, :class=>'drinks-photo', :alt=>'Happy Hour Drinks') %>
+          <% if user_signed_in? %>  
+            <div class="caption">
+              <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
         <% end %>
       <% end %>
@@ -488,16 +457,8 @@
                 </div>
               <% end %>
               <% if user_signed_in? %>
-                <div class="actions">
-                  <%= link_to edit_menu_item_path(menu_item) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
           </div>
         </div>
@@ -536,20 +497,13 @@
               </div>
             <% end %>
           </div>
-          <% if user_signed_in? %>
-            <div class="panel-footer">      
-              <div class="actions">
-                <%= link_to edit_menu_item_path(menu_item) do %>
-                  <span class="glyphicon glyphicon-edit"></span>
-                  Edit
-                <% end %>
-                <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span class="glyphicon glyphicon-trash"></span>
-                  Delete
-                <% end %>
+         <% if user_signed_in? %>
+              <div class="panel-footer">      
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <span class="rank">Order: <%= menu_item.item_rank %></span>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
-            </div>
-          <% end %>
+            <% end %>
         </div>
       </div>
     <% end %>
@@ -565,6 +519,11 @@
         <% if menu_photo.name == 'Nine-Eleven-One' %>
         <div class="thumbnail">
         <%= image_tag(menu_photo.photo.url, :class=>'drinks-photo', :alt=>'Happy Hour Drinks') %>
+          <% if user_signed_in? %>  
+            <div class="caption">
+              <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
+            </div>
+          <% end %>
         </div>
         <% end %>
       <% end %>
@@ -590,17 +549,9 @@
                   <p><%= menu_item.extra_three %></p>
                 </div>
               <% end %>
-              <% if user_signed_in? %>
-                <div class="actions">
-                  <%= link_to edit_menu_item_path(menu_item) do %>
-                    <span class="glyphicon glyphicon-edit"></span>
-                    Edit
-                  <% end %>
-                  <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                    <span class="glyphicon glyphicon-trash"></span>
-                    Delete
-                  <% end %>
-                </div>
+             <% if user_signed_in? %>
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
           </div>
         </div>
@@ -640,33 +591,29 @@
             <% end %>
           </div>
           <% if user_signed_in? %>
-            <div class="panel-footer">      
-              <div class="actions">
-                <%= link_to edit_menu_item_path(menu_item) do %>
-                  <span class="glyphicon glyphicon-edit"></span>
-                  Edit
-                <% end %>
-                <%= link_to menu_item, method: :delete, data: { confirm: 'Are you sure?' } do %>
-                  <span class="glyphicon glyphicon-trash"></span>
-                  Delete
-                <% end %>
+              <div class="panel-footer">      
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <span class="rank">Order: <%= menu_item.item_rank %></span>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
               </div>
-            </div>
-          <% end %>
+            <% end %>
         </div>
       </div>
     <% end %>
   <% end %>
   </div>
-
 </div>
+  
+  <div class="container-fluid">
   <% if user_signed_in? %>
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
         <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-default btn-lg btn-block" %>
-        <br/>
-        <%= link_to 'New Menu Photo', new_menu_photo_path, class: "btn btn-primary btn-lg btn-block" %>
+        <br>
+        <%= link_to 'New Menu Photo', new_menu_photo_path, class: "btn btn-primary btn-lg btn-block" %><br>
       </div>
     </div>
   <% end %>
+  </div>
+  
 </div>

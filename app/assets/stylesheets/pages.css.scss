@@ -75,6 +75,10 @@
   background-color: #ccc;
 }
 
+#brunch-style .panel-footer .btn-default {
+  float: right;
+}
+
 .menu-price {
   margin-bottom: 10px;
   text-align: right;
@@ -93,17 +97,12 @@
   background-color: #f9f9f9;
 }
 
+#brunch-style .thumbnail .btn-default {
+  float: right;
+}
+
 .food-photo {
   width: 100%;
-}
-
-#brunch-style .actions a {
-  color: #242021;
-  padding-right: 15px;
-}
-
-#brunch-style .actions a:hover {
-  color: #d41a27;
 }
 
 #brunch-style .well {
@@ -120,14 +119,10 @@
   line-height: 130%;
 }
 
-#brunch-style .well .actions a {
-  color: #f9f9f9;
-  padding-right: 15px;
+#brunch-style .well .btn-default {
+  float: right;
 }
 
-#brunch-style .well .actions a:hover {
-  color: #d41a27;
-}
 
 #contact-header {
   width: 100%;

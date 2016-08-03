@@ -4,32 +4,40 @@
   </div>
 </div>
 
-<div id="gallery_photos" class="transitions-enabled">
+<div class="container-fluid">
+  <div id="gallery_photos" class="transitions-enabled">
   <% @gallery_photos.each do |gallery_photo| %>
+  <div class="gallery-hover-effect">
     <div class="box panel panel-primary">
-      <%= link_to image_tag(gallery_photo.image.url(:medium), :class=>'photo-image'), gallery_photo %>
+      <%= image_tag(gallery_photo.image.url(:medium), :class=>'photo-image') %>
       <div class="panel-body">
         <p><%= gallery_photo.name %></p>
         <p class="photo-description"><%= gallery_photo.description %></p>
-        
-        <% if user_signed_in? %>
-          <div class="actions">
-            <%= link_to edit_gallery_photo_path(gallery_photo) do %>
-              <span class="glyphicon glyphicon-edit"></span>
-              Edit
-            <% end %>
-            <%= link_to gallery_photo, method: :delete, data: { confirm: 'Are you sure?' } do %>
-              <span class="glyphicon glyphicon-trash"></span>
-              Delete
-            <% end %>
-          </div>
+        <% photo_id = gallery_photo.id %>
+      </div>
+      
+      <% if user_signed_in? %>
+      <div class="panel-footer">
+        <div class="button">
+          <%= link_to 'Edit Photo', edit_gallery_photo_path(gallery_photo), class: "btn btn-primary" %>
+          <%= link_to 'Delete', gallery_photo, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-default" %>
+        </div>
+      </div>
         <% end %>
      </div>
    </div>
   <% end %>
+  </div>
 </div>
 
-<br>
 <div class="container-fluid">
-<%= link_to 'New Gallery photo', new_gallery_photo_path %>
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <br>
+        <%= link_to 'New Gallery photo', new_gallery_photo_path, class: "btn btn-default btn-lg btn-block" %>
+        <br>
+      </div>
+    </div>
+  <% end %>
 </div>

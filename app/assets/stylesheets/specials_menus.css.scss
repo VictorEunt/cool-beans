@@ -54,6 +54,10 @@
     border-top: none;
     background: #262626;
   }
+  
+  .panel-footer .btn-default {
+    float: right;
+  }
 
   .menu-price h5 {
     margin-bottom: 10px;
@@ -68,14 +72,6 @@
     text-align: right;
     color: #eee2c3;
   }
-  .actions a {
-  color: #f9f9f9;
-  padding-right: 15px;
-  }
-
-  .actions a:hover {
-    color: #d41a27;
-  }
   
   .well {
   border-color: #1a1a1a;
@@ -89,6 +85,14 @@
   font-size: 16px;
   font-weight: normal;
   line-height: 130%;
+  }
+  
+  .well .btn-default {
+    float: right;
+  }
+  
+  .rank {
+  color: #eee2c3;
   }
 }
 
