@@ -110,7 +110,7 @@ body {
   margin-bottom: 10px;
   text-align: center;
   border: none;
-  max-height: 360px;
+  max-height: 390px;
 }
 
 .nav_link {
@@ -366,6 +366,10 @@ body {
 .rank {
   margin-left: 15px;
   color: #242021;
+}
+
+#home_option {
+display: none;
 }
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {

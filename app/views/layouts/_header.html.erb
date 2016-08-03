@@ -16,7 +16,11 @@
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-collapse">
     <ul class="active nav navbar-nav navbar-right">
-      <li class="<%= active_class(root_path) %>" id="home_option"><%= link_to "Home", root_path, class: "nav_link" %></li>
+      <% if current_page?(root_path) %>
+        <li class="<%= active_class(root_path) %>" id="home_option"><%= link_to "Home", root_path, class: "nav_link" %></li>
+      <% else %>
+        <li class="<%= active_class(root_path) %>"><%= link_to "Home", root_path, class: "nav_link" %></li>
+      <% end %>
       <li class="<%= active_class(about_path) %>"><%= link_to "About Us", about_path, class: "nav_link" %></li>
       <li class="<%= active_class(menu_path) %>"><%= link_to "Our Menu", menu_path, class: "nav_link" %></li>
       <li class="<%= active_class(specials_path) %>"><%= link_to "Specials", specials_path, class: "nav_link" %></li>
