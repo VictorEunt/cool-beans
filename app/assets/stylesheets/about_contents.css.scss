@@ -41,7 +41,7 @@
 #about-style {
   background-color: #eee2c3;
   padding: 0 3%;
-  margin-bottom: 5%;
+  margin-bottom: 25px;
 }
 
 #about-style p {
@@ -65,11 +65,11 @@
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  margin: 0 0 5% 0;
+  margin: 0 0 25px 0;
 }
 
 #about-image-two {
-  margin: 25px 0;
+  margin: 0 0 25px 0;
 }
 
 #about-image-beans {
@@ -103,7 +103,10 @@
 @media (min-width: 768px) {
   #about-image-two {
   display: none;
-}
+  }
+  
+  #about-image-one {
+  }
 }
 
 

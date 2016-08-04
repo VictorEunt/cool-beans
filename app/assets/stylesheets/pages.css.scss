@@ -188,7 +188,7 @@
 
 // Hours Section
 #contact-hours-container {
-  margin-bottom: 25px;
+  margin-bottom: 0;
 
   #contact-hours-style {
   margin: 15px 15px;
@@ -209,9 +209,27 @@
   }
 }
 
+#map-jumbotron {
+  background-image: url("door-800x300.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  padding: 0;
+  border-radius: 0;
+  height: 250px;
+  margin: 5% 2% 15% 2%;
+  }
+
+  iframe{
+    height: 100%;
+    width: 100%;
+    opacity: .9;
+  }
 
 #contact-jumbotron {
   background-image: url("door-800x300.png");
+  background-color: rgba(249, 249, 249, .3);
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -220,22 +238,26 @@
   padding-top: 2%;
   margin: 5% 2%;
   color: #eee2c3;
+  border-radius: 0;
+  height: 250px;
   
   p {
     font-family: 'Rye', cursive;
-    background-color: rgba(0, 0, 0, 0.6);
+    font-size: 32px;
+    color: #000;
+    background-color: rgba(249, 249, 249, .4);
     padding: 3%;
-    line-height: 85%;
+    line-height: 90%;
   }
   
   img {
-    height: 100px;
-    padding-bottom: 10px;
+    height: 125px;
+    padding: 10px 0;
   }
   
   img:hover {
-    opacity: .7;
-    height: 125px;
+    opacity: .5;
+    width: 120px;
     overflow: visible;
     -webkit-transition: all 0.4s ease-in-out;
     -moz-transition: all 0.4s ease-in-out;
@@ -252,6 +274,10 @@
   height: 200px;
   }
   
+  #contact-header {
+  margin-bottom: 25px;
+  }
+  
   #contact-image-one {
     background-image: url("patio-color-lrg.png");
     height: 300px;
@@ -259,12 +285,25 @@
   }
     // Hours Section
   #contact-hours-container {
-
+    margin-bottom: 2%;
 
     #contact-hours-style p {
     font-size: 18px;
     }
+  }
 
+  #contact-jumbotron {
+    margin: 0 2% 0 2%;
+    height: 250px;
+    
+    p {
+    font-size: 36px;
+  }
+  }
+    
+  #map-jumbotron {
+  height: 250px;
+  margin: 5% 2% 15% 2%;
   }
  
 }
@@ -311,9 +350,7 @@
   
   #contact-header {
   margin: 0 0 15px 0;
-}
-  .embed-responsive-item{
-    height: auto;
-    width: 100%;
   }
+  
+
 }
