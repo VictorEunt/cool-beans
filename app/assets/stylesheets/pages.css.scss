@@ -190,45 +190,130 @@
 #contact-hours-container {
   margin-bottom: 25px;
 
-  #hours-style {
+  #contact-hours-style {
   margin: 15px 15px;
   border: solid 1px #f9f9f9;
   padding: 5%;
   height: auto;
   }
 
-  #hours-style p {
-  font-size: 22px;
+  #contact-hours-style p {
+  font-size: 16px;
   color: #eee2c3;
   text-align: center;
   }
 
-  #hours-text {
-  color: #f9f9f9;
+  #contact-hours-text {
+    text-align: center;
+    color: #f9f9f9;
+  }
+}
+
+
+#contact-jumbotron {
+  background-image: url("door-800x300.png");
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  text-align: center;
+  padding-top: 2%;
+  margin: 5% 2%;
+  color: #eee2c3;
+  
+  p {
+    font-family: 'Rye', cursive;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 3%;
+    line-height: 85%;
+  }
+  
+  img {
+    height: 100px;
+    padding-bottom: 10px;
+  }
+  
+  img:hover {
+    opacity: .7;
+    height: 125px;
+    overflow: visible;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
   }
 }
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
+  #brunch-header-image {
+  height: 200px;
+  }
   
+  #contact-image-one {
+    background-image: url("patio-color-lrg.png");
+    height: 300px;
+    margin: 0 0 3% 0;
+  }
+    // Hours Section
+  #contact-hours-container {
+
+
+    #contact-hours-style p {
+    font-size: 18px;
+    }
+
+  }
+ 
 }
 
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
   
-  #brunch-style .well p {
-  font-size: 18px;
-}
+ 
+    #brunch-header-image {
+    background-image: url("bar-superhero-lrg.png");
+    width: 100%;
+    height: 240px;
+    margin: -20px 0 5% 0;
+  }
+    #brunch-style .well p {
+    font-size: 16px;
+  }
+  
+  // Hours Section
+  #contact-hours-container {
+
+
+    #contact-hours-style p {
+    font-size: 22px;
+    }
+
+  }
   
 }
 
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
-  #brunch-style .well p {
-  font-size: 22px;
-}
+  #brunch-header-image {
+  background-image: url("bar-superhero-lrg.png");
+  width: 100%;
+  height: 280px;
+  margin: -20px 0 5% 0;
+  }
+  #contact-image-one {
+    height: 400px;
+  }
   
+  #contact-header {
+  margin: 0 0 15px 0;
+}
+  .embed-responsive-item{
+    height: auto;
+    width: 100%;
+  }
 }

@@ -18,7 +18,7 @@
 <div class="container-fluid">
 <div id="brunch-style">
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-9 col-lg-9">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-8">
       <h1>The Dive Brunch</h1>
     </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
@@ -41,7 +41,7 @@
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Brunch-Note' && menu_item.description.present? %>
       <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-7">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-7">
           <div class="well well-lg">
             <p><%= menu_item.description %></p>
               <% if menu_item.extra_one.present? %>
@@ -112,7 +112,7 @@
   </div>
 
   <div class="row">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-9 col-lg-9">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-8">
       <h1>Dive Brunch Cocktails</h1>
       </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
@@ -134,7 +134,7 @@
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Brunch-Cocktails-Note' && menu_item.description.present? %>
       <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-7">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-7">
           <div class="well well-lg">
             <p><%= menu_item.description %></p>
               <% if menu_item.extra_one.present? %>

@@ -2,6 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#gallery-container {
+  margin-bottom: 50px;
+}
 #gallery-form .panel-body p {
   color: #666666;
 }
@@ -27,7 +30,7 @@
   font-weight: bold;
   color: #d41a27;
   line-height: 90%;
-  margin-top: 13%;
+  margin: 50px 20px;
 }
 
 #gallery-header-image h1 small {
@@ -76,18 +79,43 @@
     margin: 0 auto;
   }
   
+  #gallery-header-image h1 {
+  text-align: center;
+  font-size: 72px;
+  font-weight: bold;
+  color: #d41a27;
+  line-height: 90%;
+  margin-top: 3%;
+}
+  
 }
 
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 
+  #gallery-header-image {
+  background-image: url("beans-across-lrg.png");
+  height: 325px;
+  }
   
+  #gallery-header-image h1 {
+  font-size: 100px;
+  margin-top: 3%;
+  }
 }
 
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-
+  
+  #gallery-header-image {
+  height: 375px;
+  }
+  
+  #gallery-header-image h1 {
+  font-size: 150px;
+  margin-top: 3%;
+  }
   
 }

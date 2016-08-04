@@ -123,6 +123,10 @@
   #burger_two {
     display: block;
 }
+  #menu-header-image h1 {
+  font-size: 52px;
+  margin: 10% 0 0 8%;
+}
   
 }
 
@@ -131,7 +135,17 @@
 @media (min-width: 992px) {
   
   #menu-style .well p {
-  font-size: 18px;
+  font-size: 16px;
+}
+  #menu-header-image {
+  background-image: url("mac-cheese-lrg.png");
+  height: 500px;
+}
+  #menu-header-image h1 {
+  margin: 150px 0 0 7%;
+}
+  #menu-header-image h1 small {
+  font-size: 130px;
 }
   
 }
@@ -140,8 +154,6 @@
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
-  #menu-style .well p {
-  font-size: 22px;
-}
+
   
 }

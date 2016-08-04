@@ -1,9 +1,13 @@
 <div id="contact-header">
   <div class="container-fluid">
-    <h1>Cool Beans</h1>
-    <h2>1210 W Hickory St.</h2>
-    <h3>Denton, TX 76201</h3>
-    <h3><a href="tel:940-382-7025">940-382-7025</a></h3>
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
+      <h1>Cool Beans</h1>
+      <h2>1210 W Hickory St.</h2>
+      <h3>Denton, TX 76201</h3>
+      <h3><a href="tel:940-382-7025">940-382-7025</a></h3>
+    </div>
+  </div>
   </div>
 </div>
 
@@ -17,9 +21,9 @@
   <div class="row">
   <% @hours.each do |hour| %>
     <% if hour.name == 'Regular Hours' %>
-        <div class="col-xs-12 col-sm-6">
-          <div id="hours-style">
-            <p id="hours-text">Our Hours</p>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-8 col-lg-offset-2">
+          <div id="contact-hours-style">
+            <h3 id="contact-hours-text">Our Hours</h3>
             <p><%= hour.note %></p>
             <p><%= hour.message %></p>
             <% if user_signed_in? %>
@@ -35,19 +39,21 @@
 </div>
 </div>
 
-<div class="container-fluid">
-<div id="contact-style">  
-  <div class="row">
 
+
+
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-lg-6">
+    <div class="jumbotron center" id="contact-jumbotron">
+      <%= link_to image_tag("instagram.png"), "https://www.instagram.com/coolbeans_denton/", :alt=> 'instagram logo' %>
+      <p>Connect With Us on Instagram</p>
+    </div>
   </div>
-</div>
-</div>
-
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="embed-responsive embed-responsive-4by3">
-    <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3337.971493004789!2d-97.14812848489751!3d33.214843568839136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864dca663c5b411f%3A0x97228866b3d7a84a!2sCool+Beans!5e0!3m2!1sen!2sus!4v1470024490089" style="border:0" allowfullscreen></iframe>
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-lg-6 col-lg-offset-0">
+      <div class="jumbotron center" id="contact-jumbotron">
+      <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3337.971493004789!2d-97.14812848489751!3d33.214843568839136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x864dca663c5b411f%3A0x97228866b3d7a84a!2sCool+Beans!5e0!3m2!1sen!2sus!4v1470024490089" style="border:0" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
 </div>

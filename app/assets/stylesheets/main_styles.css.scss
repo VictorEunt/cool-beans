@@ -380,32 +380,37 @@ display: none;
 		display:none;
 		}
   .navbar-brand {
-    left: 10%;
-    height: 200px;
+    left: 8%;
+    height: 165px;
   }
   .navbar-collapse {
-  width: 100%;
   margin-top: 0;
   margin-bottom: 0;
-  text-align: center;
-  border: none;
   }
+  
  .navbar-right {
   padding-top: 0%;
   margin-top: 0%;
-	margin-bottom: 5px;
-  margin-left: 0px;
-  margin-right: 1%;
-  padding-right: 0px;
+	margin-bottom: 0;
+  margin-left: 0;
+  padding-right: 15px;
 }
   .nav_link {
-  font-size: 110%;
-  width: 100px;
-	font-weight: bold;
+  font-size: 14px;
+  width: 86px;
+	font-weight: normal;
+  }
+  
+  .navbar-nav li a {
+    line-height: 15px;
   }
 
   #home_option {
   display: none;
+  }
+  
+  .modal-dialog {
+    left: 0;
   }
   
 }
@@ -414,11 +419,24 @@ display: none;
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: $screen-md-min) {
   .navbar-brand {
-
-
+    left: 8%;
   }
+  
+ .navbar-right {
+  padding-top: 0%;
+  margin-top: 0%;
+	margin-bottom: 0;
+  margin-left: 0;
+  padding-right: 20px;
+}
   .nav_link {
-	 margin-bottom: 2px;
+  font-size: 16px;
+  width: 115px;
+	font-weight: normal;
+  }
+  
+  .navbar-nav li a {
+    line-height: 15px;
   }
   p {
     font-size: 18px;
@@ -429,12 +447,32 @@ display: none;
 	h3 {
 		font-size: 28px;
 	}
+  
+  #footer-copy {
+   margin-top: 35px;
+  
+     h5 {
+     font-size: 18px;
+    }
+
+     p {
+     line-height: 100%;
+    }
+
+  }
+  
+  // Vip Form
+.input-vip {
+    font-size: 150%;
+  }
+  
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: $screen-lg-min) {
   .navbar-brand {
-
+    left: 10%;
+    height: 200px;
   }
   .navbar-toggle {
   display: none;

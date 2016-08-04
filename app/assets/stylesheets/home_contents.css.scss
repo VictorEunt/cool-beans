@@ -382,10 +382,21 @@ margin-bottom: 25px;
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   
-  #hero-image {
-    margin-bottom: 25px;
-  }
-  
+  // Hero Section 
+#hero-image {
+  background-image: url('hero-tables.png');
+  height: 400px;
+  margin-bottom: 25px;
+}
+
+
+#home-title {
+  font-size: 80px;
+  margin-top: 40px;
+  line-height: 85%;
+  padding-top: 10px;
+}
+    
   #hours-container {
   }
   
@@ -397,7 +408,7 @@ margin-bottom: 25px;
   }
 
   #all-ages p {
-  font-size: 22px;
+  font-size: 20px;
   color: #eee2c3;
   text-align: center;
   }  
@@ -414,7 +425,7 @@ margin-bottom: 25px;
   }
   
   #hours-style p {
-  font-size: 22px;
+  font-size: 20px;
   color: #eee2c3;
   text-align: center;
   }
@@ -423,6 +434,13 @@ margin-bottom: 25px;
   color: #f9f9f9;
   }
 
+  
+  // Weekend Section
+#weekend-styles {
+  .thumbnail {
+   height: 290px;
+  }
+  }
 
   #classics-container {
   height: 500px;
@@ -459,10 +477,53 @@ margin-bottom: 25px;
     }
     
   }
+  
+  #event-styles {
+
+  .thumbnail {
+    height: 290px;
+  }
+
+}
+
+  
+#event-modal-styles .modal-header .close {
+    color: #f9f9f9;
+    opacity: .7;
+  }
+
+#event-modal-styles h4 {
+    color: #eee2c3;
+  }
+
+#event-modal-styles .modal-body p {
+    color: #eee2c3;
+    font-size: 16px;
+    margin-top: 15px;
+  }
+  
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+  
+  #hero-image {
+  background-image: url('hero-tables-lrg.png');
+  height: 400px;
+  margin-bottom: 25px;
+  }
+  
+  #home-title {
+  margin-top: 20px;
+  }
+  
+  #all-ages #ages-text {
+  font-size: 24px;
+  }
+  
+  #hours-style #hours-text {
+  font-size: 24px;
+  }
   
   #classics-container {
     height: 550px;
@@ -473,17 +534,65 @@ margin-bottom: 25px;
    .thumbnail {
       padding: 5%;
       margin: 15px 2%;
-      height: 400px;
+      height: 410px;
     }
 
     .thumbnail p {
       font-size: 18px;
     }
-    
   }
   
-  #hero-image {
-    margin-bottom: 25px;
+  #event-styles {
+
+    .thumbnail {
+      height: 335px;
+    }
+    .thumbnail p {
+      font-size: 18px;
+    }
+  }
+  
+  // Weekend Section
+  #weekend-styles {
+    .thumbnail {
+     height: 335px;
+    }
+    .thumbnail p {
+      font-size: 18px;
+    }
+  }
+  
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  
+  #home-title {
+  margin-top: 30px;
+  }
+  
+    #classics-styles {
+    
+   .thumbnail {
+      height: 430px;
+    }
+
+  }
+  
+  #event-styles {
+
+    .thumbnail {
+      height: 365px;
+    }
+
+  }
+  
+  // Weekend Section
+  #weekend-styles {
+    .thumbnail {
+     height: 365px;
+    }
+
   }
   
 }

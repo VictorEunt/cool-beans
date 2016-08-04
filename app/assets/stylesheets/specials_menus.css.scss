@@ -153,3 +153,51 @@
 #admin-page-links a:hover {
   color: #d41a27;
 }
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  
+  #food-specials-image h1 {
+    font-size: 72px;
+    line-height: 90%;
+    margin: 8% 10%;
+  }
+  #drinks-image h1 {
+    font-size: 72px;
+    line-height: 90%;
+    margin: 8% 10%;
+  }
+ 
+}
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #food-specials-image {
+    background-image: url("cheeseburger-lrg.png");
+    height: 500px;
+  }
+
+  #food-specials-image h1 {
+    font-size: 100px;
+    margin: 10% 10%;
+  }
+
+  #drinks-image {
+    background-image: url("cherries-lrg.png");
+    height: 500px;
+  }
+
+  #drinks-image h1 {
+    font-size: 100px;
+    margin: 10% 10%;
+  }
+  
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  
+}
