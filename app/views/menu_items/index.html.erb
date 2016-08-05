@@ -17,10 +17,35 @@
 </div>
 
 <div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+      <div class="dropdown">
+        <button class="btn btn-default btn-lg btn-block dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Our Menu Sections
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+          <li><a href="#burger-anchor">Our Burgers</a></li>
+          <li><a href="#chicken-anchor">Chicken Sandwiches</a></li>
+          <li><a href="#basket-anchor">Baskets and More</a></li>
+          <li><a href="#vegetarian-anchor">For the Vegetarian</a></li>
+          <li><a href="#munchies-anchor">The Munchies</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="/specials">Food and Drink Specials</a></li>
+          <li><a href="/brunch">Sunday Dive Brunch</a></li>
+          <li role="separator" class="divider"></li>
+          <li><a href="#">PDF Menu</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
 <div id="menu-style">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-8">
-      <h1>Our Burgers</h1>
+      <h1 id="burger-anchor">Our Burgers</h1>
     </div>
   
   <% @menu_photos.each do |menu_photo| %>
@@ -129,7 +154,7 @@
   
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
-      <h1>Our Chicken Sandwiches</h1>
+      <h1 id="chicken-anchor">Our Chicken Sandwiches</h1>
     </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
       <% @menu_photos.each do |menu_photo| %>
@@ -222,7 +247,7 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-8">
-      <h1>Our Baskets and More</h1>
+      <h1 id="basket-anchor">Our Baskets and More</h1>
       </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
       <% @menu_photos.each do |menu_photo| %>
@@ -315,7 +340,7 @@
   
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-8">
-      <h1>For the Vegetarian</h1>
+      <h1 id="vegetarian-anchor">For the Vegetarian</h1>
       </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
       <% @menu_photos.each do |menu_photo| %>
@@ -408,7 +433,7 @@
 
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-8">
-      <h1>The Munchies</h1>
+      <h1 id="munchies-anchor">The Munchies</h1>
       </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
       <% @menu_photos.each do |menu_photo| %>
