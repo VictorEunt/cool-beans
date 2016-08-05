@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   devise_for :users
   
+ 
+  
   root "home_contents#index"
   get "about" => "about_contents#index"
   get "menu" => "menu_items#index"
@@ -35,9 +37,11 @@ Rails.application.routes.draw do
   get "brunch" => "pages#brunch"
   get "gallery" => "gallery_photos#index"
   get "contact" => "pages#contact"
-  get "manager" => "pages#manager"
-
-
+  get "dashboard" => "pages#dashboard"
+  get "email" => "manager_notes#index"
+  devise_scope :user do
+    get "manager" => "devise/sessions#new"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

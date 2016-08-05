@@ -28,7 +28,7 @@ class MenuItemsController < ApplicationController
   def create
     @menu_item = MenuItem.new(menu_item_params)
     if @menu_item.save
-      redirect_to manager_path, notice: 'Your menu item was successfully created.'
+      redirect_to dashboard_path, notice: 'Your menu item was successfully created.'
     else
       render action: 'new'
     end
@@ -36,7 +36,7 @@ class MenuItemsController < ApplicationController
 
   def update
    if @menu_item.update(menu_item_params)
-      redirect_to manager_path, notice: 'Your menu item was saved.'
+      redirect_to dashboard_path, notice: 'Your menu item was saved.'
     else
       render action: 'edit'
     end
@@ -44,7 +44,7 @@ class MenuItemsController < ApplicationController
 
   def destroy
     @menu_item.destroy
-    redirect_to manager_path
+    redirect_to dashboard_path
   end
 
   private

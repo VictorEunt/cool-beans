@@ -27,13 +27,16 @@ class AboutContentsController < ApplicationController
   end
 
   def update
-    @about_content.update(about_content_params)
-    respond_with(@about_content)
+   if @about_content.update(about_content_params)
+      redirect_to dashboard_path, notice: 'Your update was saved.'
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
     @about_content.destroy
-    respond_with(@about_content)
+    redirect_to dashboard_path
   end
 
   private

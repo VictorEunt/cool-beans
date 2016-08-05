@@ -22,18 +22,24 @@ class MenuPhotosController < ApplicationController
 
   def create
     @menu_photo = MenuPhoto.new(menu_photo_params)
-    @menu_photo.save
-    respond_with(@menu_photo)
+    if @menu_photo.save
+      redirect_to dashboard_path, notice: 'Your menu photo was successfully created.'
+    else
+      render action: 'new'
+    end
   end
 
   def update
-    @menu_photo.update(menu_photo_params)
-    respond_with(@menu_photo)
+   if @menu_photo.update(menu_photo_params)
+      redirect_to dashboard_path, notice: 'Your menu photo was saved.'
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
     @menu_photo.destroy
-    respond_with(@menu_photo)
+    redirect_to dashboard_path
   end
 
   private

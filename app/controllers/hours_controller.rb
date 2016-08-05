@@ -1,5 +1,6 @@
 class HoursController < ApplicationController
   before_action :set_hour, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy]
 
   respond_to :html
 
@@ -27,13 +28,16 @@ class HoursController < ApplicationController
   end
 
   def update
-    @hour.update(hour_params)
-    respond_with(@hour)
+   if @hour.update(hour_params)
+      redirect_to dashboard_path, notice: 'Your update was saved.'
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
     @hour.destroy
-    respond_with(@hour)
+    redirect_to dashboard_path
   end
 
   private

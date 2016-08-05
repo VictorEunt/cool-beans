@@ -31,7 +31,7 @@ class WeekendsController < ApplicationController
 
   def update
     if @weekend.update(weekend_params)
-      redirect_to root_path, notice: 'Your updates were saved.'
+      redirect_to dashboard_path, notice: 'Your updates were saved.'
     else
       render action: 'edit'
     end
@@ -39,7 +39,7 @@ class WeekendsController < ApplicationController
 
   def destroy
     @weekend.destroy
-    redirect_to manager_path
+    redirect_to dashboard_path
   end
 
   private

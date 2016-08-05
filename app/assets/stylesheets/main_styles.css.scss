@@ -383,6 +383,11 @@ body {
 #home_option {
 display: none;
 }
+
+#login-jumbotron {
+    margin-bottom: 200px;
+  }
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
 	.navbar-toggle {

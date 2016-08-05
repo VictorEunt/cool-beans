@@ -25,15 +25,18 @@ class ClassicsController < ApplicationController
     @classic.save
     respond_with(@classic)
   end
-
+  
   def update
-    @classic.update(classic_params)
-    respond_with(@classic)
+   if @classic.update(classic_params)
+      redirect_to dashboard_path, notice: 'Your update was saved.'
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
     @classic.destroy
-    respond_with(@classic)
+    redirect_to dashboard_path
   end
 
   private

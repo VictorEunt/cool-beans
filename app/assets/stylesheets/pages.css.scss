@@ -274,6 +274,21 @@
   padding-bottom: 5%;
 }
 
+//Dashboard Styles
+
+#dashboard-styles{
+  p {
+    color: #eee2c3;
+  }
+  h5 {
+    margin-top: 40px;
+  }
+  
+  .well-lg a {
+    color: #ffc902;
+  }
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   #brunch-header-image {

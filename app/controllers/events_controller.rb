@@ -27,14 +27,17 @@ class EventsController < ApplicationController
   end
 
   def update
-    @event.update(event_params)
-    respond_with(@event)
+   if @event.update(event_params)
+      redirect_to dashboard_path, notice: 'Your update was saved.'
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
     @event.destroy
-    respond_with(@event)
-  end
+    redirect_to dashboard_path
+  end  
 
   private
     def set_event
