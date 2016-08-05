@@ -21,4 +21,12 @@ class PagesController < ApplicationController
       format.html
     end
   end
+  def specials
+    @menu_items = MenuItem.all.order('item_rank ASC')
+    @menu_photos = MenuPhoto.all
+
+    respond_to do |format|
+      format.html 
+    end
+  end
 end

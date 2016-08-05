@@ -1,0 +1,28 @@
+<div class="container-fluid">
+<h1>Edit or Add Menu Section Notes</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Image Section</th>
+      <th>Image Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @menu_items.each do |menu_item| %>
+    <% if menu_item.name == 'note' %> 
+      <tr>
+        <td><%= menu_item.menu_section %></td>
+        <td><%= menu_item.description %></td>
+        <td><%= link_to 'Update', edit_menu_item_path(menu_item) %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+</div>

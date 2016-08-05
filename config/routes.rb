@@ -33,12 +33,13 @@ Rails.application.routes.draw do
   root "home_contents#index"
   get "about" => "about_contents#index"
   get "menu" => "menu_items#index"
-  get "specials" => "specials_menus#index"
+  get "specials" => "pages#specials"
   get "brunch" => "pages#brunch"
   get "gallery" => "gallery_photos#index"
   get "contact" => "pages#contact"
   get "dashboard" => "pages#dashboard"
   get "email" => "manager_notes#index"
+  get "specials" => "pages#specials"
   devise_scope :user do
     get "manager" => "devise/sessions#new"
   end

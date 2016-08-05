@@ -46,7 +46,7 @@ class MenuItemsController < ApplicationController
     @menu_item.destroy
     redirect_to dashboard_path
   end
-
+  
   private
     def set_menu_item
       @menu_item = MenuItem.find(params[:id])

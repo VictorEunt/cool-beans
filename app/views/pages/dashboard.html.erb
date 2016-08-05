@@ -3,37 +3,50 @@
     <div class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
         <h1>The Dashboard</h1>
-  <p>Visit the Home page to edit its contents. You can also visit any page once logged in to edit or add to its content.</p>
+        <p>Visit the Home page to edit its content. Now that you are logged in, you can visit any page to edit or add to its content.</p>
       </div>
     </div>
     <% if user_signed_in? %>
       <div class="row">
         <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
-          <h5>Add to the Menu</h5>
-          <p>This can be a menu note or a menu item for the food, specials, or brunch menu.</p>
+          <h5>Add a new item to a Menu</h5>
+          <p>This can be a new menu item for the food, specials, or brunch menu.</p>
           <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-primary btn-lg btn-block" %>
           <br>
-          <h5>Edit Menu Photos</h5>
-          <p>Edit Menu Photos for the food, specials, and brunch menu.<p>
+          
+          <h5>Update a desription or note for any Menu Section</h5>
+          <p>This note would fall under a menu section such as Our Burgers or Chicken Sandwiches.</p>
+          <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-primary btn-lg btn-block" %>
+          <br>
+          
+          <h5>Edit Your Menu Photos</h5>
+          <p>You can edit the Menu Photos for your food, specials, and brunch menu.<p>
           <%= link_to 'Edit Menu Photos', menu_photos_path, class: "btn btn-primary btn-lg btn-block" %><br>
+          
           <h5>Add a Gallery Photo</h5>
-          <p>Add a photo to the gallery.</p>
+          <p>Have a great Cool Beans photo? Add it to the gallery.</p>
           <%= link_to 'Add a Gallery photo', new_gallery_photo_path, class: "btn btn-primary btn-lg btn-block" %><br>
+          
           <h5>Edit the About Us content</h5>
-          <p>Edit or add content to the about page.</p>
+          <p>You can edit or add new content sections to the about page.</p>
           <%= link_to 'Edit About Contents', edit_about_content_path(1), class: "btn btn-primary btn-lg btn-block" %><br>
-          <h5>Edit Hours contents</h5>
-          <p>The hours note appears on the home page and the hours note and message both appear on the Contact page.</p>
+          
+          <h5>Edit the Hours content</h5>
+          <p>The hours content appears both on the Home and Contact page.</p>
           <%= link_to 'Edit Hours Content', edit_hour_path(1), class: "btn btn-primary btn-lg btn-block" %><br>
-          <h5>Manage Dive VIPs</h5>
-          <p>You can view, add, and delete VIP members.</p>
+          
+          <h5>Manage Your Dive VIPs</h5>
+          <p>You can view, add, and delete your VIP members.</p>
           <%= link_to 'DIVE VIPs', members_path, class: "btn btn-primary btn-lg btn-block" %><br>
-          <h5>Create or Send an Email</h5>
-          <p>Create a new email or send a saved one to the Dive VIPs.</p>
+          
+          <h5>Create or Send an Email to Your Dive VIPs</h5>
+          <p>Create a new email or send a saved one to your Dive VIPs.</p>
           <%= link_to 'VIP Emails', email_path, class: "btn btn-primary btn-lg btn-block" %><br>
+          
           <h5>Log out</h5>
           <p>Don't forget to log out.</p>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-default btn-lg btn-block"  %>
+          
           <div class="well-lg">Please, contact me if you need any assistance at <a href="mailto:victorestrada.ux@gmail.com">victorestrada.ux@gmail.com</a>.</div>
         </div>
       </div>
