@@ -47,7 +47,12 @@
           <p>Don't forget to log out.</p>
           <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-default btn-lg btn-block"  %>
           
-          <div class="well-lg">Please, contact me if you need any assistance at <a href="mailto:victorestrada.ux@gmail.com">victorestrada.ux@gmail.com</a>.</div>
+          <div class="well-lg">Please, contact me if you need any assistance at <a href="mailto:victorestrada.ux@gmail.com">victorestrada.ux@gmail.com</a>.
+              <h5>Useful Resources</h5>
+              <ul>
+                <li><a href="https://www.usability.gov/how-to-and-tools/methods/writing-for-the-web.html">Tips on writing for the Web</a></li>
+                <li>Once logged in with coolbeans.divebar@gmail.com you can access the saved photos on your <a href="https://drive.google.com/drive/my-drive">Google Drive.</a></li>
+              </ul></div><br>
         </div>
       </div>
     <% end %>
