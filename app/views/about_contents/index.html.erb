@@ -70,6 +70,25 @@
 </div>
 </div>
 
+<div class="container-fluid">
+  <% @about_contents.each do |about_content| %>
+    <% if about_content.name == 'About Page' && about_content.part_five.present? %>
+    <div id="about-style">  
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+          <% if about_content.part_five.present? %>
+            <p><%= about_content.part_five %></p>
+          <% end %>
+          <% if about_content.part_five.present? %>
+            <p><%= about_content.part_five %></p>
+          <% end %>
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>
+</div>
+
 <div id="about-image-two">
   <div class="container-fluid">
     <%= image_tag('outside-grey.png', :class=>'img-responsive', :id=>'about-image-beans', :alt=>'Outside Beans') %>

@@ -1,10 +1,28 @@
 <div class="footer">
   <div class="container">
 			<div class="row">
-        <div class="col-xs-6 col-sm-9">
+        <div class="col-xs-6 col-sm-9 col-md-2 col-lg-1">
           <%= image_tag('eagle-logo.png', :id=>'eagle-image', :alt=>'Eagle Logo') %>
         </div>
-				<div class="col-xs-6 col-sm-3">
+        <div id="hide-footer"> 
+         <div class="col-md-3 col-md-offset-1 col-lg-4 col-lg-offset-2">
+          <ul class="footer-links">
+            <li><%= link_to('Home', root_path)  %></li>
+            <li><%= link_to('About Us', about_path)  %></li>
+            <li><%= link_to('Our Menu', menu_path)  %></li>
+            <li><%= link_to('The Specials', specials_path)  %></li>
+          </ul>
+        </div>
+         <div class="col-md-3 col-lg-3">
+          <ul class="footer-links">
+            <li><%= link_to('Brunch', brunch_path)  %></li>
+            <li><%= link_to('Contact Us', contact_path)  %></li>
+            <li><%= link_to('Dive VIPs', '/#vip-container')  %></li>
+            <li><%= link_to('Instagram', 'https://www.instagram.com/coolbeans_denton/')  %></li>
+          </ul>
+        </div>
+        </div>
+				<div class="col-xs-6 col-sm-3 col-md-3 col-lg-2">
           <div id="footer-copy">
             <h5>Cool Beans</h5>
             <p>1201 W. Hickory St.<br>
@@ -13,13 +31,19 @@
           </div>
 				</div>
 		</div>
-	</div>
+    <div class="row">
+      <div class="col-xs-12">
+         <p id="copyright-year">11am to 2am everyday | 11am to 9pm all ages</p>
+      </div>
+	 </div>
+  </div>
+</div>
 
 <div id="footer-note">
     <div class="container">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12">
-          <p>11am to 2am everyday | 11am to 9pm all ages</p>
+          <h6>&#169; Denton's Finest Dive Bar | <%= Date.today.year %></h6>
 				</div>
 		</div>
 	</div>
