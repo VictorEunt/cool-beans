@@ -1,6 +1,6 @@
 class HoursController < ApplicationController
   before_action :set_hour, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :show, :new, :edit, :create, :update, :destroy]
 
   respond_to :html
 

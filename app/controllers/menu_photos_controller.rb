@@ -1,5 +1,6 @@
 class MenuPhotosController < ApplicationController
   before_action :set_menu_photo, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :show, :new, :edit, :create, :update, :destroy]
 
   respond_to :html
 

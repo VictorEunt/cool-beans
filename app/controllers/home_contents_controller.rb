@@ -1,5 +1,6 @@
 class HomeContentsController < ApplicationController
   before_action :set_home_content, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy]
 
   respond_to :html
 

@@ -1,14 +1,14 @@
 <div id="dashboard-styles"> 
   <div class="container-fluid">
     <div class="row">
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
         <h1>The Dashboard</h1>
         <p>Visit the Home page to edit its content. Now that you are logged in, you can visit any page to edit or add to its content.</p>
       </div>
     </div>
     <% if user_signed_in? %>
       <div class="row">
-        <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <div class="xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
           <h5>Add a new item to a Menu</h5>
           <p>This can be a new menu item for the food, specials, or brunch menu.</p>
           <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-primary btn-lg btn-block" %>
@@ -16,7 +16,7 @@
           
           <h5>Update a desription or note for any Menu Section</h5>
           <p>This note would fall under a menu section such as Our Burgers or Chicken Sandwiches.</p>
-          <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-primary btn-lg btn-block" %>
+          <%= link_to 'Edit Menu Descriptions', specials_menus_path, class: "btn btn-primary btn-lg btn-block" %>
           <br>
           
           <h5>Edit Your Menu Photos</h5>
@@ -36,7 +36,7 @@
           <%= link_to 'Edit Hours Content', edit_hour_path(1), class: "btn btn-primary btn-lg btn-block" %><br>
           
           <h5>Manage Your Dive VIPs</h5>
-          <p>You can view, add, and delete your VIP members.</p>
+          <p>You can view and delete your VIP members.</p>
           <%= link_to 'DIVE VIPs', members_path, class: "btn btn-primary btn-lg btn-block" %><br>
           
           <h5>Create or Send an Email to Your Dive VIPs</h5>

@@ -1,5 +1,6 @@
 class MembersController < ApplicationController
   before_action :set_member, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :show, :edit]
 
   respond_to :html
 
@@ -9,7 +10,6 @@ class MembersController < ApplicationController
   end
 
   def show
-    respond_with(@member)
   end
 
   def new

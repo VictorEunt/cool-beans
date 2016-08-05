@@ -12,7 +12,8 @@
         </ul>
       </div>
     <% end %>
-
+<div class="row">
+  <div class="xs-12 col-md-6 col-md-offset-3">
   <div class="panel panel-default">
     <div class="panel-heading">
       <h2>Menu Item Form</h2>
@@ -20,7 +21,7 @@
   <div class="panel-body">
     <div class="form-group">
       <p><%= f.label :menu_section %></p>
-      <p><%= f.text_field :menu_section, class: "input-lg" %></p>
+      <p><%= f.select(:menu_section, [['Our Burgers', 'Burgers'], ['Our Chicken Sandwiches', 'Chicken Sandwiches'], ['Our Baskets and More', 'Baskets and More'], ['For the Vegetarian', 'Vegetarian'], ['The Munchies', 'Munchies'], ['Weekly Food Specials', 'Food Specials'], ['Happy Hour Food', 'Happy Hour Food'], ['Weekly Drink Specials', 'Weekly Drink Specials'], ['Pitcher Specials', 'Pitcher Specials'], ['Happy Hour Drinks', 'Happy Hour Drinks'], ['7 to 11pm Drinks', '7 to 11 Drinks'], ['9 to 11pm Drinks', '9 to 11 Drinks'], ['Dive Brunch', 'Sunday Brunch'], ['Dive Brunch Cocktails', 'Brunch Cocktails']], {prompt: "Please Select"}, {class: "input-lg"}) %></p>
     </div>
     <div class="form-group">
       <p><%= f.label :item_rank, "Order of Item" %></p>
@@ -47,19 +48,19 @@
       <p><%= f.text_field :extra_one_price, class: "input-lg" %></p>
     </div>
     <div class="form-group">
-      <p><%= f.label :extra_two, "Add On" %></p>
+      <p><%= f.label :extra_two, "Add On (2)" %></p>
       <p><%= f.text_field :extra_two, class: "input-lg" %></p>
     </div>
     <div class="form-group">
-      <p><%= f.label :extra_two_price, "Add On Price" %></p>
+      <p><%= f.label :extra_two_price, "Add On Price (2)" %></p>
       <p><%= f.text_field :extra_two_price, class: "input-lg" %></p>
     </div>
     <div class="form-group">
-      <p><%= f.label :extra_three, "Add On" %></p>
+      <p><%= f.label :extra_three, "Add On (3)" %></p>
       <p><%= f.text_field :extra_three, class: "input-lg" %></p>
     </div>
     <div class="form-group">
-      <p><%= f.label :extra_three_price, "Add On Price" %></p>
+      <p><%= f.label :extra_three_price, "Add On Price (3)" %></p>
       <p><%= f.text_field :extra_three_price, class: "input-lg" %></p>
     </div>
      <div class="form-group">
@@ -72,5 +73,7 @@
 
   <% end %>
   </div>
-</div>
+  </div>
+  </div>
+  </div>
 </div>

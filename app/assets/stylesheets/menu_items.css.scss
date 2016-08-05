@@ -118,6 +118,22 @@
 #burger_two{
   display: none;
 }
+
+#mobile-dropdown {
+  .btn-default {
+    background-color: #eee2c3;
+    font-family: 'Suez One', serif;
+  }
+}
+    
+#food-dropdown {
+  display: none;
+}
+
+#food-dropdown-large {
+  display: none;
+}    
+    
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   #burger_two {
@@ -127,6 +143,12 @@
   font-size: 52px;
   margin: 10% 0 0 8%;
 }
+ #food-dropdown {
+  display: none;
+  }
+ #food-dropdown-large {
+  display: none;
+  }
   
 }
 
@@ -140,6 +162,7 @@
   #menu-header-image {
   background-image: url("mac-cheese-lrg.png");
   height: 500px;
+  margin-bottom: 40px;
 }
   #menu-header-image h1 {
   margin: 150px 0 0 7%;
@@ -147,6 +170,30 @@
   #menu-header-image h1 small {
   font-size: 130px;
 }
+  #mobile-dropdown {
+    display: none;
+  }
+
+ #food-dropdown {
+    display: block;
+    margin-bottom: 25px;
+    margin-left: -1%;
+   
+   .btn-default{
+    background-color: #1a1a1a;
+    font-family: 'Suez One', serif;
+    color: #ffc902;
+    border: none;
+   }
+  
+   .btn-default:hover {
+   color: #f9f9f9;
+   }
+}
+  
+ #food-dropdown-large {
+    display: none;
+  }
   
 }
 
@@ -154,6 +201,24 @@
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
 
-
+  #food-dropdown {
+    display: none;
+  }
+  
+ #food-dropdown-large {
+    display: block;
+    margin: 20px 0 50px -1%;
+   
+   .btn-default{
+    background-color: #1a1a1a;
+    font-family: 'Suez One', serif;
+    color: #ffc902;
+    border: none;
+   }
+   
+   .btn-default:hover {
+     color: #f9f9f9;
+   }
+  }
   
 }

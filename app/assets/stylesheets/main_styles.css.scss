@@ -49,9 +49,9 @@ $form-group-margin-bottom: 25px;
 $modal-content-bg: #242021;
 $modal-header-border-color: #1a1a1a;
 $modal-footer-border-color: #1a1a1a;
-$dropdown-bg: #f9f9f9;
+$dropdown-bg: #eee2c3;
 $dropdown-link-color: #242021;
-$dropdown-link-hover-bg: #d41a27;
+$dropdown-link-hover-bg: rgba(212, 26, 39, .4);
 $dropdown-divider-bg: rgba(212, 26, 39, .4);
 
 
@@ -404,6 +404,10 @@ display: none;
   font-size: 16px;
 }
 
+.table a {
+  color: #ffc902;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
 	.navbar-toggle {
@@ -446,7 +450,13 @@ display: none;
     left: 0;
   }
   
+  .form-titles {
+  margin: 15px 15px 0 0;
+  }
   
+  .dropdown-menu {
+  min-width: 590px;
+  }
 }
 
 

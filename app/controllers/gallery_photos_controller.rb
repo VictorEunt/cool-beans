@@ -1,5 +1,6 @@
 class GalleryPhotosController < ApplicationController
   before_action :set_gallery_photo, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy]
 
   def index
     @gallery_photos = GalleryPhoto.all

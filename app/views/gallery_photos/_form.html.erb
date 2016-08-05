@@ -13,33 +13,36 @@
         </ul>
       </div>
     <% end %>
+    <div class="row">
+      <div class="xs-12 col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h2>Gallery Photo Form</h2>
+          </div>
 
-  <div class="panel panel-default">
-    <div class="panel-heading">
-      <h2>Gallery Photo Form</h2>
+        <div class="panel-body">
+          <div class="form-group">
+            <p><%= f.label :name %></p>
+            <p><%= f.text_field :name, class: "input-lg" %></p>
+          </div>
+          <div class="form-group">
+            <p><%= f.label :description %></p>
+            <p><%= f.text_field :description, class: "input-lg" %></p>
+          </div>
+          <div class="form-group">
+            <p><%= f.label :image %></p>
+            <%= f.file_field :image, class: "btn btn-default btn-lg btn-block" %>
+          </div>
+          <div class="form-group">
+            <%= f.submit "Upload Photo", class: "btn btn-primary btn-lg btn-block" %>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <%= link_to 'Go to Dashboard', dashboard_path, class: "btn btn-default" %>
+        </div>
+        <% end %>
+        </div>
     </div>
-
-  <div class="panel-body">
-    <div class="form-group">
-      <p><%= f.label :name %></p>
-      <p><%= f.text_field :name, class: "input-lg" %></p>
-    </div>
-    <div class="form-group">
-      <p><%= f.label :description %></p>
-      <p><%= f.text_field :description, class: "input-lg" %></p>
-    </div>
-    <div class="form-group">
-      <p><%= f.label :image %></p>
-      <%= f.file_field :image, class: "btn btn-default btn-lg btn-block" %>
-    </div>
-    <div class="form-group">
-      <%= f.submit "Upload Photo", class: "btn btn-primary btn-lg btn-block" %>
-    </div>
-  </div>
-  <div class="panel-footer">
-    <%= link_to 'Go to Dashboard', dashboard_path, class: "btn btn-default" %>
-  </div>
-  <% end %>
   </div>
   </div>
 </div>

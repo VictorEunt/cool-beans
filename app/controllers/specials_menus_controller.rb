@@ -1,5 +1,6 @@
 class SpecialsMenusController < ApplicationController
   before_action :set_specials_menu, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:index, :show, :new, :edit, :create, :update, :destroy]
 
   respond_to :html
 
