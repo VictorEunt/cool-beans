@@ -6,7 +6,7 @@ $navbar-height: 65px;
 $navbar-default-bg: #000;
 $navbar-default-link-color: #f9f9f9;
 $navbar-default-link-active-bg: #000;
-$navbar-default-link-active-color: #eee2c3;
+$navbar-default-link-active-color: #d41a27;
 $navbar-default-link-hover-color: #ffc902;
 $navbar-default-border: #000;
 $navbar-default-toggle-border-color: #000;
@@ -389,6 +389,7 @@ display: none;
 }
 
 #login-jumbotron {
+    padding: 5%;
     margin-bottom: 200px;
   }
 
@@ -401,11 +402,16 @@ display: none;
 .dropdown-menu li {
   font-family: 'Suez One', serif;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
+  margin: 12px 0;
 }
 
 .table a {
   color: #ffc902;
+}
+
+.bottom-menu-links {
+  margin: 5% 0;
 }
 
 /* Small devices (tablets, 768px and up) */

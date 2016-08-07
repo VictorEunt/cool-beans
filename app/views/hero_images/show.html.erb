@@ -3,7 +3,7 @@
 <p>
   <strong>Name:</strong>
   <%= @hero_image.name %>
-  <%= link_to image_tag(@hero_image.image.url(:medium)), @hero_image %>
+  <%= link_to 'The Menu', @hero_image.image.url %>
 </p>
 
 <%= link_to 'Edit', edit_hero_image_path(@hero_image) %> |

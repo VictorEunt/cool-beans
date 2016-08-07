@@ -1,30 +1,30 @@
 <div class="container-fluid">
   <div class="jumbotron" id="login-jumbotron">
-  <h1>Log in to update the Cool Beans website.</h1>
+      <h1>Log in to update the Cool Beans website.</h1>
 
-  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    
-  <div class="form-group form-group-lg">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, class: "form-control" %>
-    </div>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-    <div class="form-group form-group-lg">
-      <%= f.label :password %>
-      <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
-    </div>
+      <div class="form-group form-group-lg">
+          <%= f.label :email %><br />
+          <%= f.email_field :email, autofocus: true, class: "form-control" %>
+        </div>
 
-    <% if devise_mapping.rememberable? -%>
-      <div class="form-group">
-        <%= f.check_box :remember_me %>
-        <%= f.label :remember_me %>
-      </div>
-    <% end -%>
+        <div class="form-group form-group-lg">
+          <%= f.label :password %>
+          <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
+        </div>
 
-    <div class="form-group">
-      <%= f.submit "Log in", class: "btn btn-primary btn-lg btn-block" %>
-    </div>
-  <% end %>
-  <p><%= render "devise/shared/links" %></p>
+        <% if devise_mapping.rememberable? -%>
+          <div class="form-group">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end -%>
+
+        <div class="form-group">
+          <%= f.submit "Log in", class: "btn btn-primary btn-lg btn-block" %>
+        </div>
+      <% end %>
+      <p><%= render "devise/shared/links" %></p>
   </div>
 </div>

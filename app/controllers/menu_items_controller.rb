@@ -7,6 +7,7 @@ class MenuItemsController < ApplicationController
   def index
     @menu_items = MenuItem.all.order('item_rank ASC')
     @menu_photos = MenuPhoto.all
+    @hero_images = HeroImage.all
 
     respond_to do |format|
       format.html  

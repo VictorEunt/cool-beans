@@ -75,6 +75,10 @@
   color: #d41a27;
 }
 
+.menu-price h5 {
+  font-size: 115%;
+}
+
 .menu-extra {
   margin-top: 5px;
   text-align: right;
@@ -132,7 +136,28 @@
 
 #food-dropdown-large {
   display: none;
-}    
+}  
+
+.back-to-top {
+ 
+background: none;
+margin: 0;
+position: fixed;
+bottom: 10%;
+right: 1%;
+width: 40px;
+height: 40px;
+z-index: 100;
+display: none;
+text-decoration: none;
+color: rgba(212, 26, 39, .8);
+background-color: transparent;
+ 
+}
+ 
+.back-to-top span {
+  font-size: 40px;
+}
     
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {

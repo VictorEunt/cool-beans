@@ -3,7 +3,7 @@ class GalleryPhotosController < ApplicationController
   before_action :authenticate_user!, only: [:show, :new, :edit, :create, :update, :destroy]
 
   def index
-    @gallery_photos = GalleryPhoto.all
+    @gallery_photos = GalleryPhoto.all.order('created_at DESC')
   end
 
   def show
@@ -19,7 +19,7 @@ class GalleryPhotosController < ApplicationController
   def create
     @gallery_photo = GalleryPhoto.new(gallery_photo_params)
     if @gallery_photo.save
-      redirect_to gallery_photos_path, notice: 'Photo was successfully created.'
+      redirect_to gallery_path, notice: 'Photo was successfully created.'
     else
       render action: 'new'
     end
@@ -27,7 +27,7 @@ class GalleryPhotosController < ApplicationController
 
   def update
     if @gallery_photo.update(gallery_photo_params)
-      redirect_to gallery_photos_path, notice: 'Photo was successfully updated.'
+      redirect_to gallery_path, notice: 'Photo was successfully updated.'
     else
       render action: 'edit'
     end
@@ -35,7 +35,7 @@ class GalleryPhotosController < ApplicationController
 
   def destroy
     @gallery_photo.destroy
-    redirect_to gallery_photos_path
+    redirect_to gallery_path
   end
 
   private

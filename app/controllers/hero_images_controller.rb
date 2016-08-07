@@ -23,13 +23,19 @@ class HeroImagesController < ApplicationController
 
   def create
     @hero_image = HeroImage.new(hero_image_params)
-    @hero_image.save
-    respond_with(@hero_image)
+    if @hero_image.save
+      redirect_to dashboard_path, notice: 'Your menu was successfully created.'
+    else
+      render action: 'new'
+    end
   end
 
   def update
-    @hero_image.update(hero_image_params)
-    respond_with(@hero_image)
+   if @hero_image.update(hero_image_params)
+      redirect_to dashboard_path, notice: 'Your PDF menu was updated.'
+    else
+      render action: 'edit'
+    end
   end
 
   def destroy
