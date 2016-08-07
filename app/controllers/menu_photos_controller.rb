@@ -5,7 +5,7 @@ class MenuPhotosController < ApplicationController
   respond_to :html
 
   def index
-    @menu_photos = MenuPhoto.all
+    @menu_photos = MenuPhoto.all.order('name ASC')
     respond_with(@menu_photos)
   end
 

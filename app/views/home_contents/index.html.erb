@@ -106,7 +106,7 @@
         <p><%= weekend.first_modal_description %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">The Specials Menu</button>
+        <%= link_to 'The Specials Menu', specials_path, class: "btn btn-primary" %>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -130,7 +130,7 @@
         <p><%= weekend.second_modal_description %></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Sunday Brunch Menu</button>
+        <%= link_to 'Dive Brunch Menu', brunch_path, class: "btn btn-primary" %>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -220,7 +220,7 @@
           <p><%= classic.first_modal_description %></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">The Food Menu</button>
+          <%= link_to 'The Food Menu', menu_path, class: "btn btn-primary" %>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
         </div>
@@ -244,7 +244,7 @@
           <p><%= classic.second_modal_description %></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">The Specials Menu</button>
+          <%= link_to 'The Specials Menu', specials_path, class: "btn btn-primary" %>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -268,7 +268,7 @@
           <p><%= classic.third_modal_description %></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">The Specials Menu</button>
+          <%= link_to 'The Specials Menu', specials_path, class: "btn btn-primary" %>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -347,7 +347,7 @@
           <p><%= event.first_modal_description %></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">The Specials Menu</button>
+          <%= link_to 'The Specials Menu', specials_path, class: "btn btn-primary" %>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
         </div>
@@ -371,7 +371,7 @@
           <p><%= event.second_modal_description %></p>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary">Sign Up to be a Dive VIP</button>
+          <%= link_to "Dive VIPs", '/#vip-container', class: "btn btn-primary" %>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
@@ -430,7 +430,7 @@
   </div>
 </div>
 
-<script src="js/classie.js"></script>
+
 		<script>
 			(function() {
 				// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
