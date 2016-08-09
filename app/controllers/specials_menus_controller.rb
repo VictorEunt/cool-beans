@@ -6,7 +6,7 @@ class SpecialsMenusController < ApplicationController
 
   def index
     @specials_menus = SpecialsMenu.all
-    @menu_items = MenuItem.all.order('item_rank ASC')
+    @menu_items = MenuItem.all.order('menu_section DESC')
     @menu_photos = MenuPhoto.all
     
     respond_to do |format|

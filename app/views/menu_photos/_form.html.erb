@@ -23,7 +23,7 @@
     <div class="panel-body">
       <div class="form-group">
         <p><%= f.label :name %></p>
-        <p><%= f.text_field :name, class: "input-lg" %></p>
+        <p><%= f.select(:name, [['Our Burgers(1)', 'Burgers-One'], ['Our Burgers(2)', 'Burger-Two'], ['Our Chicken Sandwiches', 'Chicken-One'], ['Our Baskets and More', 'Baskets-One'], ['For the Vegetarian', 'Vegetarian-One'], ['The Munchies', 'Munchies-One'], ['Weekly Food Specials(1)', 'Food-Specials-One'], ['Weekly Food Specials(2)', 'Food-Specials-Two'], ['Happy Hour Food', 'Happy-Hour-Food-One'], ['Weekly Drink Specials', 'Weekly-Drink-Specials-One'], ['Pitcher Specials', 'Pitcher-Specials-One'], ['Happy Hour Drinks', 'Happy-Drinks-One'], ['7 to 11pm Drinks', 'Seven-Eleven-One'], ['9 to 11 Drinks', 'Nine-Eleven-One'], ['Dive Brunch', 'Brunch-One'], ['Dive Brunch Cocktails', 'Sunday-Cocktails-One'], ['Drafts', 'Drafts-One']], {prompt: "Please Select"}, {class: "input-lg"}) %></p>
       </div>
       <div class="form-group">
         <p><%= f.label :photo %></p>
