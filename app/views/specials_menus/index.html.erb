@@ -8,7 +8,7 @@
         <tr>
           <th>Menu Section</th>
           <th>Description</th>
-          <th colspan="3"></th>
+          <th colspan="2"></th>
         </tr>
       </thead>
 
@@ -19,7 +19,7 @@
             <td><%= menu_item.menu_section %></td>
             <td><%= menu_item.description %></td>
             <td><%= link_to 'Update', edit_menu_item_path(menu_item) %></td>
-            <td><%= link_to 'Destroy', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <td><%= link_to 'Delete', menu_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr>
         <% end %>
         <% end %>

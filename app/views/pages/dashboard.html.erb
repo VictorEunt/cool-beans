@@ -9,6 +9,8 @@
     <% if user_signed_in? %>
       <div class="row">
         <div class="xs-12 col-sm-10 col-sm-offset-1 col-md-6 col-md-offset-3">
+          <h2>Menu Options</h2>
+          
           <h5>Add a new item to a Menu</h5>
           <p>This can be a new menu item for the food, specials, or brunch menu.</p>
           <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-primary btn-lg btn-block" %>
@@ -19,14 +21,20 @@
           <%= link_to 'Edit Menu Descriptions', specials_menus_path, class: "btn btn-primary btn-lg btn-block" %>
           <br>
           
+          <h5>Add a Menu Photo</h5>
+          <p>You can add a Menu Photo for your food, specials, brunch, and drafts menu.<p>
+          <%= link_to 'New Menu Photos', new_menu_photo_path, class: "btn btn-primary btn-lg btn-block" %><br>
+          
           <h5>Edit Your Menu Photos</h5>
-          <p>You can edit the Menu Photos for your food, specials, and brunch menu.<p>
+          <p>You can edit the Menu Photos for your food, specials, brunch, and drafts menu.<p>
           <%= link_to 'Edit Menu Photos', menu_photos_path, class: "btn btn-primary btn-lg btn-block" %><br>
           
+          <h2>Gallery Options</h2>
           <h5>Add a Gallery Photo</h5>
           <p>Have a great Cool Beans photo? Add it to the gallery.</p>
           <%= link_to 'Add a Gallery photo', new_gallery_photo_path, class: "btn btn-primary btn-lg btn-block" %><br>
           
+          <h2>General Content</h2>
           <h5>Edit the About Us content</h5>
           <p>You can edit or add new content sections to the about page.</p>
           <%= link_to 'Edit About Contents', edit_about_content_path(1), class: "btn btn-primary btn-lg btn-block" %><br>
@@ -39,6 +47,7 @@
           <p>You can easily keep the site current with the latest PDF menu.</p>
           <%= link_to 'Update the PDF Menu', edit_hero_image_path(1), class: "btn btn-primary btn-lg btn-block" %><br>
           
+          <h2>Dive VIPs</h2>
           <h5>Manage Your Dive VIPs</h5>
           <p>You can view and delete your VIP members.</p>
           <%= link_to 'DIVE VIPs', members_path, class: "btn btn-primary btn-lg btn-block" %><br>
@@ -46,6 +55,11 @@
           <h5>Create or Send an Email to Your Dive VIPs</h5>
           <p>Create a new email or send a saved one to your Dive VIPs.</p>
           <%= link_to 'VIP Emails', email_path, class: "btn btn-primary btn-lg btn-block" %><br>
+          
+          <h2>Manage Your Account</h2>
+          <h5>Password</h5>
+          <p>You can change the password for your account.</p>
+          <%= link_to "Update Password", edit_user_registration_path, class: "btn btn-default btn-lg btn-block"  %>
           
           <h5>Log out</h5>
           <p>Don't forget to log out.</p>

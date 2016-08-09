@@ -123,6 +123,7 @@
           <% if user_signed_in? %>  
             <div class="caption">
               <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
+              <%= link_to 'Delete', menu_photo, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
           <% end %>
         </div>

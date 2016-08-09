@@ -1,0 +1,134 @@
+<div id="drafts-image">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-8 col-md-offset-2">
+        <h1><small>The Dive Bar</small><br/>Drafts</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  
+<div class="drafts-menu-style">
+    
+ <div class="row">
+
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-lg-7">
+      <% @menu_photos.each do |menu_photo| %>
+        <% if menu_photo.name == 'Drafts-One' && menu_photo.photo_file_name.present? %>
+        <div class="thumbnail">
+        <%= image_tag(menu_photo.photo.url, :class=>'drinks-photo', :alt=>'Drafts') %>
+          <% if user_signed_in? %>  
+            <div class="caption">
+              <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
+            </div>
+          <% end %>
+        </div>
+        <% end %>
+      <% end %>
+    </div>
+
+  
+  <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+    <h2>Over 35 Cold Drafts</h2>
+  </div>
+</div>
+  
+  
+  <% @menu_items.each do |menu_item| %>
+    <% if menu_item.menu_section == 'Drafts-Note' && menu_item.description.present? %>
+      <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-7">
+          <div class="well well-lg">
+            <p><%= menu_item.description %></p>
+              <% if menu_item.extra_one.present? %>
+                  <p><%= menu_item.extra_one %></p>
+              <% end %>
+              <% if menu_item.extra_two.present? %>
+                <div class="menu-extra">
+                  <p><%= menu_item.extra_two %></p>
+                </div>
+              <% end %>
+              <% if menu_item.extra_three.present? %>
+                <div class="menu-extra">
+                  <p><%= menu_item.extra_three %></p>
+                </div>
+              <% end %>
+             <% if user_signed_in? %>
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+
+  <div class="row">
+  <% @menu_items.each do |menu_item| %>
+    <% if menu_item.menu_section == 'Drafts' %>
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <div class="panel panel-success">
+          <div class="panel-heading">
+            <h3 class="panel-title"><%= menu_item.name %></h3>
+          </div>
+          <div class="panel-body">
+            <% if menu_item.description.present? %>
+              <p><%= menu_item.description %></p>
+            <% end %>
+            <div class="menu-price">
+              <h5><%= menu_item.price %></h5>
+            </div>
+            <% if menu_item.extra_one.present? %>
+              <div class="menu-extra">
+                <h5><%= menu_item.extra_one %> <%= menu_item.extra_one_price %></h5>
+              </div>
+            <% end %>
+            <% if menu_item.extra_two.present? %>
+              <div class="menu-extra">
+                <h5><%= menu_item.extra_two %> <%= menu_item.extra_two_price %></h5>
+              </div>
+            <% end %>
+            <% if menu_item.extra_three.present? %>
+              <div class="menu-extra">
+                <h5><%= menu_item.extra_three %> <%= menu_item.extra_three_price %></h5>
+              </div>
+            <% end %>
+          </div>
+          <% if user_signed_in? %>
+              <div class="panel-footer">      
+                <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
+                <span class="rank">Order: <%= menu_item.item_rank %></span>
+                <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            <% end %>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+  </div>
+</div>
+  
+  <div class="row bottom-menu-links">
+    <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2">
+      <%= link_to 'Our Specials Menu', specials_path, class: "btn btn-primary btn-lg btn-block" %><br>
+    </div>
+    <div class="col-xs-12 col-sm-5 col-md-4">
+      <%= link_to 'Sunday Dive Brunch', brunch_path, class: "btn btn-default btn-lg btn-block" %><br>
+    </div>
+  </div>
+  
+  <div class="container-fluid">
+  <% if user_signed_in? %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
+        <%= link_to 'New Menu Item', new_menu_item_path, class: "btn btn-default btn-lg btn-block" %>
+        <br>
+        <%= link_to 'Edit Menu Photos', menu_photos_path, class: "btn btn-primary btn-lg btn-block" %><br>
+      </div>
+    </div>
+  <% end %>
+  </div>
+  
+</div>

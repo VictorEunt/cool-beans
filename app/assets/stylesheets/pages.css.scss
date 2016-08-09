@@ -278,20 +278,7 @@
   padding-bottom: 5%;
 }
 
-//Dashboard Styles
 
-#dashboard-styles{
-  p {
-    color: #eee2c3;
-  }
-  h5 {
-    margin-top: 40px;
-  }
-  
-  .well-lg a {
-    color: #ffc902;
-  }
-}
 
 // Specials
 .specials-menu-style {
@@ -378,6 +365,16 @@
   .rank {
   color: #eee2c3;
   }
+  
+  .thumbnail {
+  background-color: #242021;
+  border-color: #262626;
+  }
+  
+  .thumbnail .btn-default {
+  float: right;
+}
+  
 }
 
 #food-specials-image {
@@ -430,6 +427,139 @@
   color: #242021;
 }
 
+// Drafts
+.drafts-menu-style {
+  
+  h2 {
+  font-family: 'Rye', cursive;
+  color: #eee2c3;
+  margin-bottom: 20px;
+  }
+  
+  .panel {
+    background: #242021;
+  }
+  .panel-success {
+    padding: 5px 0 0 0;
+    border-radius: 0;
+    border-color: #262626;
+  }
+  
+  .panel-heading {
+    border-color: #242021;
+    background: #242021;
+  }
+  
+  .panel-title {
+    font-size: 32px;
+    line-height: 90%;
+    color: #f9f9f9;
+    border-color: #242021;
+    margin-bottom: -15px;
+  }
+  
+  .panel-body {
+    background: #242021;  
+  }
+
+  .panel-success p {
+    color: #eee2c3;
+    font-size: 20px;
+    line-height: 100%;
+  }
+
+  .panel-footer {
+    border-top: none;
+    background: #262626;
+  }
+  
+  .panel-footer .btn-default {
+    float: right;
+  }
+
+  .menu-price h5 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: right;
+    color: #f9f9f9;
+  }
+
+  .menu-extra h5 {
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: right;
+    color: #eee2c3;
+  }
+  
+  .well {
+  border-color: #1a1a1a;
+  padding-top: 0;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  }
+
+  .well p {
+  color: #eee2c3;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 130%;
+  }
+  
+  .well .btn-default {
+    float: right;
+  }
+  
+  .rank {
+  color: #eee2c3;
+  }
+  
+  .thumbnail {
+    background-color: #242021;
+    border-color: #262626;
+  }
+}
+
+#drafts-image {
+  width: 100%;
+  height: auto;
+  padding: 0 2% 0 2%;
+  margin: -50px 0 0 0;
+}
+
+#drafts-image h1 {
+  font-weight: bold;
+  color: #f9f9f9;
+  font-size: 100px;
+  line-height: 75%;
+}
+
+#drafts-image h1 small {
+  font-family: 'Rye', cursive;
+  color: #d41a27;
+  font-size: 28px;
+}
+
+//Dashboard Styles
+
+#dashboard-styles{
+  p {
+    color: #eee2c3;
+  }
+  
+  h2 {
+    margin-top: 15%;
+    margin-bottom: -20px;
+  }
+  
+  h5 {
+    margin-top: 40px;
+  }
+  
+  .well-lg a {
+    color: #ffc902;
+  }
+}
+
 #admin-page-links a {
   color: #eee2c3;
 }
@@ -437,6 +567,7 @@
 #admin-page-links a:hover {
   color: #d41a27;
 }
+
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
@@ -548,8 +679,6 @@
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
   #brunch-header-image {
-  background-image: url("bar-superhero-lrg.png");
-  width: 100%;
   height: 280px;
   margin: -20px 0 5% 0;
   }
