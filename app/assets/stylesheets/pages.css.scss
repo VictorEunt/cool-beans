@@ -464,7 +464,7 @@
 
   .panel-success p {
     color: #eee2c3;
-    font-size: 20px;
+    font-size: 18px;
     line-height: 100%;
   }
 
@@ -478,17 +478,32 @@
   }
 
   .menu-price h5 {
-    margin-bottom: 10px;
-    font-size: 18px;
+    margin-bottom: 5px;
+    font-size: 22px;
     text-align: right;
-    color: #f9f9f9;
+    color: #eee2c3;
   }
-
-  .menu-extra h5 {
+  
+ .menu-extra p {
     margin-top: 5px;
+    margin-bottom: 5px;
     font-size: 16px;
     text-align: right;
     color: #eee2c3;
+  }
+
+  .menu-extra h5 {
+    margin-top: 1px;
+    font-size: 16px;
+    text-align: right;
+    color: #f9f9f9;
+  }
+  
+  .menu-extra h4 {
+    margin-top: 1px;
+    font-size: 20px;
+    text-align: right;
+    color: #f9f9f9;
   }
   
   .well {

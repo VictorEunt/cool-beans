@@ -187,6 +187,18 @@ $dropdown-link-hover-bg: transparent;
   color: #f9f9f9;
 }
 
+.btn-default:hover {
+  background-color: #242021;
+  color: #f9f9f9;
+  border-color: #f9f9f9;
+}
+
+.btn-primary:hover {
+  background-color: #333333;
+  color: #d41a27;
+  border-color: #d41a27;
+}
+
 .form-titles {
   margin: 15px 15px 0 15px;
 }
