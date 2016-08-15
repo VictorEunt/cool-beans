@@ -3,8 +3,8 @@
     <div id="hero-background">
       <h1 id="home-title">Cool Beans</h1>
       <h2 id="home-subtitle">Denton's Finest</br>Dive Bar</h2>
-      <div id="food-menu-button"><%= link_to "Our Menu", menu_path, class: "btn btn-primary btn-lg" %></div><br>
-      <div id="specials-button"><%= link_to "The Specials", specials_path, class: "btn btn-default btn-lg" %></div><br>
+      <div id="food-menu-button"><%= link_to "Our Food Menu", menu_path, class: "btn btn-primary btn-lg" %></div><br>
+      <div id="specials-button"><%= link_to "Food & Drink Specials", specials_path, class: "btn btn-default btn-lg" %></div><br>
       <div id="food-menu-button"><%= link_to "Sunday Brunch", brunch_path, class: "btn btn-primary btn-lg" %></div>
     </div>
   </div>
@@ -12,19 +12,23 @@
 
 <div id="hours-container">
 <div class="container-fluid">
-  <div class="row">
-      <div class="col-xs-12 col-sm-6">
-        <div id="all-ages">
-          <p id="ages-text">All Ages</p>
-          <p>Cool Beans is for ALL AGES everyday from 11am to 9pm. Come enjoy the best food and fun on Fry.</p>
-      </div>
-    </div>
+  
   <% @hours.each do |hour| %>
     <% if hour.name == 'Regular Hours' %>
-        <div class="col-xs-12 col-sm-6">
-          <div id="hours-style">
-            <p id="hours-text">Our Hours</p>
-            <p><%= hour.note %></p>
+    <div id="hours-style">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <h3>Our Hours</h3>
+          <p><%= hour.note %></p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <h3>All Ages</h3>
+          <p>Cool Beans is for ALL AGES everyday from 11am to 9pm.</p>
+        </div>
+        <div class="col-xs-12 col-sm-4">
+          <h3>The Kitchen</h3>
+          <p>Open until 12am, come grab a bite or call in your order.</p>
+        </div>
             <% if user_signed_in? %>
                 <div class="button">
                   <%= link_to 'Edit Hours', edit_hour_path(hour), class: "btn btn-primary" %>
@@ -38,48 +42,49 @@
 </div>
 </div>
 
-<div id="weekend-container">
-  <% @weekends.each do |weekend| %>
-    <% if weekend.title == 'The Weekend' %>
+<!-- Events Section -->
+<div id="event-container">
+  <% @events.each do |event| %>
+    <% if event.title == 'Our Events' %>
     <div class="container-fluid">
-      <div id="weekend-styles">
+      <div id="event-styles">
       <div class="row">
         <div class="col-xs-12 col-sm-6">
           <div class="home-container-heading">
-            <h1><%= weekend.title %></h1>
-            <h6><%= weekend.description %></h6>
+            <h1><%= event.title %></h1>
+            <h6><%= event.description %></h6>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <div id="hover-effect">
-            <div class="thumbnail" data-toggle="modal" data-target="#weekendModal1">
-               <%= image_tag(weekend.image_one.url, :class=>'photo-image', :alt=>'weekend special') %>
-              <div class="caption">
-                <h3><%= weekend.first_special %></h3>
-                <p><%= weekend.first_special_description %></p>
-              </div>
+        <div id="event-hover-effect">
+          <div class="thumbnail" data-toggle="modal" data-target="#eventModal1">
+             <%= image_tag(event.image_one.url, :class=>'event-photo', :alt=>'event one') %>
+            <div class="caption">
+              <h3><%= event.first_event %></h3>
+              <p><%= event.first_event_description %></p>
             </div>
           </div>
         </div>
+        </div>
         <div class="col-xs-12 col-sm-6">
-          <div id="hover-effect">
-            <div class="thumbnail" data-toggle="modal" data-target="#weekendModal2">
-               <%= image_tag(weekend.image_two.url, :class=>'photo-image', :alt=>'weekend special') %>
-              <div class="caption">
-                <h3><%= weekend.second_special %></h3>
-                <p><%= weekend.second_special_description %></p>
-              </div>
+          <div id="event-hover-effect">
+          <div class="thumbnail" data-toggle="modal" data-target="#eventModal2">
+             <%= image_tag(event.image_two.url, :class=>'event-photo', :alt=>'event special') %>
+            <div class="caption">
+              <h3><%= event.second_event %></h3>
+              <p><%= event.second_event_description %></p>
             </div>
           </div>
+        </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
           <% if user_signed_in? %>
             <div class="button">
-              <%= link_to 'Edit Weekend', edit_weekend_path(weekend), class: "btn btn-primary" %>
+              <%= link_to 'Edit Events', edit_event_path(event), class: "btn btn-primary" %>
             </div>
           <% end %>
         </div>
@@ -90,54 +95,54 @@
   <% end %> 
 </div>
 
-<!-- Weekend Modal 1 -->
-<div id="weekend-modal-styles">
-  <% @weekends.each do |weekend| %>
-    <% if weekend.title == 'The Weekend' %>
-<div class="modal fade" id="weekendModal1" tabindex="-1" role="dialog" aria-labelledby="weekendLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><%= weekend.first_modal %></h4>
-      </div>
-      <div class="modal-body">
-        <%= image_tag(weekend.modal_image_one.url, :class=>'img-responsive', :alt=>'weekend special') %>
-        <p><%= weekend.first_modal_description %></p>
-      </div>
-      <div class="modal-footer">
-        <%= link_to 'The Specials Menu', specials_path, class: "btn btn-primary" %>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!-- Event Modals -->
+<div id="event-modal-styles">
+    <% @events.each do |event| %>
+    <% if event.title == 'Our Events' %>
+    <div class="modal fade" id="eventModal1" tabindex="-1" role="dialog" aria-labelledby="eventLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><%= event.first_modal %></h4>
+        </div>
+        <div class="modal-body">
+          <%= image_tag(event.modal_image_one.url, :class=>'img-responsive', :alt=>'event') %>
+          <p><%= event.first_modal_description %></p>
+        </div>
+        <div class="modal-footer">
+          <%= link_to 'The Specials Menu', specials_path, class: "btn btn-primary" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<% end %>
-<% end %>
+    <% end %>
+    <% end %>
 
-<!-- Weekend Modal 2 -->
-  <% @weekends.each do |weekend| %>
-    <% if weekend.title == 'The Weekend' %>
-<div class="modal fade" id="weekendModal2" tabindex="-1" role="dialog" aria-labelledby="weekendLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel"><%= weekend.second_modal %></h4>
-      </div>
-      <div class="modal-body">
-        <%= image_tag(weekend.modal_image_two.url, :class=>'img-responsive', :alt=>'weekend special') %>
-        <p><%= weekend.second_modal_description %></p>
-      </div>
-      <div class="modal-footer">
-        <%= link_to 'Dive Brunch Menu', brunch_path, class: "btn btn-primary" %>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<!-- Event Modal 2 -->
+    <% @events.each do |event| %>
+    <% if event.title == 'Our Events' %>
+    <div class="modal fade" id="eventModal2" tabindex="-1" role="dialog" aria-labelledby="eventLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel"><%= event.second_modal %></h4>
+        </div>
+        <div class="modal-body">
+          <%= image_tag(event.modal_image_two.url, :class=>'img-responsive', :alt=>'event two') %>
+          <p><%= event.second_modal_description %></p>
+        </div>
+        <div class="modal-footer">
+          <%= link_to "Dive VIPs", '/#vip-container', class: "btn btn-primary" %>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-<% end %>
-<% end %>
+    </div>
+    <% end %>
+    <% end %>
 </div>
 
 <!-- Classics Section -->
@@ -148,7 +153,7 @@
       <div id="classics-styles">
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-          <div class="home-container-heading">
+        <div class="home-container-heading">
             <h1><%= classic.title %></h1>
             <h6><%= classic.description %></h6>
           </div>
@@ -204,7 +209,7 @@
   <% end %> 
 </div>
 
-<!-- Classic Modal 1 -->
+<!-- Classic Modals -->
 <div id="classic-modal-styles">
     <% @classics.each do |classic| %>
     <% if classic.title == 'The Classics' %>
@@ -278,49 +283,49 @@
     <% end %>
 </div>
 
-<!-- Events Section -->
-<div id="event-container">
-  <% @events.each do |event| %>
-    <% if event.title == 'Our Events' %>
+<!-- Weekend -->
+<div id="weekend-container">
+  <% @weekends.each do |weekend| %>
+    <% if weekend.title == 'The Weekend' %>
     <div class="container-fluid">
-      <div id="event-styles">
+      <div id="weekend-styles">
       <div class="row">
         <div class="col-xs-12 col-sm-6">
           <div class="home-container-heading">
-            <h1><%= event.title %></h1>
-            <h6><%= event.description %></h6>
+            <h1><%= weekend.title %></h1>
+            <h6><%= weekend.description %></h6>
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
-        <div id="event-hover-effect">
-          <div class="thumbnail" data-toggle="modal" data-target="#eventModal1">
-             <%= image_tag(event.image_one.url, :class=>'event-photo', :alt=>'event one') %>
-            <div class="caption">
-              <h3><%= event.first_event %></h3>
-              <p><%= event.first_event_description %></p>
+          <div id="hover-effect">
+            <div class="thumbnail" data-toggle="modal" data-target="#weekendModal1">
+               <%= image_tag(weekend.image_one.url, :class=>'photo-image', :alt=>'weekend special') %>
+              <div class="caption">
+                <h3><%= weekend.first_special %></h3>
+                <p><%= weekend.first_special_description %></p>
+              </div>
             </div>
           </div>
-        </div>
         </div>
         <div class="col-xs-12 col-sm-6">
-          <div id="event-hover-effect">
-          <div class="thumbnail" data-toggle="modal" data-target="#eventModal2">
-             <%= image_tag(event.image_two.url, :class=>'event-photo', :alt=>'event special') %>
-            <div class="caption">
-              <h3><%= event.second_event %></h3>
-              <p><%= event.second_event_description %></p>
+          <div id="hover-effect">
+            <div class="thumbnail" data-toggle="modal" data-target="#weekendModal2">
+               <%= image_tag(weekend.image_two.url, :class=>'photo-image', :alt=>'weekend special') %>
+              <div class="caption">
+                <h3><%= weekend.second_special %></h3>
+                <p><%= weekend.second_special_description %></p>
+              </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12 col-sm-6">
           <% if user_signed_in? %>
             <div class="button">
-              <%= link_to 'Edit Events', edit_event_path(event), class: "btn btn-primary" %>
+              <%= link_to 'Edit Weekend', edit_weekend_path(weekend), class: "btn btn-primary" %>
             </div>
           <% end %>
         </div>
@@ -331,54 +336,54 @@
   <% end %> 
 </div>
 
-<!-- Event Modal 1 -->
-<div id="event-modal-styles">
-    <% @events.each do |event| %>
-    <% if event.title == 'Our Events' %>
-    <div class="modal fade" id="eventModal1" tabindex="-1" role="dialog" aria-labelledby="eventLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel"><%= event.first_modal %></h4>
-        </div>
-        <div class="modal-body">
-          <%= image_tag(event.modal_image_one.url, :class=>'img-responsive', :alt=>'event') %>
-          <p><%= event.first_modal_description %></p>
-        </div>
-        <div class="modal-footer">
-          <%= link_to 'The Specials Menu', specials_path, class: "btn btn-primary" %>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-        </div>
+<!-- Weekend Modals -->
+<div id="weekend-modal-styles">
+  <% @weekends.each do |weekend| %>
+    <% if weekend.title == 'The Weekend' %>
+<div class="modal fade" id="weekendModal1" tabindex="-1" role="dialog" aria-labelledby="weekendLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= weekend.first_modal %></h4>
+      </div>
+      <div class="modal-body">
+        <%= image_tag(weekend.modal_image_one.url, :class=>'img-responsive', :alt=>'weekend special') %>
+        <p><%= weekend.first_modal_description %></p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'The Specials Menu', specials_path, class: "btn btn-primary" %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-    <% end %>
-    <% end %>
+  </div>
+</div>
+<% end %>
+<% end %>
 
-<!-- Event Modal 2 -->
-    <% @events.each do |event| %>
-    <% if event.title == 'Our Events' %>
-    <div class="modal fade" id="eventModal2" tabindex="-1" role="dialog" aria-labelledby="eventLabel">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 class="modal-title" id="myModalLabel"><%= event.second_modal %></h4>
-        </div>
-        <div class="modal-body">
-          <%= image_tag(event.modal_image_two.url, :class=>'img-responsive', :alt=>'event two') %>
-          <p><%= event.second_modal_description %></p>
-        </div>
-        <div class="modal-footer">
-          <%= link_to "Dive VIPs", '/#vip-container', class: "btn btn-primary" %>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
+<!-- Weekend Modal 2 -->
+  <% @weekends.each do |weekend| %>
+    <% if weekend.title == 'The Weekend' %>
+<div class="modal fade" id="weekendModal2" tabindex="-1" role="dialog" aria-labelledby="weekendLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel"><%= weekend.second_modal %></h4>
+      </div>
+      <div class="modal-body">
+        <%= image_tag(weekend.modal_image_two.url, :class=>'img-responsive', :alt=>'weekend special') %>
+        <p><%= weekend.second_modal_description %></p>
+      </div>
+      <div class="modal-footer">
+        <%= link_to 'Dive Brunch Menu', brunch_path, class: "btn btn-primary" %>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
-    </div>
-    <% end %>
-    <% end %>
+  </div>
+</div>
+<% end %>
+<% end %>
 </div>
 
 <!-- VIP Section -->
@@ -400,16 +405,16 @@
       <span class="input-vip input--kozakura">
         <%= f.text_field :name, class: "input__field input__field--kozakura" %>
         <label class="input__label input__label--kozakura" for="member_name">
-						<span class="input__label-content input__label-content--kozakura" data-content="Your VIP Name">Your VIP Name</span>
+						<span class="input__label-content input__label-content--kozakura" data-content="Your VIP Name">Please enter your NAME</span>
         </label>
         <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
 					</svg>
       </span>
       <span class="input-vip input--kozakura">
-        <%= f.text_field :email, class: "input__field input__field--kozakura" %>
+        <%= f.email_field :email, class: "input__field input__field--kozakura",:required => 'required' %>
         <label class="input__label input__label--kozakura" for="member_email">
-						<span class="input__label-content input__label-content--kozakura" data-content="Your Email">Your Email</span>
+						<span class="input__label-content input__label-content--kozakura" data-content="Your Email">Please enter your EMAIL</span>
         </label>
         <svg class="graphic graphic--kozakura" width="300%" height="100%" viewBox="0 0 1200 60" preserveAspectRatio="none">
 						<path d="M1200,9c0,0-305.005,0-401.001,0C733,9,675.327,4.969,598,4.969C514.994,4.969,449.336,9,400.333,9C299.666,9,0,9,0,9v43c0,0,299.666,0,400.333,0c49.002,0,114.66,3.484,197.667,3.484c77.327,0,135-3.484,200.999-3.484C894.995,52,1200,52,1200,52V9z"/>
@@ -420,7 +425,9 @@
       <div class="row">
         <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-10 col-lg-offset-2">
           <div class="form-group" id="register-button">
-            <%= f.submit "Register", class: "btn btn-primary btn-lg" %>
+            <%= button_tag(type: 'submit', class: "btn btn-primary btn-lg") do %>
+              <span class="glyphicon glyphicon-ok"></span> 
+            <% end %>
           </div>
         </div>
       </div>

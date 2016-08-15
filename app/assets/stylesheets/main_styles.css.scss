@@ -65,7 +65,8 @@ $dropdown-link-hover-bg: transparent;
 /* Extra small devices (phones, less than 768px) */
 /* No media query since this is the default in Bootstrap */
 
-body {
+#large-navigation {
+  display: none;
 }
 
 .navbar-brand {
@@ -117,7 +118,7 @@ body {
   margin-bottom: 10px;
   text-align: center;
   border: none;
-  max-height: 390px;
+  max-height: 455px;
 }
 
 .nav_link {
@@ -220,13 +221,11 @@ body {
 .input__field {
 	position: relative;
 	display: block;
-	float: right;
 	padding: 0.8em;
 	width: 60%;
 	border: none;
 	border-radius: 0;
-	background: #eee2c3;
-	color: #242021;
+  background: #eee2c3;
 	font-weight: normal;
 	-webkit-appearance: none; /* for box shadows to show on iOS */
 }
@@ -238,18 +237,16 @@ body {
 	padding: 0.25em 0.5em;
 	margin-top: 1.25em;
 	width: 100%;
-	background: transparent;
+  background: transparent;
+	color: #242021;
 	font-size: 1.55em;
 	opacity: 0;
 }
 
 .input__label {
 	display: inline-block;
-	float: right;
 	padding: 0 1em;
 	width: 40%;
-	color: #ffc902;
-	font-weight: bold;
 	font-size: 70.25%;
 	-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -264,7 +261,6 @@ body {
 .input__label-content {
 	position: relative;
 	display: block;
-	padding: 1.6em 0;
 	width: 100%;
 }
 
@@ -283,7 +279,7 @@ body {
 }
 
 .input__label-content--kozakura {
-	color: #ccc;
+	color: #242021;
 	padding: 0.25em 0;
 	-webkit-transition: -webkit-transform 0.3s;
 	transition: transform 0.3s;
@@ -308,7 +304,7 @@ body {
 	position: absolute;
 	top: 0;
 	left: 0;
-	fill: #242021;
+	fill: rgba(249, 249, 249, .8);
 }
 
 .graphic--kozakura {
@@ -427,7 +423,15 @@ display: none;
 
 /* Small devices (tablets, 768px and up) */
 @media (min-width: $screen-sm-min) {
-	.navbar-toggle {
+	#large-navigation {
+  display: block;
+  }
+  
+  #mobile-navigation {
+    display: none;
+  }
+  
+  .navbar-toggle {
 		display: none;
 		}
 	.navbar-text {

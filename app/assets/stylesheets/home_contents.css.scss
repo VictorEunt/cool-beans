@@ -38,7 +38,7 @@
 
 #food-menu-button .btn {
   background-color: rgba(0, 0, 0, 0.3);
-  width: 150px;
+  width: 200px;
 }
 
 #food-menu-button .btn:hover {
@@ -49,7 +49,7 @@
   background-color: rgba(0, 0, 0, 0.3);
   color: #f9f9f9;
   border-color: #f9f9f9;
-  width: 150px;
+  width: 200px;
 }
 
 #specials-button .btn:hover {
@@ -58,35 +58,24 @@
 
 // Hours Section
 #hours-container {
-  margin-top: 10px;
+  margin-top: 25px;
   margin-bottom: 25px;
 
   .button .btn {
   }
 }
 
-#all-ages {
-margin: 15px 15px;
-border: solid 1px #eee2c3;
-padding: 5%;
-height: 240px;
-}
-
-#all-ages p {
-font-size: 22px;
-color: #eee2c3;
-text-align: center;
-}  
-
-#all-ages #ages-text {
-color: #f9f9f9;
-}
-
 #hours-style {
 margin: 0 15px;
 border: solid 1px #f9f9f9;
-padding: 5%;
-height: 240px;
+padding: 0 5% 5% 5%;
+height: auto;
+}
+
+#hours-style h3 {
+color: #f9f9f9;
+text-align: center;
+margin-top: 35px;
 }
 
 #hours-style p {
@@ -95,9 +84,6 @@ color: #eee2c3;
 text-align: center;
 }
 
-#hours-style #hours-text {
-color: #f9f9f9;
-}
 
 // Weekend Section
 #weekend-container {
@@ -400,39 +386,22 @@ margin-bottom: 25px;
   #hours-container {
   }
   
-  #all-ages {
-  margin: 25px 15px;
-  border: solid 1px #eee2c3;
-  padding: 5%;
-  height: 200px;
-  }
-
-  #all-ages p {
-  font-size: 20px;
-  color: #eee2c3;
-  text-align: center;
-  }  
-  
-  #all-ages #ages-text {
-  color: #f9f9f9;
-  }
-  
   #hours-style {
   margin: 25px 15px;
-  border: solid 1px #eee2c3;
+  height: auto;
   padding: 5%;
-  height: 200px;
   }
   
+  #hours-style h3 {
+    margin-top: 0;
+}
   #hours-style p {
   font-size: 20px;
-  color: #eee2c3;
-  text-align: center;
+
   }
   
-  #hours-style #hours-text {
-  color: #f9f9f9;
-  }
+
+
 
   
   // Weekend Section
