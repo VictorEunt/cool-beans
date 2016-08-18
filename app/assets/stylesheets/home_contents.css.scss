@@ -43,6 +43,8 @@
 
 #food-menu-button .btn:hover {
   background-color: #242021;
+  color: #f9f9f9;
+  border-color: #f9f9f9;
 }
 
 #specials-button .btn {
@@ -54,6 +56,8 @@
 
 #specials-button .btn:hover {
   background-color: #242021;
+  color: #eee2c3;
+  border-color: #eee2c3;
 }
 
 // Hours Section
@@ -82,6 +86,7 @@ margin-top: 35px;
 font-size: 22px;
 color: #eee2c3;
 text-align: center;
+line-height: 100%;
 }
 
 
@@ -129,6 +134,11 @@ text-align: center;
     font-size: 16px;
     line-height: 95%;
     color: #eee2c3;
+  }
+  
+  .thumbnail .glyphicon {
+    margin-left: 99%;
+    color: rgba(249, 249, 249, .9);
   }
   
   #hover-effect:hover {
@@ -209,6 +219,11 @@ margin-bottom: 25px;
     color: #eee2c3;
   }
   
+   .thumbnail .glyphicon {
+    margin-left: 99%;
+    color: rgba(249, 249, 249, .9);
+  }
+  
   #classic-hover-effect:hover {
     opacity: .7;
     overflow: visible;
@@ -286,6 +301,11 @@ margin-bottom: 25px;
     font-size: 16px;
     line-height: 95%;
     color: #242021;
+  }
+  
+  .thumbnail .glyphicon {
+    margin-left: 99%;
+    color: rgba(36, 32, 33, .4);
   }
 
   #event-hover-effect:hover {
@@ -400,6 +420,9 @@ margin-bottom: 25px;
 
   }
   
+  .thumbnail .glyphicon-share-alt {
+    display: none;
+  }
 
 
 
@@ -538,6 +561,10 @@ margin-bottom: 25px;
   
   #home-title {
   margin-top: 30px;
+  }
+  
+  #hours-style {
+  padding: 3% 15% 3% 15%;
   }
   
   #classics-container {

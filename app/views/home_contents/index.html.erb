@@ -64,6 +64,7 @@
             <div class="caption">
               <h3><%= event.first_event %></h3>
               <p><%= event.first_event_description %></p>
+              <span class="glyphicon glyphicon-share-alt"></span>
             </div>
           </div>
         </div>
@@ -75,6 +76,7 @@
             <div class="caption">
               <h3><%= event.second_event %></h3>
               <p><%= event.second_event_description %></p>
+              <span class="glyphicon glyphicon-share-alt"></span>
             </div>
           </div>
         </div>
@@ -167,6 +169,7 @@
                 <div class="caption">
                   <h3><%= classic.first_classic %></h3>
                   <p><%= classic.first_classic_description %></p>
+                  <span class="glyphicon glyphicon-share-alt"></span>
                 </div>
             </div>
           </div>
@@ -178,6 +181,7 @@
               <div class="caption">
                 <h3><%= classic.second_classic %></h3>
                 <p><%= classic.second_classic_description %></p>
+                <span class="glyphicon glyphicon-share-alt"></span>
             </div>
             </div>
           </div>
@@ -189,6 +193,7 @@
               <div class="caption">
                 <h3><%= classic.third_classic %></h3>
                 <p><%= classic.third_classic_description %></p>
+                <span class="glyphicon glyphicon-share-alt"></span>
               </div>
             </div>
           </div>
@@ -305,6 +310,7 @@
               <div class="caption">
                 <h3><%= weekend.first_special %></h3>
                 <p><%= weekend.first_special_description %></p>
+                <span class="glyphicon glyphicon-share-alt"></span>
               </div>
             </div>
           </div>
@@ -316,6 +322,7 @@
               <div class="caption">
                 <h3><%= weekend.second_special %></h3>
                 <p><%= weekend.second_special_description %></p>
+                <span class="glyphicon glyphicon-share-alt"></span>
               </div>
             </div>
           </div>
@@ -412,7 +419,7 @@
 					</svg>
       </span>
       <span class="input-vip input--kozakura">
-        <%= f.email_field :email, class: "input__field input__field--kozakura",:required => 'required' %>
+        <%= f.email_field :email, class: "input__field input__field--kozakura", :required => 'required' %>
         <label class="input__label input__label--kozakura" for="member_email">
 						<span class="input__label-content input__label-content--kozakura" data-content="Your Email">Please enter your EMAIL</span>
         </label>
