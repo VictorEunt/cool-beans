@@ -385,6 +385,13 @@ margin-bottom: 25px;
   background-color: #242021;
 }
 
+#register-button .btn:focus {
+  background-color: #242021;
+  border-color: #d41a27;
+  color: #d41a27;
+  outline: none;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) {
   
