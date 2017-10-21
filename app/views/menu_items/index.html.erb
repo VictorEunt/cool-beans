@@ -3,7 +3,7 @@
     <h1><small>The Menu</small></h1>
   </div>
 </div>
-  
+
 <div class="container-fluid">
   <% if user_signed_in? %>
     <div class="row">
@@ -26,8 +26,8 @@
             <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a class="down-to-anchor" href="#" data-target="burger-anchor">Our Burgers</a></li>
-            <li><a class="down-to-anchor" href="#" data-target="chicken-anchor">Chicken Sandwiches</a></li>
+            <li><a class="down-to-anchor" href="#" data-target="burger-anchor">Our Sandwiches</a></li>
+            <!--<li><a class="down-to-anchor" href="#" data-target="chicken-anchor">Chicken Sandwiches</a></li>-->
             <li><a class="down-to-anchor" href="#" data-target="basket-anchor">Baskets and More</a></li>
             <li><a class="down-to-anchor" href="#" data-target="vegetarian-anchor">For the Vegetarian</a></li>
             <li><a class="down-to-anchor" href="#" data-target="munchies-anchor">The Munchies</a></li>
@@ -53,8 +53,8 @@
     <div class="row">
       <div class="col-md-10 col-md-offset-2">
       <div class="btn-group" role="group" aria-label="Food Menu Sections">
-        <%= link_to 'Our Burgers', '#', class: "btn btn-default down-to-anchor", :data=> {target: "burger-anchor"} %>
-        <%= link_to 'Chicken Sandwiches', '#', class: "btn btn-default down-to-anchor", :data=> {target: "chicken-anchor"} %>
+        <%= link_to 'Our Sandwiches', '#', class: "btn btn-default down-to-anchor", :data=> {target: "burger-anchor"} %>
+        <!-- <%= link_to 'Chicken Sandwiches', '#', class: "btn btn-default down-to-anchor", :data=> {target: "chicken-anchor"} %> -->
         <%= link_to 'Baskets', '#', class: "btn btn-default down-to-anchor", :data=> {target: "basket-anchor"} %>
         <%= link_to 'Vegetarian', '#', class: "btn btn-default down-to-anchor", :data=> {target: "vegetarian-anchor"} %>
         <%= link_to 'Munchies', '#', class: "btn btn-default down-to-anchor", :data=> {target: "munchies-anchor"} %>
@@ -74,8 +74,8 @@
     <div class="row">
       <div class="col-lg-10 col-lg-offset-2">
       <div class="btn-group btn-group-lg" role="group" aria-label="Food Menu Sections">
-        <%= link_to 'Our Burgers', '#', class: "btn btn-default down-to-anchor", :data=> {target: "burger-anchor"} %>
-        <%= link_to 'Chicken Sandwiches', '#', class: "btn btn-default down-to-anchor", :data=> {target: "chicken-anchor"} %>
+        <%= link_to 'Our Sandwiches', '#', class: "btn btn-default down-to-anchor", :data=> {target: "burger-anchor"} %>
+        <!-- <%= link_to 'Chicken Sandwiches', '#', class: "btn btn-default down-to-anchor", :data=> {target: "chicken-anchor"} %> -->
         <%= link_to 'Baskets', '#', class: "btn btn-default down-to-anchor", :data=> {target: "basket-anchor"} %>
         <%= link_to 'Vegetarian', '#', class: "btn btn-default down-to-anchor", :data=> {target: "vegetarian-anchor"} %>
         <%= link_to 'Munchies', '#', class: "btn btn-default down-to-anchor", :data=> {target: "munchies-anchor"} %>
@@ -96,13 +96,13 @@
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-8">
       <h1 id="burger-anchor">Our Burgers</h1>
     </div>
-  
+
   <% @menu_photos.each do |menu_photo| %>
     <% if menu_photo.name == 'Burger-One' && menu_photo.photo_file_name.present? %>
         <div class="col-xs-12 col-sm-5 col-sm-offset-1 col-md-4 col-md-offset-2">
           <div class="thumbnail">
             <%= image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Burger') %>
-            <% if user_signed_in? %>  
+            <% if user_signed_in? %>
             <div class="caption">
               <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
             </div>
@@ -111,23 +111,23 @@
         </div>
     <% end %>
   <% end %>
-  
+
   <% @menu_photos.each do |menu_photo| %>
     <% if menu_photo.name == 'Burger-Two' && menu_photo.photo_file_name.present? %>
       <div class="col-xs-12 col-sm-5 col-md-4">
         <div class="thumbnail" id="burger_two">
           <%= image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Burger') %>
-          <% if user_signed_in? %>  
+          <% if user_signed_in? %>
             <div class="caption">
               <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
             </div>
           <% end %>
-        </div> 
+        </div>
       </div>
     <% end %>
   <% end %>
   </div>
-  
+
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Burger-Note' && menu_item.description.present? %>
       <div class="row">
@@ -189,7 +189,7 @@
               <% end %>
             </div>
               <% if user_signed_in? %>
-              <div class="panel-footer">      
+              <div class="panel-footer">
                 <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
                 <span class="rank">Order: <%= menu_item.item_rank %></span>
                 <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -200,8 +200,8 @@
     <% end %>
   <% end %>
   </div>
-  
-  <div class="row">
+
+  <!-- <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-8">
       <h1 id="chicken-anchor">Our Chicken Sandwiches</h1>
     </div>
@@ -210,7 +210,7 @@
         <% if menu_photo.name == 'Chicken-One' && menu_photo.photo_file_name.present? %>
         <div class="thumbnail">
         <%= image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Chicken Sandwich') %>
-          <% if user_signed_in? %>  
+          <% if user_signed_in? %>
             <div class="caption">
               <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
               <%= link_to 'Delete', menu_photo, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -241,7 +241,7 @@
                   <p><%= menu_item.extra_three %></p>
                 </div>
               <% end %>
-              <% if user_signed_in? %>      
+              <% if user_signed_in? %>
                   <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
                   <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
@@ -250,7 +250,7 @@
       </div>
     <% end %>
   <% end %>
-  
+
   <div class="row">
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Chicken Sandwiches' %>
@@ -283,7 +283,7 @@
               <% end %>
             </div>
             <% if user_signed_in? %>
-              <div class="panel-footer">      
+              <div class="panel-footer">
                 <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
                 <span class="rank">Order: <%= menu_item.item_rank %></span>
                 <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -293,7 +293,7 @@
               </div>
             <% end %>
           <% end %>
-        </div>
+        </div> -->
 
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-8">
@@ -304,7 +304,7 @@
         <% if menu_photo.name == 'Basket-One' && menu_photo.photo_file_name.present? %>
         <div class="thumbnail">
         <%= image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Tacos') %>
-          <% if user_signed_in? %>  
+          <% if user_signed_in? %>
             <div class="caption">
               <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
               <%= link_to 'Delete', menu_photo, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -335,7 +335,7 @@
                   <p><%= menu_item.extra_three %></p>
                 </div>
               <% end %>
-              <% if user_signed_in? %>      
+              <% if user_signed_in? %>
                   <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
                   <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
               <% end %>
@@ -344,7 +344,7 @@
       </div>
     <% end %>
   <% end %>
-  
+
     <div class="row">
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Baskets and More' %>
@@ -377,7 +377,7 @@
               <% end %>
             </div>
             <% if user_signed_in? %>
-              <div class="panel-footer">      
+              <div class="panel-footer">
                 <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
                 <span class="rank">Order: <%= menu_item.item_rank %></span>
                 <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -388,7 +388,7 @@
     <% end %>
   <% end %>
   </div>
-  
+
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-2 col-lg-8">
       <h1 id="vegetarian-anchor">For the Vegetarian</h1>
@@ -398,7 +398,7 @@
         <% if menu_photo.name == 'Vegetarian-One' && menu_photo.photo_file_name.present? %>
         <div class="thumbnail">
         <%= image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Munchie') %>
-          <% if user_signed_in? %>  
+          <% if user_signed_in? %>
             <div class="caption">
               <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
               <%= link_to 'Delete', menu_photo, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -438,7 +438,7 @@
         </div>
     <% end %>
   <% end %>
-  
+
   <div class="row">
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Vegetarian' %>
@@ -471,7 +471,7 @@
               <% end %>
             </div>
             <% if user_signed_in? %>
-              <div class="panel-footer">      
+              <div class="panel-footer">
                 <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
                 <span class="rank">Order: <%= menu_item.item_rank %></span>
                 <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -492,7 +492,7 @@
         <% if menu_photo.name == 'Munchies-One' && menu_photo.photo_file_name.present? %>
         <div class="thumbnail">
         <%= image_tag(menu_photo.photo.url, :class=>'food-photo', :alt=>'Munchie') %>
-          <% if user_signed_in? %>  
+          <% if user_signed_in? %>
             <div class="caption">
               <%= link_to 'Edit', edit_menu_photo_path(menu_photo), class: "btn btn-primary" %>
               <%= link_to 'Delete', menu_photo, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -503,7 +503,7 @@
       <% end %>
     </div>
   </div>
- 
+
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Munchies-Note' && menu_item.description.present? %>
       <div class="row">
@@ -532,7 +532,7 @@
       </div>
     <% end %>
   <% end %>
-  
+
     <div class="row">
   <% @menu_items.each do |menu_item| %>
     <% if menu_item.menu_section == 'Munchies' %>
@@ -565,7 +565,7 @@
               <% end %>
             </div>
             <% if user_signed_in? %>
-              <div class="panel-footer">      
+              <div class="panel-footer">
                 <%= link_to 'Edit', edit_menu_item_path(menu_item), class: "btn btn-primary" %>
                 <span class="rank">Order: <%= menu_item.item_rank %></span>
                 <%= link_to 'Delete', menu_item, class: "btn btn-default", id: "email-delete-button", method: :delete, data: { confirm: 'Are you sure?' } %>
@@ -585,7 +585,7 @@
         <%= link_to 'Sunday Dive Brunch', brunch_path, class: "btn btn-default btn-lg btn-block" %><br>
       </div>
     </div>
-  
+
   <div class="container-fluid">
   <% if user_signed_in? %>
     <div class="row">
@@ -597,7 +597,7 @@
     </div>
   <% end %>
   </div>
-  
+
 </div>
 </div>
 
