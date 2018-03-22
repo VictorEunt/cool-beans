@@ -8,14 +8,14 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
     </button>
-      <%= link_to image_tag("logo.png", :alt=>'cool beans logo', :class=>'navbar-brand'), root_path %> 
+      <%= link_to image_tag("logo.png", :alt=>'cool beans logo', :class=>'navbar-brand'), root_path %>
     <% if user_signed_in? %>
       <h6><%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navbar-text", id: "menu-link" %></h6>
     <% else %>
        <h6><%= link_to "Dive VIPs", '/#vip-container', class: "navbar-text", id: "menu-link" %></h6>
     <% end %>
     </div>
-  
+
 
 <!-- Mobile Collect the nav links, forms, and other content for toggling -->
   <div id="mobile-navigation">
@@ -31,7 +31,6 @@
         <li class="<%= active_class(specials_path) %>"><%= link_to "The Specials", specials_path, class: "nav_link" %></li>
         <li class="<%= active_class(brunch_path) %>"><%= link_to "Sunday Brunch", brunch_path, class: "nav_link" %></li>
         <li class="<%= active_class(drafts_path) %>"><%= link_to "Draft Beers", drafts_path, class: "nav_link" %></li>
-        <li class="<%= active_class(gallery_path) %>"><%= link_to "Photo Gallery", gallery_path, class: "nav_link" %></li>
         <li class="<%= active_class(contact_path) %>"><%= link_to "Contact Us", contact_path, class: "nav_link" %></li>
         <% if user_signed_in? %>
          <li class="<%= active_class(dashboard_path) %>"><%= link_to "Dashboard", dashboard_path, class: "nav_link" %></li>
@@ -70,6 +69,6 @@
     </ul>
     </div><!-- /.navbar-collapse -->
   </div>
-    
+
 </div>
 </nav>
